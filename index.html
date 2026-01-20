@@ -932,16 +932,18 @@ preg_conditions: {
   </script>
   <script>
   const params = new URLSearchParams(window.location.search);
-  const s = params.get("source");
-  if (s) {
+  const source = params.get("source");
+
+  if (source && typeof gtag === "function") {
     gtag('event', 'qr_scan', {
       event_category: 'QR',
-      event_label: s
+      event_label: source
     });
   }
- </script>
+</script>
  </body>
 </html>
+
 
 
 
