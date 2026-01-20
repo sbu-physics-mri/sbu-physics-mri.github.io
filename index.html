@@ -930,8 +930,19 @@ preg_conditions: {
 
        renderNode();
   </script>
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  const s = params.get("source");
+  if (s) {
+    gtag('event', 'qr_scan', {
+      event_category: 'QR',
+      event_label: s
+    });
+  }
+ </script>
  </body>
 </html>
+
 
 
 
