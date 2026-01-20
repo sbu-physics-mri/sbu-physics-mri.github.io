@@ -935,14 +935,12 @@ preg_conditions: {
   const source = params.get("source");
 
   if (source && typeof gtag === "function") {
-    gtag('event', 'qr_scan', {
-      event_category: 'QR',
-      event_label: source
-    });
+    gtag("event", "qr_scan", { source: source });
   }
 </script>
  </body>
 </html>
+
 
 
 
