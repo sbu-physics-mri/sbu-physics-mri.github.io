@@ -184,12 +184,10 @@
   const params = new URLSearchParams(window.location.search);
   const site_source = params.get("source") || "(direct)";
 
-  // Attach site_source to page views (URL usage)
   gtag('config', 'G-0T8V10184M', {
     site_source: site_source
   });
 
-  // Count QR usage ONLY when ?source= exists
   if (params.has("source")) {
     gtag('event', 'qr_scan', {
       site_source: site_source
@@ -943,16 +941,9 @@ preg_conditions: {
 
        renderNode();
   </script>
-  <script>
-  const params = new URLSearchParams(window.location.search);
-  const source = params.get("source");
-
-  if (source && typeof  === "function") {
-    gtag("event", "qr_scan", { source: source });
-  }
-</script>
  </body>
 </html>
+
 
 
 
