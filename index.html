@@ -181,7 +181,13 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
- gtag('config', 'G-0T8V10184M');
+ const params = new URLSearchParams(window.location.search);
+ const source = params.get("source");
+
+ gtag('config', 'G-0T8V10184M', {
+  source: source || undefined
+});
+
 </script>
 	 
  </head>
@@ -934,12 +940,13 @@ preg_conditions: {
   const params = new URLSearchParams(window.location.search);
   const source = params.get("source");
 
-  if (source && typeof gtag === "function") {
+  if (source && typeof  === "function") {
     gtag("event", "qr_scan", { source: source });
   }
 </script>
  </body>
 </html>
+
 
 
 
