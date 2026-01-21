@@ -182,23 +182,19 @@
   gtag('js', new Date());
 
   const params = new URLSearchParams(window.location.search);
-  const source = params.get("source");                // e.g. "morriston"
-  const qr_source = source || "(direct)";             // fallback label
+  const site_source = params.get("source") || "(direct)";
 
-  // 1) Attach qr_source to page_view (URL usage)
+  // Attach site_source to page views (URL usage)
   gtag('config', 'G-0T8V10184M', {
-    qr_source: qr_source
+    site_source: site_source
   });
 
-  // 2) Count QR usage ONLY when the URL contains ?source=...
+  // Count QR usage ONLY when ?source= exists
   if (params.has("source")) {
     gtag('event', 'qr_scan', {
-      qr_source: qr_source
+      site_source: site_source
     });
   }
-</script>
-
-
 </script>
 	 
  </head>
@@ -957,6 +953,7 @@ preg_conditions: {
 </script>
  </body>
 </html>
+
 
 
 
