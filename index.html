@@ -181,18 +181,12 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  const params = new URLSearchParams(window.location.search);
-  const site_source = params.get("source") || "(direct)";
+  window.site_source = new URLSearchParams(window.location.search).get("source") || "(direct)";
 
   gtag('config', 'G-0T8V10184M', {
-    site_source: site_source
+    site_source: window.site_source
   });
 
-  if (params.has("source")) {
-    gtag('event', {
-      site_source: site_source
-    });
-  }
 </script>
 	 
  </head>
@@ -912,7 +906,7 @@ preg_conditions: {
 			      gip_selected: opt.label,      
 			      from_node: current,          
 			      to_node: opt.next,            
-			      site_source: site_source      
+			      site_source: window.site_source      
 			    });
 			  }
 
@@ -952,6 +946,7 @@ preg_conditions: {
   </script>
  </body>
 </html>
+
 
 
 
