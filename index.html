@@ -901,11 +901,9 @@ preg_conditions: {
              btn.className = (current === "q1" && opt.warning) ? "warning" : "yes";
              btn.onclick = () => {
 			  // GA: track button press
-			  if (typeof gtag === "function") {
-			    gtag("event", "button_click", {
-			      gip_selected: opt.label,      
-			      from_node: current,          
-			      to_node: opt.next,            
+			  if (current === "q1" && typeof gtag === "function") {
+			    gtag("event", "Q1_click", {
+			      gip_selected: opt.label,                
 			      site_source: window.site_source      
 			    });
 			  }
@@ -948,6 +946,7 @@ preg_conditions: {
   </script>
  </body>
 </html>
+
 
 
 
