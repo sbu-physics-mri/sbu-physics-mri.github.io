@@ -189,7 +189,7 @@
   });
 
   if (params.has("source")) {
-    gtag('event', 'qr_scan', {
+    gtag('event', {
       site_source: site_source
     });
   }
@@ -267,9 +267,9 @@
                { label: "Orthopaedic Implants", next: "ortho1" },
                { label: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories", next: "shunts1" },
                { label: "Vascular Stents", next: "stents1" },
-   	       { label: "CIEDs", next: "cied1" },
+   	           { label: "CIEDs", next: "cied1" },
                { label: "Implant not in one of these categories", next: "nogip", warning: true },
-	       { label: "Pregnancy", next: "preg1", warning: true}
+	           { label: "Pregnancy", next: "preg1", warning: true}
              ]
            },
 
@@ -906,9 +906,18 @@ preg_conditions: {
              btn.textContent = opt.label;
              btn.className = (current === "q1" && opt.warning) ? "warning" : "yes";
              btn.onclick = () => {
-               history.push(current);
-               nextNode(opt.next);
-             };
+			  // GA: track button press
+			  if (typeof gtag === "function") {
+			    gtag("event", "button_click", {
+			      gip_selected: opt.label,      
+			      from_node: current,          
+			      to_node: opt.next,            
+			      site_source: site_source      
+			    });
+			  }
+
+  history.push(current);
+  nextNode(opt.next);
              bEl.appendChild(btn);
            });
          } else if (node.type === "outcome") {
@@ -943,6 +952,7 @@ preg_conditions: {
   </script>
  </body>
 </html>
+
 
 
 
