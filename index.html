@@ -903,7 +903,9 @@ preg_conditions: {
 			  // GA: track button press
 			  if (current === "q1" && typeof gtag === "function") {
 			    gtag("event", "Q1_click", {
-			      gip_selected: opt.label,                
+			      gip_selected: opt.label,
+				  from_node: current,
+          		  to_node: opt.next,
 			      site_source: window.site_source      
 			    });
 			  }
@@ -946,6 +948,7 @@ preg_conditions: {
   </script>
  </body>
 </html>
+
 
 
 
