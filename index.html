@@ -905,7 +905,7 @@ preg_conditions: {
 			  if (typeof gtag === "function") {
 
 			    if (current === "q1") {
-			      gtag("event", "gip_selected", {
+			      gtag("event", "Q1_clicked", {
 			        gip_selected: opt.label,   
 			        site_source: window.site_source
 			      });
@@ -928,6 +928,15 @@ preg_conditions: {
            });
          } else if (node.type === "outcome") {
            qEl.innerHTML = node.text;
+
+			 // GA: track outcome reached
+  		   if (typeof gtag === "function") {
+	    	   gtag("event", "outcome_reached", {
+	           outcome_node: current,   
+	           site_source: window.site_source
+            });
+           }
+		
            const restartBtn = document.createElement("button");
            restartBtn.textContent = "Start Over";
            restartBtn.className = "no";
@@ -958,6 +967,7 @@ preg_conditions: {
   </script>
  </body>
 </html>
+
 
 
 
