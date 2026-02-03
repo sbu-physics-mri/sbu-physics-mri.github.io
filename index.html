@@ -298,6 +298,10 @@
              text: "<div class='outcome-box red-box'>Do not scan</div>"
            },
 
+<!-- ----------------------------------- -->
+<!-- Clips, Staples and Metal Structures -->
+<!-- ----------------------------------- -->
+
           clips1: {
              type: "question",
              text: "<strong>Clips, Staples and Metal Sutures</strong><br><br><div class='outcome-box orange-box'>This policy covers all clips and staples, <u>excluding those implanted above the neck</div></u>",
@@ -551,45 +555,45 @@
              text: "<strong>Ingestible Capsules</strong><br><br><div class='outcome-box green-box'>Scan as normal</div><br><br>Inform the patient to press the buzzer if they feel discomfort during their scan. If the patient reports <strong>abdominal discomfort</strong> or if there are <strong>susceptibility artefacts</strong> present in adbominal localise images, <strong>terminate the scan immediately</strong>, then slowly and carefully move the patient out of the scanner and scanne room.<br><br><ul><u>Based on current information, with these conditions in place:</u><li>The likelihood is 2. UNLIKELY and the consequence 3. MODERATE</li><li>This gives a MODERATE risk score of 6</li></ul><br><br><ol>Furthermore, to minimise risks due to the static field and spatial gradient:<br><br><li>Move the patient slowly into and out of the scanner room</li><li>Move the patient slowly into and out of the MRI scanner</li><li>Advise the patient not to get up / sit up quickly after the scan has been completed</li></ol><br><br>Please document the decision and use of GIP (name and version) on the screening form."
            },
 
-         iud1: {
-             type: "question",
-             text: "<strong>Intrauterine Devices</strong><br><br><div class='outcome-box red-box'>This GIP <strong>does not cover pregnant patients with retained IUDs</strong></div>",
-             options: [
-               { label: "Continue", next: "iud2" },
-               { label: "Start Over", next: "q1" }
-             ]
-           },
+	 iud1: {
+		 type: "question",
+		 text: "<strong>Intrauterine Devices</strong><br><br><div class='outcome-box red-box'>This GIP <strong>does not cover pregnant patients with retained IUDs</strong></div>",
+		 options: [
+		   { label: "Continue", next: "iud2" },
+		   { label: "Start Over", next: "q1" }
+		 ]
+	   },
  
-          iud2: {
-             type: "question",
-             text: "<strong>Intrauterine Devices</strong><br><br>Was the IUD fitted in China",
-             options: [
-   	    { label: "Yes", next: "iud_warning" },
-            { label: "No", next: "iud_conditions" },
-             ]
-           },
+	  iud2: {
+		 type: "question",
+		 text: "<strong>Intrauterine Devices</strong><br><br>Was the IUD fitted in China",
+		 options: [
+	{ label: "Yes", next: "iud_warning" },
+		{ label: "No", next: "iud_conditions" },
+		 ]
+	   },
 
-           iud_warning: {
-             type: "outcome",
-             text: "<strong>Intrauterine Devices</strong><br><br><div class='outcome-box red-box'>Identifiy make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all confitions can be met. Scan according to conditions.<br><br><strong>If not possible</strong> or any questions, contact MRI Physics.</div>"
-           },
+	   iud_warning: {
+		 type: "outcome",
+		 text: "<strong>Intrauterine Devices</strong><br><br><div class='outcome-box red-box'>Identifiy make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all confitions can be met. Scan according to conditions.<br><br><strong>If not possible</strong> or any questions, contact MRI Physics.</div>"
+	   },
 
-           iud_conditions: {
-             type: "outcome",
-             text: `<strong>Intrauterine Devices</strong><br><br>Scan following conditions in <strong>Section 5.2</strong> of the <strong>Generic Implant Procedure for intrauterine devices (IUDs)</strong>:
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
-     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
-     <tbody>
-       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only 3T scanner is available, scan at 3T.</td></tr>
-       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid areas near covers at entrance to bore</td></tr>
-       <tr><td><strong>SAR</strong><br>No limit</td><td></td></tr>
-       <tr><td><strong>Gradient Switching mode</strong><br>No limit</td><td></td></tr>
-       <tr><td><strong>Minimum time since implantation</strong><br>None</td><td></td></tr>
-     </tbody>
-   </table>
-   <br><ul><u>Based on current information, with these conditions in place:</u><li>The likelihood is 1. RARE and the consequence 5. CATASTRPHIC</li><li>This give a LOW risk score of 5</li></ul>
-   <br><br>Please document the decision and use of GIP (name and version) on the screening form.`
-           },
+	   iud_conditions: {
+		 type: "outcome",
+		 text: `<strong>Intrauterine Devices</strong><br><br>Scan following conditions in <strong>Section 5.2</strong> of the <strong>Generic Implant Procedure for intrauterine devices (IUDs)</strong>:
+		<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+		 <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+		 <tbody>
+		   <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only 3T scanner is available, scan at 3T.</td></tr>
+		   <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid areas near covers at entrance to bore</td></tr>
+		   <tr><td><strong>SAR</strong><br>No limit</td><td>Only enter into First Level Mode if clinically required</td></tr>
+		   <tr><td><strong>Gradient Switching mode</strong><br>No limit</td><td></td></tr>
+		   <tr><td><strong>Minimum time since implantation</strong><br>None</td><td></td></tr>
+		 </tbody>
+		</table>
+		<br><ul><u>Based on current information, with these conditions in place:</u><li>The likelihood is 1. RARE and the consequence 5. CATASTRPHIC</li><li>This give a LOW risk score of 5</li></ul>
+		<br><br>Please document the decision and use of GIP (name and version) on the screening form.`
+	   },
 
    	ortho1: {
              type: "question",
@@ -967,6 +971,7 @@ preg_conditions: {
   </script>
  </body>
 </html>
+
 
 
 
