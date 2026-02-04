@@ -20,8 +20,8 @@
   background-color: #ef4444;  
   color: white;
   text-align: center;
-  padding: 8px 0;
-  -weight: bold;
+  padding: 8px 12px;
+  font-weight: bold;
   z-index: 1000;          
   font-size: 1rem;
 }
@@ -33,7 +33,7 @@
        display: flex;
        justify-content: center;
        padding: 20px;
-       padding-top: 60px;
+       padding-top: 20px;
        margin: 0;
        min-height: 100vh;
        align-items: flex-start;
@@ -101,7 +101,7 @@
        }
        .danger {
          color: #b91c1c;
-         -weight: bold;
+         font-weight: bold;
        }
        ul {
          text-align: left;
@@ -1016,8 +1016,23 @@ preg_conditions: {
 
        renderNode();
   </script>
+  <script>
+  function adjustForBanner() {
+    const banner = document.querySelector(".test-banner");
+    if (!banner) return;
+    document.body.style.paddingTop = (bannerHeight + 20) + "px";
+  }
+
+  window.addEventListener("load", adjustForBanner);
+  window.addEventListener("resize", adjustForBanner);
+
+  if (document.fonts) {
+     document.fonts.ready.then(adjustForBanner);
+  }
+</script>
  </body>
 </html>
+
 
 
 
