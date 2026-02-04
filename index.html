@@ -175,6 +175,14 @@
 
   .orange-box { border-color: #f97316; }  /* orange border */
 
+  .card-logo {
+  display: block;
+  margin: 0 auto 12px auto; /* centered, space below */
+  max-width: 180px;         /* prevents oversized logos */
+  width: 100%;
+  height: auto;
+  }
+
   </style>
 
 <!-- Google tag (gtag.js) -->
@@ -203,6 +211,11 @@
   <!-- PASSWORD -->
 
   <div id="login-screen" class="card">
+	<img
+	    src="group_logo.JPG"
+	    alt="MRI Physics Group"
+	    class="card-logo"
+   	/>
    <h2>MRI Clinical Decision Helper</h2>
    <p>This tool is only intended for trained staff from sites supported by the MRI PHYSICS GROUP hosted by Swansea Bay University Health Board. By continuing, you confirm that you are authorised to use it<br><br>Please enter the password</p>
    <input type="password" id="passwordInput" placeholder="Password" style="padding:10px;width:100%;margin-bottom:10px;" onkeydown="if (event.key === 'Enter') checkPassword();" />
@@ -219,12 +232,18 @@
 
   <div id="protected-content" style="display:none;">
    <div class="card">
-    <h4>
+	<img
+	    src="group_logo.JPG"
+	    alt="MRI Physics Group"
+	    class="card-logo"
+   	/>
+    
+    <h2>
+     MRI Clinical Decision Helper
+    </h2>
+	 <h4>
      <u>Only for use by sites supported by the MRI PHYSICS GROUP hosted by Swansea Bay University Health Board</u>
     </h4>
-    <h1>
-     MRI Clinical Decision Helper
-    </h1>
     <span id="back-link" class="back-link" onclick="goBack()">
      ← Back
     </span>
@@ -1033,6 +1052,7 @@ preg_conditions: {
 </script>
  </body>
 </html>
+
 
 
 
