@@ -958,6 +958,12 @@ preg_conditions: {
        const bEl = document.getElementById("buttons");
        const backEl = document.getElementById("back-link");
 
+	  function scrollToTop() {
+		  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+		  document.documentElement.scrollTop = 0;
+		  document.body.scrollTop = 0;
+		}
+	  
        function renderNode() {
          const node = tree.nodes[current];
          bEl.innerHTML = "";
@@ -1013,6 +1019,9 @@ preg_conditions: {
            restartBtn.onclick = restart;
            bEl.appendChild(restartBtn);
          }
+
+		scrollToTop();
+		   
        }
 
        function nextNode(next) {
@@ -1052,6 +1061,7 @@ preg_conditions: {
 </script>
  </body>
 </html>
+
 
 
 
