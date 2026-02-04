@@ -1020,7 +1020,8 @@ preg_conditions: {
   function adjustForBanner() {
     const banner = document.querySelector(".test-banner");
     if (!banner) return;
-    document.body.style.paddingTop = (bannerHeight + 20) + "px";
+	  const bannerHeight = banner.offsetHeight; 
+      document.body.style.paddingTop = (bannerHeight + 20) + "px";
   }
 
   window.addEventListener("load", adjustForBanner);
@@ -1032,6 +1033,7 @@ preg_conditions: {
 </script>
  </body>
 </html>
+
 
 
 
