@@ -181,7 +181,7 @@
   max-width: 180px;         /* prevents oversized logos */
   width: 100%;
   height: auto;
- }
+  }
 
   </style>
 
@@ -211,11 +211,11 @@
   <!-- PASSWORD -->
 
   <div id="login-screen" class="card">
-	 <img
-    src="group_logo.JPG"
-    alt="MRI Physics Group"
-    class="card-logo"
-      />
+	<img
+	    src="group_logo.JPG"
+	    alt="MRI Physics Group"
+	    class="card-logo"
+   	/>
    <h2>MRI Clinical Decision Helper</h2>
    <p>This tool is only intended for trained staff from sites supported by the MRI PHYSICS GROUP hosted by Swansea Bay University Health Board. By continuing, you confirm that you are authorised to use it<br><br>Please enter the password</p>
    <input type="password" id="passwordInput" placeholder="Password" style="padding:10px;width:100%;margin-bottom:10px;" onkeydown="if (event.key === 'Enter') checkPassword();" />
@@ -230,20 +230,20 @@
 
   <!-- PROTECTED  -->
 
-  
   <div id="protected-content" style="display:none;">
    <div class="card">
-    <img
-    src="group_logo.JPG"
-    alt="MRI Physics Group"
-    class="card-logo"
-    />
-    <h4>
+	<img
+	    src="group_logo.JPG"
+	    alt="MRI Physics Group"
+	    class="card-logo"
+   	/>
+    
+    <h2>
+     MRI Clinical Decision Helper
+    </h2>
+	 <h4>
      <u>Only for use by sites supported by the MRI PHYSICS GROUP hosted by Swansea Bay University Health Board</u>
     </h4>
-    <h1>
-     MRI Clinical Decision Helper
-    </h1>
     <span id="back-link" class="back-link" onclick="goBack()">
      ← Back
     </span>
@@ -930,19 +930,19 @@ preg_conditions: {
    <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
-       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T especially in first trimester</td></tr>
        <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid area near covers at entrance to bore</td></tr>
        <tr><td><strong>SAR</strong><br>Normal mode</td><td>Only enter into First Level Mode if clinically required</td></tr>
        <tr><td><strong>Gradient switching mode</strong><br>No limit</td><td>Use noise-reducing protocols if possible</td></tr>
        <tr><td><strong>Scan time</strong><br>No limit</td><td></td></tr>
        <tr><td><strong>Patient positioning</strong><br>Supine or left lateral tilt depending on gestational age and patient comfort</td><td>Radiographer to decide based on a case-by-case basis</td></tr>
-       <tr><td><strong>Patient set-up</strong><br>If foetus is in FOV, reduce non-MRI warming</td><td>Ensure the fans are on and consider no covering the patient with blankets, depending on patient comfort.</td></tr>
+       <tr><td><strong>Patient set-up</strong><br>If foetus is in FOV, reduce non-MRI warming</td><td>Ensure the fans are on and consider not covering the patient with blankets, depending on patient comfort.</td></tr>
      </tbody>
    </table>
    <br>
 <br><div style="text-align: left;"><u>Based on current information, with these conditions in place:</u></div>
 <br><br><div style="text-align: left;"><strong>Non-contrast MRI in Normal mode:</strong></div>
-<ul><li>The likelihood is 1. RARE and the consequence 3. NONE</li><li>This give a VERY LOW risk score of 1</li></ul>
+<ul><li>The likelihood is 1. RARE and the consequence 1. NONE</li><li>This give a VERY LOW risk score of 1</li></ul>
 <br><br><div style="text-align: left;"><strong>Non-contrast MRI in 1st level mode:</strong></div>
 <ul><li>The likelihood is 1. RARE and the consequence 2. MINOR</li><li>This give a VERY LOW risk score of 2</li></ul>
 <br><br><div style="text-align: left;"><strong>Gadolinium contrast MRI:</strong></div>
@@ -958,6 +958,12 @@ preg_conditions: {
        const bEl = document.getElementById("buttons");
        const backEl = document.getElementById("back-link");
 
+	  function scrollToTop() {
+		  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+		  document.documentElement.scrollTop = 0;
+		  document.body.scrollTop = 0;
+		}
+	  
        function renderNode() {
          const node = tree.nodes[current];
          bEl.innerHTML = "";
@@ -1013,6 +1019,9 @@ preg_conditions: {
            restartBtn.onclick = restart;
            bEl.appendChild(restartBtn);
          }
+
+		scrollToTop();
+		   
        }
 
        function nextNode(next) {
@@ -1052,6 +1061,8 @@ preg_conditions: {
 </script>
  </body>
 </html>
+
+
 
 
 
