@@ -651,7 +651,7 @@
 
    	capsules1: {
              type: "question",
-             text: "<strong>Ingestible Capsules</strong><br><br>The patient has undergone a procedure with an ingestible capsule within the last 30 days",
+             text: "<div class='blue-box'>The patient has undergone a procedure with an ingestible capsule within the last 30 days</div>",
              options: [
                { label: "Yes", next: "capsules2" },
                { label: "No", next: "capsules_scan" }
@@ -660,7 +660,7 @@
 
    	capsules2: {
              type: "question",
-             text: "<strong>Ingestible Capsules</strong><br><br>The patient can confirm that the capsule has been excreted?",
+             text: "<div class='blue-box'>The patient can confirm that the capsule has been excreted?</div>",
              options: [
                { label: "Yes", next: "capsules_scan" },
                { label: "No", next: "capsules3" }
@@ -669,7 +669,7 @@
 
    	capsules3: {
              type: "question",
-             text: "<strong>Ingestible Capsules</strong><br><br>Is there an abdominal CT / X-ray available taken since the capsule intake that the supervising radiologist could review?",
+             text: "<div class='blue-box'>Is there an abdominal CT / X-ray available taken since the capsule intake that the supervising radiologist could review?</div>",
              options: [
                { label: "Yes, and the capsule is not present", next: "capsules_scan" },
                { label: "Yes, and the capsule is present", next: "capsules4" },
@@ -679,17 +679,17 @@
 
    	capsules4: {
              type: "outcome",
-             text: "<strong>Ingestible Capsules</strong><br><br><div class='outcome-box red-box'>MRI is contraindicated until exretion / removal of capsule is confirmed. However, if the scan is urgent, consider following the off-label scanning procedure.</div>"
+             text: "<div class='outcome-box red-box'>MRI is contraindicated until exretion / removal of capsule is confirmed. However, if the scan is urgent, consider following the off-label scanning procedure.</div>"
            },
 
    	capsules5: {
              type: "outcome",
-             text: "<strong>Ingestible Capsules</strong><br><br><div class='outcome-box red-box'>The supervising radiologist may decide to request an abdominal CT / X-ray if one is not available.<br><br>MRI is contraindicated until extretion / removal or capsule is confirmed. However, if the scan is urgent, consider following the off-label scanning procedure.</div><br>"
+             text: "<div class='outcome-box red-box'>The supervising radiologist may decide to request an abdominal CT / X-ray if one is not available.<br><br>MRI is contraindicated until extretion / removal or capsule is confirmed. However, if the scan is urgent, consider following the off-label scanning procedure.</div><br>"
            },
 
    	capsules_scan: {
              type: "outcome",
-             text: "<strong>Ingestible Capsules</strong><br><br><div class='outcome-box green-box'>Scan as normal</div><br><br>Inform the patient to press the buzzer if they feel discomfort during their scan. If the patient reports <strong>abdominal discomfort</strong> or if there are <strong>susceptibility artefacts</strong> present in adbominal localise images, <strong>terminate the scan immediately</strong>, then slowly and carefully move the patient out of the scanner and scanne room.<br><br><ul><u>Based on current information, with these conditions in place:</u><li>The likelihood is 2. UNLIKELY and the consequence 3. MODERATE</li><li>This gives a MODERATE risk score of 6</li></ul><br><br><ol>Furthermore, to minimise risks due to the static field and spatial gradient:<br><br><li>Move the patient slowly into and out of the scanner room</li><li>Move the patient slowly into and out of the MRI scanner</li><li>Advise the patient not to get up / sit up quickly after the scan has been completed</li></ol><br><br>Please document the decision and use of GIP (name and version) on the screening form."
+             text: "<div class='outcome-box green-box'>Scan as normal</div><br><br>Inform the patient to press the buzzer if they feel discomfort during their scan. If the patient reports <strong>abdominal discomfort</strong> or if there are <strong>susceptibility artefacts</strong> present in adbominal localise images, <strong>terminate the scan immediately</strong>, then slowly and carefully move the patient out of the scanner and scanne room.<br><br><ul><u>Based on current information, with these conditions in place:</u><li>The likelihood is 2. UNLIKELY and the consequence 3. MODERATE</li><li>This gives a MODERATE risk score of 6</li></ul><br><br><ol>Furthermore, to minimise risks due to the static field and spatial gradient:<br><br><li>Move the patient slowly into and out of the scanner room</li><li>Move the patient slowly into and out of the MRI scanner</li><li>Advise the patient not to get up / sit up quickly after the scan has been completed</li></ol><br><br>Please document the decision and use of GIP (name and version) on the screening form."
            },
 
 // ---- 
@@ -698,7 +698,7 @@
 
 	 iud1: {
 		 type: "question",
-		 text: "<strong>Intrauterine Devices</strong><br><br><div class='outcome-box red-box'>This GIP <strong>does not cover pregnant patients with retained IUDs</strong></div>",
+		 text: "<div class='outcome-box red-box'>This GIP <strong>does not cover pregnant patients with retained IUDs</strong></div>",
 		 options: [
 		   { label: "Continue", next: "iud2" },
 		   { label: "Start Over", next: "q1" }
@@ -707,7 +707,7 @@
  
 	  iud2: {
 		 type: "question",
-		 text: "<strong>Intrauterine Devices</strong><br><br>Was the IUD fitted in China",
+		 text: "<div class='blue-box'>Was the IUD fitted in China</div>",
 		 options: [
 	{ label: "Yes", next: "iud_warning" },
 		{ label: "No", next: "iud_conditions" },
@@ -716,13 +716,12 @@
 
 	   iud_warning: {
 		 type: "outcome",
-		 text: "<strong>Intrauterine Devices</strong><br><br><div class='outcome-box red-box'>Identifiy make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all confitions can be met. Scan according to conditions.<br><br><strong>If not possible</strong> or any questions, contact MRI Physics.</div>"
+		 text: "<div class='outcome-box red-box'>Identifiy make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all confitions can be met. Scan according to conditions.<br><br><strong>If not possible</strong> or any questions, contact MRI Physics.</div>"
 	   },
 
 	   iud_conditions: {
 		 type: "outcome",
-		 text: `<strong>Intrauterine Devices</strong><br><br>Scan following conditions in <strong>Section 5.2</strong> of the <strong>Generic Implant Procedure for intrauterine devices (IUDs)</strong>:
-		<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+		 text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
 		 <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
 		 <tbody>
 		   <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only 3T scanner is available, scan at 3T.</td></tr>
@@ -742,7 +741,7 @@
 
    	ortho1: {
              type: "question",
-             text: "<strong>Orthopaedic Implants</strong><br><br><div class='outcome-box orange-box'>This GIP <strong><u>ONLY applies to internal passive orthopaedic implants</strong></u> and does <strong><u>NOT cover</u></strong>:<ul><li>External fixation devices</li><li>External prostheses (including limbs and joints)</li><li>Implants with magnetic components or batteries</li><li>Ferromagnetic orthopaedic implants <strong><u>not</u></strong> firmly attached to bone</div></li></ul>",
+             text: "<div class='outcome-box red-box'>This GIP <strong><u>ONLY applies to internal passive orthopaedic implants</strong></u> and does <strong><u>NOT cover</u></strong>:<ul><li>External fixation devices</li><li>External prostheses (including limbs and joints)</li><li>Implants with magnetic components or batteries</li><li>Ferromagnetic orthopaedic implants <strong><u>not</u></strong> firmly attached to bone</div></li></ul>",
              options: [
                { label: "Continue", next: "ortho3" },
                { label: "Start Over", next: "q1" }
@@ -751,7 +750,7 @@
 
    	ortho3: {
              type: "question",
-             text: "<strong>Orthopaedic Implants</strong><br><br>Does this patient have a sternal fixation device with 20cm of the FOV?",
+             text: "<div class='blue-box'>Does this patient have a sternal fixation device with 20cm of the FOV?</div>",
              options: [
                { label: "Yes", next: "ortho3y" },
                { label: "No", next: "ortho_conditions1" }
@@ -760,7 +759,7 @@
 
    	ortho3y: {
              type: "question",
-             text: "<strong>Orthopaedic Implants</strong><br><br>Is there imaging available which shows that the sternal fixation device is a sternal wire and that the sternal wires from the non-interconnected, metallic closure system (loops)?",
+             text: "<div class='blue-box'>Is there imaging available which shows that the sternal fixation device is a sternal wire and that the sternal wires from the non-interconnected, metallic closure system (loops)?</div>",
              options: [
                { label: "Yes", next: "ortho_conditions1" },
                { label: "No", next: "ortho_conditions2" }
@@ -769,8 +768,7 @@
 
    	ortho_conditions1: {
              type: "outcome",
-             text: `<strong>Orthopaedic Implants</strong><br><br>Scan following conditions in <strong>Section 5.2</strong> of the <strong>Generic Implant Procedure for Orthopaedic Implants</strong>:
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T</td></tr>
@@ -786,8 +784,7 @@
 
    	ortho_conditions2: {
              type: "outcome",
-             text: `<strong>Orthopaedic Implants</strong><br><br>Scan following conditions in <strong>Section 5.3</strong> of the <strong>Generic Implant Procedure for Orthopaedic Implants</strong>:
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T</td></tr>
@@ -807,16 +804,16 @@
 	  
    shunts1: {
              type: "question",
-             text: "<strong>Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong><br><br>Does the shunt contain valves?",
+             text: "<div class='outcome green-box'><strong>If there is no valve presnet, i.e. only ventricular reservoir, scan following condirition in sec. 6.2 of GIP</strong> --> Document decision and use of GIP (name and version) on screening form",
              options: [
-               { label: "Yes", next: "shunts2" },
-               { label: "No, there are no valves present, i.e. only ventricular reservoir", next: "shunts_conditions" }
+               { label: "Valves present", next: "shunts2" },
+               { label: "No valves present, i.e. only ventricular reservoir", next: "shunts_conditions" }
              ]
            },
 
    	shunts2: {
              type: "question",
-             text: "<strong>Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong><br><br>If shunt/device contains valve, try to determine whether it is fixed or adjustable / variable / programmable by identifying make and model and checking manufacturer website.<br><br><u>You do not need to check the MR conditions of the device at this stage.</u><br><ol><li>If the shunt was <strong><u>implanted before 1984 → Shunt is fixed valve</strong></u></li><li>Make and model can be obtained from the patient’s surgical notes, or implant information provided by patient (e.g. <strong>implant card</strong>)</li><li>Certain <strong>questions</strong> can help: Has a neurosurgeon/doctor held a magnet over patient’s head to adjust shunt settings AND/OR has the patient been warned that their shunt may be affected by external magnets?--> If YES, programmable shunt.<li><strong>Previous x-ray imaging</strong> may be helpful to determine type of device: A radiograph of a programmable valve will show a rotating structure. The configuration of this structure informs the valve setting which allows regulation of the opening pressure. Some resources:  <strong>If no previous imaging available, x-ray request could be considered.</strong></li><li>Given the adjustable valve utilises a magnet, there is potential for a ferromagnetic detector to identify cases where the patient has a programmable shunt.</li></ol>",
+             text: "<div class='blue-box'>If shunt/device contains valve, try to determine whether it is fixed or adjustable / variable / programmable by identifying make and model and checking manufacturer website.<br><br><u>You do not need to check the MR conditions of the device at this stage.</u><br><ol><li>If the shunt was <strong><u>implanted before 1984 → Shunt is fixed valve</strong></u></li><li>Make and model can be obtained from the patient’s surgical notes, or implant information provided by patient (e.g. <strong>implant card</strong>)</li><li>Certain <strong>questions</strong> can help: Has a neurosurgeon/doctor held a magnet over patient’s head to adjust shunt settings AND/OR has the patient been warned that their shunt may be affected by external magnets?--> If YES, programmable shunt.<li><strong>Previous x-ray imaging</strong> may be helpful to determine type of device: A radiograph of a programmable valve will show a rotating structure. The configuration of this structure informs the valve setting which allows regulation of the opening pressure. Some resources:  <strong>If no previous imaging available, x-ray request could be considered.</strong></li><li>Given the adjustable valve utilises a magnet, there is potential for a ferromagnetic detector to identify cases where the patient has a programmable shunt.</li></ol></div>",
              options: [
                { label: "Continue", next: "shunts3" },
                { label: "Start Over", next: "q1" }
@@ -825,7 +822,7 @@
 
           shunts3: {
              type: "question",
-             text: "<strong>Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong><br><br>Is the device fixed valve and implanted in UK, Europe, US, Japan, NZ, Australia or Canada?",
+             text: "<div class='blue-box'>Is the device fixed valve and implanted in UK, Europe, US, Japan, NZ, Australia or Canada?</div>",
              options: [
                { label: "Yes", next: "shunts_conditions" },
                { label: "No", next: "shunts3n" },
@@ -835,8 +832,7 @@
 
            shunts_conditions: {
              type: "outcome",
-             text: `<strong>Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong><br><br>Scan following conditions in <strong>Section 6.2</strong> of the <strong>Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong>:
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T. However, if implanted before the year 2000, only scan at 1.5T.</td></tr><tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on the table avoiding the scanner wall when entering the scanner.</td></tr><tr><td><strong>SAR</strong><br>Normal mode only</td><td>Only enter into First Level Mode if clinically required. If use of transmit/receive head coil is clinically required, make and model should be established, and specific conditions checked. Off-label procedure may be required (contact MR Physics).</td></tr><tr><td><strong>Gradient switching mode</strong><br>No limit</td><td></td></tr>
@@ -848,12 +844,12 @@
 
            shunts3n: {
              type: "outcome",
-             text: "<strong>Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong><br><br><div class='outcome-box orange-box'>Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met.<br>Scan according to conditions.<br>IF device is Programmable: <u>Follow the Pathway for MRI Imaging of Patients with Programmable Shunts (<strong>Sec. 6.3</strong> of the <strong>Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong>).</u></div>"
+             text: "<div class='outcome-box orange-box'>Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met.<br>Scan according to conditions.<br>IF device is Programmable: <u>Follow the Pathway for MRI Imaging of Patients with Programmable Shunts (<strong>Sec. 6.3</strong> of the <strong>Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong>).</u></div>"
            },
 
            shunts_unknown: {
              type: "outcome",
-             text: "<strong>Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong><br><br><div class='outcome-box red-box'>Consult Superintendent Radiographer/ raise a ticket with MRI Physics</div>"
+             text: "<div class='outcome-box red-box'>Consult Superintendent Radiographer/ raise a ticket with MRI Physics</div>"
            },
 
 // --------------- 
@@ -863,7 +859,7 @@
 
            stents1:  {
              type: "question",
-             text: "<strong>Vascular Stents</strong><br><br>For patients will any number of vascular stents (including any overlapping stents).",
+             text: "For patients will any number of vascular stents (including any overlapping stents).",
              options: [
                { label: "Continue", next: "stents2" },
                { label: "Start Over", next: "q1" }
@@ -872,7 +868,7 @@
 
    	stents2: {
              type: "question",
-             text: "<strong>Vascular Stents</strong><br><br>Is the stent a coronary artery stent?",
+             text: "<div class='blue-box'>Is the stent a coronary artery stent?</div>",
              options: [
                { label: "Yes", next: "stents_conditions1" },
                { label: "No", next: "stents3" }
@@ -881,7 +877,7 @@
 
    	stents3: {
              type: "question",
-             text: "<strong>Vascular Stents</strong><br><br>Was the stent implanted <strong>over</strong> 6 weeks ago?",
+             text: "<div class='blue-box'>Was the stent implanted <strong>over</strong> 6 weeks ago?</div>",
              options: [
                { label: "Yes", next: "stents_conditions2" },
                { label: "No", next: "stents4" }
@@ -890,13 +886,12 @@
 
    	stents4: {
              type: "outcome",
-             text: "<strong>Vascular Stents</strong><br><br><div class='outcome-box orange-box'>Identify the make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met. Scan according to conditions or consider following off-label scanning procedure.</div>",
+             text: "<div class='outcome-box orange-box'>Identify the make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met. Scan according to conditions or consider following off-label scanning procedure.</div>",
            },
 
    	stents_conditions1: {
              type: "outcome",
-             text: `<strong>Vascular Stents</strong><br><br>Scan following conditions in <strong>Section 5.2 Table 1</strong> of the <strong>Generic Implant Procedure for Vascular Stents</strong>.<br><br><div style="text-align: left;">Coronary Artery Stents:</div>
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
@@ -912,8 +907,7 @@
 
    	stents_conditions2: {
              type: "outcome",
-             text: `<strong>Vascular Stents</strong><br><br>Scan following conditions in <strong>Section 5.2 Table 2</strong> of the <strong>Generic Implant Procedure for Vascular Stents</strong>.<br><br><div style="text-align: left;">Peripheral Vascular Stents and Coronary Venous Stents:</div>
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
