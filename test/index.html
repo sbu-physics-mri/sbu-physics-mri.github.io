@@ -387,16 +387,24 @@
 
 	  const HEADERS = {
     question: (ctx) =>
-      `These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br><br>`,
+      `These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
 
 	    outcome: (ctx) =>
-	      `This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br><br>`,
+	      `This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
 	
 	    table: (ctx) =>
-	      `This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br><br>`,
+	      `This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
 	
 	    blank: () => ""
 	  };
+
+	  const FOOTERS = {
+	  table: (ctx) =>
+	    `<br>Please refer to the full document for risk scores in order to perform a full risk-benefit analysis.
+	     <br>Please document the decision and use of <strong>${ctx.gipName}</strong> on the screening form.`,
+	  blank: () => ""
+	};
+
 
 
 	  
@@ -1111,6 +1119,19 @@ preg_conditions: {
 			  if (node.type === "outcome" && hasTable) return HEADERS.table(ctx);
 			  if (node.type === "outcome") return HEADERS.outcome(ctx);
 			
+			  return "";
+			}
+
+			  function footerForNode(node) {
+			  if (current === "q1") return "";
+			
+			  const ctx = getCtx();
+			  if (!ctx) return "";
+			
+			  const body = node.text ?? "";
+			  const hasTable = body.includes("<table");
+			
+			  if (hasTable) return FOOTERS.table(ctx);
 			  return "";
 			}
 
