@@ -276,6 +276,120 @@
    }
   </script>
   <script>
+
+	  const BRANCH = {
+	  clips: {
+	    id: "clips",
+	    title: "Clips, Staples and Metal Sutures",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+	    gipName: "Generic Implant Procedure for Clips, Staples and Metal Sutures"
+	  },
+	
+	  embolism: {
+	    id: "embolism",
+	    title: "Embolisation Coils and Other Embolisation Devices",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+	    gipName: "Generic Implant Procedure for Embolisation Coils and Other Embolisation Devices"
+	  },
+	
+	  gastric: {
+	    id: "gastric",
+	    title: "Gastric Bands",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+	    gipName: "Generic Implant Procedure for Gastric Bands"
+	  },
+	
+	  valves: {
+	    id: "valves",
+	    title: "Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+	    gipName: "Generic Implant Procedure for Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices"
+	  },
+	
+	  capsules: {
+	    id: "capsules",
+	    title: "Ingestible Capsules",
+	    questionFlowchartSection: "5.1",
+	    tableSection: null, // no single conditions table section
+	    gipName: "Generic Implant Procedure for Ingestible Capsules"
+	  },
+	
+	  iud: {
+	    id: "iud",
+	    title: "Intrauterine Devices",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+	    gipName: "Generic Implant Procedure for Intrauterine Devices (IUDs)"
+	  },
+	
+	  ortho: {
+	    id: "ortho",
+	    title: "Orthopaedic Implants",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2 / 5.3",
+	    gipName: "Generic Implant Procedure for Orthopaedic Implants"
+	  },
+	
+	  shunts: {
+	    id: "shunts",
+	    title: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories",
+	    questionFlowchartSection: "6.1",
+	    tableSection: "6.2 / 6.3",
+	    gipName: "Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories"
+	  },
+	
+	  stents: {
+	    id: "stents",
+	    title: "Vascular Stents",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+	    gipName: "Generic Implant Procedure for Vascular Stents"
+	  },
+	
+	  cieds: {
+	    id: "cieds",
+	    title: "Cardiac Implantable Electronic Devices (CIEDs)",
+	    questionFlowchartSection: "local protocol",
+	    tableSection: null,
+	    gipName: "CIED MRI Scanning Policy"
+	  },
+	
+	  nogip: {
+	    id: "nogip",
+	    title: "Implant Not Covered by a Generic Implant Procedure",
+	    questionFlowchartSection: null,
+	    tableSection: null,
+	    gipName: "MRI Implant Policy"
+	  },
+	
+	  pregnancy: {
+	    id: "pregnancy",
+	    title: "Pregnancy",
+	    questionFlowchartSection: "4.1",
+	    tableSection: "4.2",
+	    gipName: "MRI Protocol for Scanning Pregnant Patients"
+	  }
+	};
+
+	  const HEADERS = {
+    question: (ctx) =>
+      `These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional.<br><br>`,
+
+	    outcome: (ctx) =>
+	      `This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional.<br><br>`,
+	
+	    table: (ctx) =>
+	      `This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional.<br><br>`,
+	
+	    blank: () => ""
+	  };
+
+
+	  
        const tree = {
          start: "q1",
          nodes: {
@@ -284,18 +398,18 @@
              type: "question",
              text: "This tool provides an <strong>interactive digital view of existing MRI safety flowcharts</strong> for MRI physics–related considerations. Final responsibility remains with qualified healthcare professionals<br><br>Please select the relevant category:",
              options: [
-               { label: "Clips, Staples and Metal Sutures", next: "clips1" },
-               { label: "Embolisation Devices", next: "embolism1" },
-               { label: "Gastric Bands", next: "gastric1" },
-               { label: "Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices", next: "valves1" },
-               { label: "Ingestible Capsules", next: "capsules1" },
-               { label: "IUDs", next: "iud1" },
-               { label: "Orthopaedic Implants", next: "ortho1" },
-               { label: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories", next: "shunts1" },
-               { label: "Vascular Stents", next: "stents1" },
-   	           { label: "CIEDs", next: "cied1" },
-               { label: "Implant not in one of these categories", next: "nogip", warning: true },
-	           { label: "Pregnancy", next: "preg1", warning: true}
+               { label: "Clips, Staples and Metal Sutures", next: "clips1", branchID: "clips" },
+               { label: "Embolisation Devices", next: "embolism1", branchID: "embolism" },
+               { label: "Gastric Bands", next: "gastric1", branchID: "gastric" },
+               { label: "Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices", next: "valves1", branchID: "valves" },
+               { label: "Ingestible Capsules", next: "capsules1", branchID: "capsules" },
+               { label: "IUDs", next: "iud1", branchID: "iuds" },
+               { label: "Orthopaedic Implants", next: "ortho1", branchID: "orthopaedic" },
+               { label: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories", next: "shunts1", branchID: "shunts" },
+               { label: "Vascular Stents", next: "stents1", branchID: "stents" },
+   	           { label: "CIEDs", next: "cied1", branchID: "cieds" },
+               { label: "Implant not in one of these categories", next: "nogip", warning: true, branchID: "none" },
+	           { label: "Pregnancy", next: "preg1", warning: true, branchID: "pregnancy" }
              ]
            },
 
