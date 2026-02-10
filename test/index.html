@@ -175,7 +175,7 @@
 
   .orange-box { border-color: #f97316; }  /* orange border */
 
-  .black-box {
+  .blue-box {
   display: inline-block;
   border: 4px solid #57a0d2;   /* black border */
   border-radius: 0;    
@@ -447,7 +447,7 @@
 
    	clips3: {
              type: "question",
-             text: "<div class='black-box'>Is the implant an endoscopy clip</div>",
+             text: "<div class='blue-box'>Is the implant an endoscopy clip</div>",
              options: [
                { label: "Yes", next: "clips4" },
                { label: "No", next: "clips_conditions" }
@@ -456,7 +456,7 @@
 
    	clips4: {
              type: "question",
-             text: "<div class='black-box'>Was the endoscopy clip implanted in NHS Wales?</div>",
+             text: "<div class='blue-box'>Was the endoscopy clip implanted in NHS Wales?</div>",
              options: [
                { label: "Yes", next: "clips4y" },
                { label: "No", next: "clips4n" }
@@ -465,7 +465,7 @@
 
    	clips4y: {
              type: "question",
-             text: "<div class='black-box'>Was it implanted in the last 6 weeks?</div>",
+             text: "<div class='blue-box'>Was it implanted in the last 6 weeks?</div>",
              options: [
                { label: "Yes", next: "clips_xray" },
                { label: "No", next: "clips_conditions" }
@@ -474,7 +474,7 @@
 
    	clips4n: {
              type: "question",
-             text: "<div class='black-box'>Was it implanted in the last year?</div>",
+             text: "<div class='blue-box'>Was it implanted in the last year?</div>",
              options: [
                { label: "Yes", next: "clips_xray" },
                { label: "No", next: "clips_conditions" }
@@ -483,7 +483,7 @@
 
    	clips_xray: {
              type: "question",
-             text: "<div class='black-box'>Has X-ray confirmed all clips have passed?</div>",
+             text: "<div class='blue-box'>Has X-ray confirmed all clips have passed?</div>",
              options: [
                { label: "Yes", next: "clips_xrayy" },
                { label: "No", next: "clips_xrayn" }
@@ -531,7 +531,7 @@
  
           embolism1y: {
              type: "question",
-             text: "<div class='black-box'>Has the patient or referrer confirmed that the embolisation device(s) do <strong>NOT</strong> include aneurysm clip(s)? e.g. check notes or ask patient about procedure: was the coil(s) or other embolisation device(s) implanted in a intra-vascular pocedure (coil), not in a craniotomy procedure (clip)?</div>",
+             text: "<div class='blue-box'>Has the patient or referrer confirmed that the embolisation device(s) do <strong>NOT</strong> include aneurysm clip(s)? e.g. check notes or ask patient about procedure: was the coil(s) or other embolisation device(s) implanted in a intra-vascular pocedure (coil), not in a craniotomy procedure (clip)?</div>",
              options: [
    	        { label: "Yes, the implant does NOT include aneurysm clips", next: "embolism_conditions" },
             { label: "No, the implant MAY include aneurysm clips", next: "embolism_clip_warning" },
@@ -573,7 +573,7 @@
 
    	gastric3: {
              type: "question",
-             text: "<div class='black-box'>Was a laproscopic adjustable gastric band implanted in the <strong>UK, US, Europe, Canada, Australia or New Zealand after 2000?</strong></div>",
+             text: "<div class='blue-box'>Was a laproscopic adjustable gastric band implanted in the <strong>UK, US, Europe, Canada, Australia or New Zealand after 2000?</strong></div>",
              options: [
                { label: "Yes", next: "gastric2y" },
                { label: "No", next: "gastric_makemodel" }
@@ -582,7 +582,7 @@
 
    	gastric2y: {
              type: "question",
-             text: "<strong>Gastric Bands</strong><br><br>Was a laproscopic adjustable gastric band implanted <strong>between 2009 and 2011 (inc.)?",
+             text: "<div class='blue-box'>Was a laproscopic adjustable gastric band implanted <strong>between 2009 and 2011 (inc.)?</div>",
              options: [
                { label: "Yes", next: "gastric2yy" },
                { label: "No", next: "gastric_conditions" }
@@ -591,7 +591,7 @@
 
    	gastric2yy: {
              type: "question",
-             text: "<strong>Gastric Bands</strong><br><br>Can you gather any evidence the laproscopic band <strong>IS NOT</strong> an EasyBand e.g. confirm by X-ray the band <strong>DOES NOT</strong> have an electrical motor?",
+             text: "<div class='blue-box'>Can you gather any evidence the laproscopic band <strong>IS NOT</strong> an EasyBand e.g. confirm by X-ray the band <strong>DOES NOT</strong> have an electrical motor?</div>",
              options: [
                { label: "Yes", next: "gastric_conditions" },
                { label: "No", next: "gastric_makemodel" }
@@ -600,13 +600,12 @@
 
    	gastric_makemodel: {
              type: "outcome",
-             text: "<strong>Gastric Bands</strong><br><br><div class='outcome-box orange-box'>Identify make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met. Scan according to conditions. <strong>If not possible</strong>, or any other questions, please contact Medical Physics.</div>"
+             text: "<div class='outcome-box orange-box'>Identify make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met. Scan according to conditions. <strong>If not possible</strong>, or any other questions, please contact Medical Physics.</div>"
            },
 
    	gastric_conditions: {
              type: "outcome",
-             text: `<strong>Gastric Bands</strong><br><br>Scan following conditions in <strong>Section 5.2</strong> of the <strong>Generic Implant Procedure for Gastric Bands</strong>:
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
