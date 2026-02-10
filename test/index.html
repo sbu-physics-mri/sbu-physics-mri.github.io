@@ -277,8 +277,8 @@
   </script>
   <script>
 
-// headings for nodes
-	  
+	// info for nodes
+		  
 	  const BRANCH = {
 	  clips: {
 	    id: "clips",
@@ -286,7 +286,11 @@
 	    questionFlowchartSection: "5.1",
 	    tableSection: "5.2",
 	    riskSection: "6",
-	    gipName: "Generic Implant Procedure for Clips, Staples and Metal Sutures (v2.0)"
+	    gipName: "Generic Implant Procedure for Clips, Staples and Metal Sutures (v2.0)",
+		likelihood: "1 - RARE",
+		consequence: "5 - CATASTROPHIC",
+		risk-cat: "low",
+	    risk-score: "5"
 	  },
 	
 	  embolism: {
@@ -295,7 +299,11 @@
 	    questionFlowchartSection: "5.1",
 	    tableSection: "5.2",
 		riskSection: "6",
-	    gipName: "Generic Implant Procedure for Embolisation Coils and Other Embolisation Devices (v4.1)"
+	    gipName: "Generic Implant Procedure for Embolisation Coils and Other Embolisation Devices (v4.1)",
+		likelihood: "1 - RARE",
+		consequence: "5 - CATASTROPHIC",
+		risk-cat: "low",
+	    risk-score: "5"
 	  },
 	
 	  gastric: {
@@ -304,7 +312,11 @@
 	    questionFlowchartSection: "5.1",
 	    tableSection: "5.2",
 		riskSection: "6",
-	    gipName: "Generic Implant Procedure for Gastric Bands (v3.0)"
+	    gipName: "Generic Implant Procedure for Gastric Bands (v3.0)",
+		likelihood: "1 - RARE",
+		consequence: "3 - MODERATE",
+		risk-cat: "low",
+	    risk-score: "3"
 	  },
 	
 	  valves: {
@@ -313,7 +325,11 @@
 	    questionFlowchartSection: "5.1",
 	    tableSection: "5.2",
 		riskSection: "6",
-	    gipName: "Generic Implant Procedure for Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices (v3.0)"
+	    gipName: "Generic Implant Procedure for Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices (v3.0)",
+		likelihood: "1 - RARE",
+		consequence: "3 - MODERATE",
+		risk-cat: "low",
+	    risk-score: "3"
 	  },
 	
 	  capsules: {
@@ -322,7 +338,11 @@
 	    questionFlowchartSection: "5.1",
 	    tableSection: null, // no single conditions table section
 		riskSection: "6",
-	    gipName: "Generic Implant Procedure for Ingestible Capsules (v1.6)"
+	    gipName: "Generic Implant Procedure for Ingestible Capsules (v1.6)",
+		likelihood: "2 - UNLIKELY",
+		consequence: "3 - MODERATE",
+		risk-cat: "moderate",
+	    risk-score: "6"
 	  },
 	
 	  iuds: {
@@ -331,7 +351,11 @@
 	    questionFlowchartSection: "5.1",
 	    tableSection: "5.2",
 		riskSection: "6",
-	    gipName: "Generic Implant Procedure for Intrauterine Devices (IUDs) (v1.0)"
+	    gipName: "Generic Implant Procedure for Intrauterine Devices (IUDs) (v1.0)",
+		likelihood: "1 - RARE",
+		consequence: "5 - CATASTROPHIC",
+		risk-cat: "low",
+	    risk-score: "5"
 	  },
 	
 	  ortho: {
@@ -340,7 +364,11 @@
 	    questionFlowchartSection: "5.1",
 	    tableSection: "5.2 / 5.3",
 		riskSection: "6",
-	    gipName: "Generic Implant Procedure for Orthopaedic Implants (v2.2)"
+	    gipName: "Generic Implant Procedure for Orthopaedic Implants (v2.2)",
+		likelihood: "1 - RARE",
+		consequence: "3 - MODERATE",
+		risk-cat: "low",
+	    risk-score: "3"
 	  },
 	
 	  shunts: {
@@ -349,7 +377,11 @@
 	    questionFlowchartSection: "6.1",
 	    tableSection: "6.2 / 6.3",
 		riskSection: "7",
-	    gipName: "Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories (v1.7)"
+	    gipName: "Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories (v1.7)",
+		likelihood: "1 - RARE",
+		consequence: "4 - MAJOR",
+		risk-cat: "low",
+	    risk-score: "4"
 	  },
 	
 	  stents: {
@@ -357,7 +389,11 @@
 	    title: "Vascular Stents",
 	    questionFlowchartSection: "5.1",
 	    tableSection: "5.2",
-	    gipName: "Generic Implant Procedure for Vascular Stents (v2.0)"
+	    gipName: "Generic Implant Procedure for Vascular Stents (v2.0)",
+		likelihood: "1 - RARE",
+		consequence: "3 - MODERATE",
+		risk-cat: "low",
+	    risk-score: "3"
 	  },
 	
 	  cieds: {
@@ -400,14 +436,13 @@
 
 	  const FOOTERS = {
 	  table: (ctx) =>
-	    `<br>Please refer to the full document for risk scores in order to perform a full risk-benefit analysis.
-	     <br>Please document the decision and use of <strong>${ctx.gipName}</strong> on the screening form.`,
+	    `<br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong> Please refer to the full document for risk scores in order to perform a full risk-benefit analysis:
+		 <ul><li>The likelihood is ${ctx.likelihood} and the consequence is ${ctx.likelihood}</li><li>This gives a ${ctx.riks-cat} risk score of ${ctx.risk-score}</li>/<ul>
+	     <br><br>Please document the decision and use of <strong>${ctx.gipName}</strong> on the screening form.`,
 	  blank: () => ""
 	};
 
 
-
-	  
        const tree = {
          start: "q1",
          nodes: {
