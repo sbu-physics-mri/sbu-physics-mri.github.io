@@ -623,7 +623,7 @@
 	  
    	valves1: {
              type: "question",
-             text: "<strong>Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices</strong><br><br>Heart valves, annuloplasty rings, mitral and tricuspid transcatheter edge-to-edge repair systems, cardiac closure and occlusion devices <strong>should not be considered a contraindication for MRI</strong> scanning",
+             text: "<div class='blue-box'>Heart valves, annuloplasty rings, mitral and tricuspid transcatheter edge-to-edge repair systems, cardiac closure and occlusion devices <strong>should not be considered a contraindication for MRI</strong> scanning</div>",
              options: [
                { label: "Continue", next: "valves2" },
                { label: "Start Over", next: "q1" }
@@ -632,8 +632,7 @@
 
            valves2: {
              type: "outcome",
-             text: `<strong>Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices</strong><br><br>Scan following conditions in <strong>Section 5.2</strong> of the <strong>Generic Implant Procedures for Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices</strong>:
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
