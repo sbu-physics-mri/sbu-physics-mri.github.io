@@ -325,7 +325,7 @@
 	    gipName: "Generic Implant Procedure for Ingestible Capsules (v1.6)"
 	  },
 	
-	  iud: {
+	  iuds: {
 	    id: "iuds",
 	    title: "Intrauterine Devices",
 	    questionFlowchartSection: "5.1",
@@ -1139,7 +1139,8 @@ preg_conditions: {
 			function buildNodeHtml(node) {
 			  const header = headerForNode(node);
 			  const body = node.text ?? "";
-			  return header + body;
+			  const footer = footerForNode(node);
+			  return header + body + footer;
 			}
 
 	  
