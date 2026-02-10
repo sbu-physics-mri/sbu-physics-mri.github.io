@@ -280,7 +280,7 @@
 	  const BRANCH = {
 	  clips: {
 	    id: "clips",
-	    title: "Clips, Staples and Metal Sutures",
+	    title: "Surgical Clips, Staples and Metal Sutures",
 	    questionFlowchartSection: "5.1",
 	    tableSection: "5.2",
 	    gipName: "Generic Implant Procedure for Clips, Staples and Metal Sutures"
@@ -377,13 +377,13 @@
 
 	  const HEADERS = {
     question: (ctx) =>
-      `These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional.<br><br>`,
+      `These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br><br>`,
 
 	    outcome: (ctx) =>
-	      `This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional.<br><br>`,
+	      `This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br><br>`,
 	
 	    table: (ctx) =>
-	      `This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional.<br><br>`,
+	      `This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br><br>`,
 	
 	    blank: () => ""
 	  };
@@ -428,7 +428,7 @@
 
    	clips2: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='outcome-box red-box'>This GIP applies to metal clips, staples and sutures and <b><u>does not cover</u></b> complex wire systems such as seternal wires (refer to orthopaedic GIP)</div>",
+             text: "<div class='outcome-box red-box'>This GIP applies to metal clips, staples and sutures and <b><u>does not cover</u></b> complex wire systems such as seternal wires (refer to orthopaedic GIP)</div>",
              options: [
                { label: "Continue", next: "clips3" },
                { label: "Start Over", next: "q1" }
@@ -437,7 +437,7 @@
 
    	clips3: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='black-box'>Is the implant an endoscopy clip</div>",
+             text: "<div class='black-box'>Is the implant an endoscopy clip</div>",
              options: [
                { label: "Yes", next: "clips4" },
                { label: "No", next: "clips_conditions" }
@@ -446,7 +446,7 @@
 
    	clips4: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='black-box'>Was the endoscopy clip implanted in NHS Wales?</div>",
+             text: "<div class='black-box'>Was the endoscopy clip implanted in NHS Wales?</div>",
              options: [
                { label: "Yes", next: "clips4y" },
                { label: "No", next: "clips4n" }
@@ -455,7 +455,7 @@
 
    	clips4y: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='black-box'>Was it implanted in the last 6 weeks?</div>",
+             text: "<div class='black-box'>Was it implanted in the last 6 weeks?</div>",
              options: [
                { label: "Yes", next: "clips_xray" },
                { label: "No", next: "clips_conditions" }
@@ -464,7 +464,7 @@
 
    	clips4n: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='black-box'>Was it implanted in the last year?</div>",
+             text: "<div class='black-box'>Was it implanted in the last year?</div>",
              options: [
                { label: "Yes", next: "clips_xray" },
                { label: "No", next: "clips_conditions" }
@@ -473,7 +473,7 @@
 
    	clips_xray: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='black-box'>Has X-ray confirmed all clips have passed?</div>",
+             text: "<div class='black-box'>Has X-ray confirmed all clips have passed?</div>",
              options: [
                { label: "Yes", next: "clips_xrayy" },
                { label: "No", next: "clips_xrayn" }
@@ -482,18 +482,17 @@
 
    	clips_xrayy: {
              type: "outcome",
-             text: "This outcome is reproduced from the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='outcome-box green-box'>OK to Scan</div>"
+             text: "<div class='outcome-box green-box'>OK to Scan</div>"
            },
 
    	clips_xrayn: {
              type: "outcome",
-             text: "This outcome is reproduced from the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='outcome-box red-box'><u>Individual risk/benefit assessment</u> to be performed. Although this is not necesserily an off-label scan, the procedure outlined in Section 7 of the Implants Policy should be followed. If the MRI is to proceed, monitor the patient throughout the scan and if they feel any discomfort when enterine the magnet room or during the scan, terminate the scan immediately and carefully remove the patient from the scan room.</div>"
+             text: "<div class='outcome-box red-box'><u>Individual risk/benefit assessment</u> to be performed. Although this is not necesserily an off-label scan, the procedure outlined in Section 7 of the Implants Policy should be followed. If the MRI is to proceed, monitor the patient throughout the scan and if they feel any discomfort when enterine the magnet room or during the scan, terminate the scan immediately and carefully remove the patient from the scan room.</div>"
            },
 
    	clips_conditions: {
              type: "outcome",
-             text: `This table is reproduced from <strong>Section 5.2</strong> of the <strong>Generic Implant Procedure for Surgical Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
