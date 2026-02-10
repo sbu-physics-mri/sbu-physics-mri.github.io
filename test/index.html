@@ -178,6 +178,7 @@
   .black-box {
   display: inline-block;
   border: 2px solid #000;   /* black border */
+  border-radius: 0;    
   padding: 8px 12px;
   margin: 12px 0;
   color: #000;
@@ -304,7 +305,7 @@
 
           clips1: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='outcome-box orange-box'>This policy covers all clips and staples, <u>excluding those implanted above the neck</u></div>",
+             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br>This policy covers all clips and staples, <u>excluding those implanted above the neck</u>",
              options: [
                { label: "Continue", next: "clips2" },
                { label: "Start Over", next: "q1" }
@@ -313,7 +314,7 @@
 
    	clips2: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='outcome-box orange-box'>This GIP applies to metal clips, staples and sutures and <b><u>does not cover</u></b> complex wire systems such as seternal wires (refer to orthopaedic GIP)</div>",
+             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='outcome-box red-box'>This GIP applies to metal clips, staples and sutures and <b><u>does not cover</u></b> complex wire systems such as seternal wires (refer to orthopaedic GIP)</div>",
              options: [
                { label: "Continue", next: "clips3" },
                { label: "Start Over", next: "q1" }
@@ -331,7 +332,7 @@
 
    	clips4: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br>Was the endoscopy clip implanted in NHS Wales?",
+             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='black-box'>Was the endoscopy clip implanted in NHS Wales?</div>",
              options: [
                { label: "Yes", next: "clips4y" },
                { label: "No", next: "clips4n" }
@@ -340,7 +341,7 @@
 
    	clips4y: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br>Was it implanted in the last 6 weeks?",
+             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='black-box'>Was it implanted in the last 6 weeks?</div>",
              options: [
                { label: "Yes", next: "clips_xray" },
                { label: "No", next: "clips_conditions" }
@@ -349,7 +350,7 @@
 
    	clips4n: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br>Was it implanted in the last year?",
+             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='black-box'>Was it implanted in the last year?</div>",
              options: [
                { label: "Yes", next: "clips_xray" },
                { label: "No", next: "clips_conditions" }
@@ -358,7 +359,7 @@
 
    	clips_xray: {
              type: "question",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br>Has X-ray confirmed all clips have passed?",
+             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='black-box'>Has X-ray confirmed all clips have passed?</div>",
              options: [
                { label: "Yes", next: "clips_xrayy" },
                { label: "No", next: "clips_xrayn" }
@@ -367,7 +368,7 @@
 
    	clips_xrayy: {
              type: "outcome",
-             text: "These questions reproduce the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='outcome-box green-box'>OK to Scan</div>"
+             text: "This outcome is found in the flow chart found in <strong>Section 5.1</strong> of the <strong>Generic Implant Procedure for Clips, Staples and Metal Sutures</strong>. Any final decision remains with the healthcare professional<br><br><div class='outcome-box green-box'>OK to Scan</div>"
            },
 
    	clips_xrayn: {
