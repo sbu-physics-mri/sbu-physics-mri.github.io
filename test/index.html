@@ -1097,10 +1097,12 @@ preg_conditions: {
 			// Picks which header to use for each node type.
 			// For now: question/outcome get their headers. Anything containing a <table gets table header.
 			function headerForNode(node) {
+			  
+			  if (current === "q1") return "";  // no header on q1
+			
 			  const ctx = getCtx();
 			  if (!ctx) return "";
 			
-			  // If add node.type === "table" you can use that 
 			  const body = node.text ?? "";
 			  const hasTable = body.includes("<table");
 			
@@ -1108,8 +1110,9 @@ preg_conditions: {
 			  if (node.type === "outcome" && hasTable) return HEADERS.table(ctx);
 			  if (node.type === "outcome") return HEADERS.outcome(ctx);
 			
-			  return HEADERS.blank();
+			  return "";
 			}
+
 			
 			function buildNodeHtml(node) {
 			  const header = headerForNode(node);
