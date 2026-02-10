@@ -158,7 +158,7 @@
 
   .outcome-box {
     display: inline-block;    
-    border: 2px solid;       
+    border: 4px solid;       
     border-radius: 0;          
     padding: 8px 12px;         
     margin: 12px 0;               
@@ -177,7 +177,7 @@
 
   .black-box {
   display: inline-block;
-  border: 2px solid #000;   /* black border */
+  border: 4px solid #57a0d2;   /* black border */
   border-radius: 0;    
   padding: 8px 12px;
   margin: 12px 0;
@@ -533,20 +533,19 @@
              type: "question",
              text: "<div class='black-box'>Has the patient or referrer confirmed that the embolisation device(s) do <strong>NOT</strong> include aneurysm clip(s)? e.g. check notes or ask patient about procedure: was the coil(s) or other embolisation device(s) implanted in a intra-vascular pocedure (coil), not in a craniotomy procedure (clip)?</div>",
              options: [
-   	    { label: "Yes, the implant does NOT include aneurysm clips", next: "embolism_conditions" },
+   	        { label: "Yes, the implant does NOT include aneurysm clips", next: "embolism_conditions" },
             { label: "No, the implant MAY include aneurysm clips", next: "embolism_clip_warning" },
              ]
            },
 
            embolism_clip_warning: {
              type: "outcome",
-             text: "<strong>Embolisation Coils and Other Embolisation Devices</strong><br><br><div class='outcome-box red-box'>Follow procedure for aneurysm clips or contact MR Physics.</div>"
+             text: "<div class='outcome-box red-box'>Follow procedure for aneurysm clips or contact MR Physics.</div>"
            },
 
            embolism_conditions: {
              type: "outcome",
-             text: `<strong>Embolisation Coils and Other Embolisation Devices</strong><br><br>Scan following conditions in <strong>Section 5.2</strong> of the <strong>Generic Implant Procedure for Embolisation Coils and Other Embolisation Devices</strong>:
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only 3T scanner is available, scan at 3T.</td></tr>
@@ -565,7 +564,7 @@
 
            gastric1: {
              type: "question",
-             text: "<strong>Gastric Bands</strong><br><br><div class='outcome-box orange-box'>Patients with <strong>bypass or sleeves</strong> where no devices have been implanted may undergo MRI scanning with no additional conditions unless there are clips or staples in situ (see <strong>Generic Implant Procedure for Surgical Clips, Staples and Metal Sutures</strong>).</div>",
+             text: "<div class='outcome-box orange-box'>Patients with <strong>bypass or sleeves</strong> where no devices have been implanted may undergo MRI scanning with no additional conditions unless there are clips or staples in situ (see <strong>Generic Implant Procedure for Surgical Clips, Staples and Metal Sutures</strong>).</div>",
              options: [
                { label: "Continue", next: "gastric3" },
                { label: "Start Over", next: "q1" }
@@ -574,7 +573,7 @@
 
    	gastric3: {
              type: "question",
-             text: "<strong>Gastric Bands</strong><br><br>Was a laproscopic adjustable gastric band implanted in the <strong>UK, US, Europe, Canada, Australia or New Zealand after 2000?</strong>",
+             text: "<div class='black-box'>Was a laproscopic adjustable gastric band implanted in the <strong>UK, US, Europe, Canada, Australia or New Zealand after 2000?</strong></div>",
              options: [
                { label: "Yes", next: "gastric2y" },
                { label: "No", next: "gastric_makemodel" }
