@@ -289,8 +289,8 @@
 	    gipName: "Generic Implant Procedure for Clips, Staples and Metal Sutures (v2.0)",
 		likelihood: "1 - RARE",
 		consequence: "5 - CATASTROPHIC",
-		risk-cat: "low",
-	    risk-score: "5"
+		riskcat: "low",
+	    riskscore: "5"
 	  },
 	
 	  embolism: {
@@ -302,8 +302,8 @@
 	    gipName: "Generic Implant Procedure for Embolisation Coils and Other Embolisation Devices (v4.1)",
 		likelihood: "1 - RARE",
 		consequence: "5 - CATASTROPHIC",
-		risk-cat: "low",
-	    risk-score: "5"
+		riskcat: "low",
+	    riskscore: "5"
 	  },
 	
 	  gastric: {
@@ -315,8 +315,8 @@
 	    gipName: "Generic Implant Procedure for Gastric Bands (v3.0)",
 		likelihood: "1 - RARE",
 		consequence: "3 - MODERATE",
-		risk-cat: "low",
-	    risk-score: "3"
+		riskcat: "low",
+	    riskscore: "3"
 	  },
 	
 	  valves: {
@@ -328,8 +328,8 @@
 	    gipName: "Generic Implant Procedure for Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices (v3.0)",
 		likelihood: "1 - RARE",
 		consequence: "3 - MODERATE",
-		risk-cat: "low",
-	    risk-score: "3"
+		riskcat: "low",
+	    riskscore: "3"
 	  },
 	
 	  capsules: {
@@ -341,8 +341,8 @@
 	    gipName: "Generic Implant Procedure for Ingestible Capsules (v1.6)",
 		likelihood: "2 - UNLIKELY",
 		consequence: "3 - MODERATE",
-		risk-cat: "moderate",
-	    risk-score: "6"
+		riskcat: "moderate",
+	    riskscore: "6"
 	  },
 	
 	  iuds: {
@@ -354,8 +354,8 @@
 	    gipName: "Generic Implant Procedure for Intrauterine Devices (IUDs) (v1.0)",
 		likelihood: "1 - RARE",
 		consequence: "5 - CATASTROPHIC",
-		risk-cat: "low",
-	    risk-score: "5"
+		riskcat: "low",
+	    riskscore: "5"
 	  },
 	
 	  ortho: {
@@ -367,8 +367,8 @@
 	    gipName: "Generic Implant Procedure for Orthopaedic Implants (v2.2)",
 		likelihood: "1 - RARE",
 		consequence: "3 - MODERATE",
-		risk-cat: "low",
-	    risk-score: "3"
+		riskcat: "low",
+	    riskscore: "3"
 	  },
 	
 	  shunts: {
@@ -380,8 +380,8 @@
 	    gipName: "Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories (v1.7)",
 		likelihood: "1 - RARE",
 		consequence: "4 - MAJOR",
-		risk-cat: "low",
-	    risk-score: "4"
+		riskcat: "low",
+	    riskscore: "4"
 	  },
 	
 	  stents: {
@@ -392,8 +392,8 @@
 	    gipName: "Generic Implant Procedure for Vascular Stents (v2.0)",
 		likelihood: "1 - RARE",
 		consequence: "3 - MODERATE",
-		risk-cat: "low",
-	    risk-score: "3"
+		riskcat: "low",
+	    riskscore: "3"
 	  },
 	
 	  cieds: {
@@ -437,7 +437,7 @@
 	  const FOOTERS = {
 	  table: (ctx) =>
 	    `<br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong> Please refer to the full document for risk scores in order to perform a full risk-benefit analysis:
-		 <ul><li>The likelihood is ${ctx.likelihood} and the consequence is ${ctx.likelihood}</li><li>This gives a ${ctx.riks-cat} risk score of ${ctx.risk-score}</li>/<ul>
+		 <ul><li>The likelihood is ${ctx.likelihood} and the consequence is ${ctx.consequence}</li><li>This gives a ${ctx.riskcat} risk score of ${ctx.riskscore}</li></ul>
 	     <br><br>Please document the decision and use of <strong>${ctx.gipName}</strong> on the screening form.`,
 	  blank: () => ""
 	};
