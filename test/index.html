@@ -319,7 +319,7 @@
 	  },
 	
 	  iud: {
-	    id: "iud",
+	    id: "iuds",
 	    title: "Intrauterine Devices",
 	    questionFlowchartSection: "5.1",
 	    tableSection: "5.2",
@@ -404,11 +404,11 @@
                { label: "Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices", next: "valves1", branchID: "valves" },
                { label: "Ingestible Capsules", next: "capsules1", branchID: "capsules" },
                { label: "IUDs", next: "iud1", branchID: "iuds" },
-               { label: "Orthopaedic Implants", next: "ortho1", branchID: "orthopaedic" },
+               { label: "Orthopaedic Implants", next: "ortho1", branchID: "ortho" },
                { label: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories", next: "shunts1", branchID: "shunts" },
                { label: "Vascular Stents", next: "stents1", branchID: "stents" },
    	           { label: "CIEDs", next: "cied1", branchID: "cieds" },
-               { label: "Implant not in one of these categories", next: "nogip", warning: true, branchID: "none" },
+               { label: "Implant not in one of these categories", next: "nogip", warning: true, branchID: "nogip" },
 	           { label: "Pregnancy", next: "preg1", warning: true, branchID: "pregnancy" }
              ]
            },
@@ -1082,11 +1082,42 @@ preg_conditions: {
        const bEl = document.getElementById("buttons");
        const backEl = document.getElementById("back-link");
 
+	   let currentBranchId = null;
+
 	  function scrollToTop() {
 		  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 		  document.documentElement.scrollTop = 0;
 		  document.body.scrollTop = 0;
 		}
+
+	  function getCtx() {
+	  if (!currentBranchId) return null;
+	  return BRANCH[currentBranchId] || null;
+			}
+			
+			// Picks which header to use for each node type.
+			// For now: question/outcome get their headers. Anything containing a <table gets table header.
+			function headerForNode(node) {
+			  const ctx = getCtx();
+			  if (!ctx) return "";
+			
+			  // If add node.type === "table" you can use that 
+			  const body = node.text ?? "";
+			  const hasTable = body.includes("<table");
+			
+			  if (node.type === "question") return HEADERS.question(ctx);
+			  if (node.type === "outcome" && hasTable) return HEADERS.table(ctx);
+			  if (node.type === "outcome") return HEADERS.outcome(ctx);
+			
+			  return HEADERS.blank();
+			}
+			
+			function buildNodeHtml(node) {
+			  const header = headerForNode(node);
+			  const body = node.text ?? "";
+			  return header + body;
+			}
+
 	  
        function renderNode() {
          const node = tree.nodes[current];
@@ -1095,7 +1126,7 @@ preg_conditions: {
          qEl.classList.remove("danger");
 
          if (node.type === "question") {
-           qEl.innerHTML = node.text;
+           qEl.innerHTML = buildNodeHtml(node);
            node.options.forEach(opt => {
              const btn = document.createElement("button");
              btn.textContent = opt.label;
@@ -1109,6 +1140,9 @@ preg_conditions: {
 			        gip_selected: opt.label,   
 			        site_source: window.site_source
 			      });
+
+					// Set the branch context when leaving q1
+					currentBranchId = opt.branchID || null;
 			
 			    } else {
 			      gtag("event", "button_clicked", {
@@ -1127,7 +1161,7 @@ preg_conditions: {
              bEl.appendChild(btn);
            });
          } else if (node.type === "outcome") {
-           qEl.innerHTML = node.text;
+           qEl.innerHTML = buildNodeHtml(node);
 
 			 // GA: track outcome reached
   		   if (typeof gtag === "function") {
@@ -1163,6 +1197,7 @@ preg_conditions: {
        function restart() {
          current = tree.start;
          history.length = 0;
+		 currentBranchId = null;
          renderNode();
        }
 
