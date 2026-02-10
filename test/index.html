@@ -436,9 +436,9 @@
 
 	  const FOOTERS = {
 	  table: (ctx) =>
-	    `<br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:
+	    `<br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:<br>
 		 <ul><li>The likelihood is ${ctx.likelihood} and the consequence is ${ctx.consequence}</li><li>This gives a ${ctx.riskcat} risk score of ${ctx.riskscore}</li></ul>
-	     <br><br>Please document the decision and use of <strong>${ctx.gipName}</strong> on the screening form.`,
+	     <br><br>Please document the final decision and use of <strong>${ctx.gipName}</strong> on the screening form.`,
 	  blank: () => ""
 	};
 
@@ -554,9 +554,7 @@
        <tr><td><strong>Gradient switching mode</strong><br>No limit</td><td></td></tr>
        <tr><td><strong>Minimum time since implantation</strong><br><br><u>For non-endoscopy clips:</u> None<br><br><u>For endoscopy clips implants in NHS Wales:</u> 6 weeks<br><br><u>For endoscopy clips implanted outside NHS Wales:</u> 1 year</td><td><u>For endoscopy clips only</u><br>Individual risk assessment required for MRI scan to proceed before that time. If the MRI is to proceed: consent the patient, monitor them during the scan, if they report any discomfort when entering the magnet room or during the scan, terminate the scan immediately and carefully remove the patient from the magnet room. </td></tr>
      </tbody>
-   </table>
-   <br>Please refer to the full document for risk scores in order to perform a full risk-benefit analysis 
-   <br><br>Please document the decision and use of GIP (name and version) on the screening form.`
+   </table>`
            },
 
 // -------------------- 
