@@ -401,7 +401,7 @@
 	    title: "Cardiac Implantable Electronic Devices (CIEDs)",
 	    questionFlowchartSection: "5.1",
 	    tableSection: "5.1",
-	    gipName: "MRI Protocol for Scanning Patients with Cardiac Implantable Electronic Devices (CIEDs)"
+	    gipName: "MRI Protocol for Scanning Patients with Cardiac Implantable Electronic Devices (CIEDs)",
 	    siteWarning: "Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board"
 	  },
 	
@@ -422,20 +422,20 @@
 	  }
 	};
 
-	  function branchBanner(ctx) {
-		  return ctx?.siteWarning ? `<u>${ctx.banner}</u><br>` : "";
+	  function branchsiteWarning(ctx) {
+		  return ctx?.siteWarning ? `<u>${ctx.siteWarning}</u><br>` : "";
 		}
 
 
 	  const HEADERS = {
     question: (ctx) =>
-      `${branchBanner(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
+      `${branchsiteWarning(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
 
 	    outcome: (ctx) =>
-	      `${branchBanner(ctx)}This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
+	      `${branchsiteWarning(ctx)}This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
 	
 	    table: (ctx) =>
-	      `${branchBanner(ctx)}This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
+	      `${branchsiteWarning(ctx)}This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
 	
 	    blank: () => ""
 	  };
@@ -968,7 +968,7 @@
 	  
    cied1: {
              type: "question",
-             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board</u><br><div class='blue-box'>Is the whole system identified as MR conditional?</div>",
+             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><div class='blue-box'>Is the whole system identified as MR conditional?</div>",
              options: [
                { label: "Yes", next: "cied_conditionaly" },
                { label: "No", next: "cied_conditionaln" }
@@ -977,12 +977,12 @@
 
    cied_conditionaly: {
              type: "outcome",
-             text: "<br><br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board</u><br><br><div class='outcome-box green-box'>Scan according to checklists</div>",
+             text: "<br><br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><br><div class='outcome-box green-box'>Scan according to checklists</div>",
            },
 
    cied_conditionaln: {
              type: "question",
-             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board</u><br><div class='blue-box'>Pulse generator identified as MR conditional</div>",
+             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><div class='blue-box'>Pulse generator identified as MR conditional</div>",
              options: [
                { label: "Yes", next: "cied_pgconditionaly" },
                { label: "No", next: "cied_pgconditionaln" }
@@ -991,7 +991,7 @@
 
    cied_pgconditionaly: {
              type: "question",
-             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board</u><br><div class='blue-box'><strong>Confirmed as e-MRC i.e. The device is ONLY not MR conditional because of:</strong><br><ul><li>MR Unlabelled/mismatched pin plug</li><li>MR Unlabelled/mismatched lead(s)</li><li>Recent implant (<6 weeks)</li><li>Temporary surgical epicardial pacing wires (no external components)</li><li>Unmet patient position or exclusion zone</li><li>Additional MR Conditional device present</li></ul></div>",
+             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><div class='blue-box'><strong>Confirmed as e-MRC i.e. The device is ONLY not MR conditional because of:</strong><br><ul><li>MR Unlabelled/mismatched pin plug</li><li>MR Unlabelled/mismatched lead(s)</li><li>Recent implant (<6 weeks)</li><li>Temporary surgical epicardial pacing wires (no external components)</li><li>Unmet patient position or exclusion zone</li><li>Additional MR Conditional device present</li></ul></div>",
              options: [
                { label: "Yes", next: "cied_conditionaly" },
                { label: "No", next: "cied_pgconditionaln" }
@@ -1000,7 +1000,7 @@
 
    cied_pgconditionaln: {
              type: "outcome",
-             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board</u><br><br><strong><div class='outcome-box orange-box'>Patient specific Risk Assessment would be required for scanning (Follow off label procedure, Sec 7 of the Implant Policy)</strong><br><u>These cases might include:</u><ul><li>Unmet MRI Condition (SAR, 3T) when required for diagnostic imaging</li><li>MR Unlabelled generators</li><li>Abandoned lead(s)</li><li>Temporary systems with externalised generator</li><li>Inactive, battery-depleted CIEDs</li><li>Permanent epicardial leads</li><li>Generators implanted outside the pectoral region</li><li>CIED component advisory warning</li><li>Stable abnormal lead parameter</li><li>Fractured leads</li><li>Battery at elective replacement interval</li><li>Pre-2003 market release pulse generators</li></ul></div>",
+             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><br><strong><div class='outcome-box orange-box'>Patient specific Risk Assessment would be required for scanning (Follow off label procedure, Sec 7 of the Implant Policy)</strong><br><u>These cases might include:</u><ul><li>Unmet MRI Condition (SAR, 3T) when required for diagnostic imaging</li><li>MR Unlabelled generators</li><li>Abandoned lead(s)</li><li>Temporary systems with externalised generator</li><li>Inactive, battery-depleted CIEDs</li><li>Permanent epicardial leads</li><li>Generators implanted outside the pectoral region</li><li>CIED component advisory warning</li><li>Stable abnormal lead parameter</li><li>Fractured leads</li><li>Battery at elective replacement interval</li><li>Pre-2003 market release pulse generators</li></ul></div>",
            },
 
 // ------------------------------------- 
