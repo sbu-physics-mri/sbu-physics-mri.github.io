@@ -991,7 +991,7 @@
 	  
 	nogip: {
              type: "question",
-             text: "<br>Can the implant be identified as MR Safe OR MR Conditional and all conditions met?",
+             text: "<div class='blue-box'>Can the implant be identified as MR Safe OR MR Conditional and all conditions met?</div>",
              options: [
                { label: "Yes", next: "implant_conditionaly" },
                { label: "No", next: "implant_conditionaln" }
@@ -1000,7 +1000,7 @@
 
            implant_conditionaln: {
              type: "question",
-             text: "<br>Can the patient be scanned under an off-label pocedure?",
+             text: "<div class='blue-box'>Can the patient be scanned under an off-label pocedure?</div>",
              options: [
                { label: "Yes", next: "implant_conditionaly" },
                { label: "No", next: "nogip_noscan" }
