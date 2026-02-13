@@ -1042,7 +1042,7 @@
 	  
    preg1:  {
              type: "question",
-             text: "<strong>Pregnancy</strong><br><br><div class='outcome-box orange-box'>The patient is known to be pregnant or has indicated that they may be pregnant during screening</div>",
+             text: "The patient is known to be pregnant or has indicated that they may be pregnant during screening",
              options: [
                { label: "Continue", next: "preg2" },
                { label: "Start Over", next: "q1" }
@@ -1051,7 +1051,7 @@
 
    preg2:  {
              type: "question",
-             text: "<strong>Pregnancy</strong><br><br>Does the scan require contrast?",
+             text: "<div class='blue-box'>Does the scan require contrast?",
              options: [
                { label: "Yes", next: "preg3" },
                { label: "No", next: "preg_sheet" }
@@ -1060,7 +1060,7 @@
 
    preg3:  {
              type: "question",
-             text: "<strong>Pregnancy</strong><br><br>Does the radiologist feel that the clinical need outweighs the risk?",
+             text: "<div class='outcome-box orange-box'>Radiologist feels the clinical need outweighs the risk</div>",
              options: [
                { label: "Yes", next: "preg4" },
                { label: "No", next: "preg_warning" }
@@ -1069,7 +1069,7 @@
 
    preg4:  {
              type: "question",
-             text: "<strong>Pregnancy</strong><br><br>Has there been a discussion with the patient and do they consent?",
+             text: "<div class='outcome-box orange-box'>Discussion with patient and patient consents</div>",
              options: [
                { label: "Yes", next: "preg_sheet" },
                { label: "No", next: "preg_warning" }
@@ -1078,21 +1078,20 @@
 
    preg_sheet:  {
              type: "question",
-             text: "<strong>Pregnancy</strong><br><br>Please ensure that you have given the patient the <i>Patient Information Sheet</i> (Appendix A in the <strong>MRI Protocol for Scanning Pregnant Patients</strong>)",
+             text: "Please ensure that you have given the patient the <i>Patient Information Sheet</i> (Appendix A in the <strong>MRI Protocol for Scanning Pregnant Patients</strong>)",
              options: [
-               { label: "Continue to conditions", next: "preg_conditions" }
+               { label: "Continue", next: "preg_conditions" }
              ]
            },
 
    preg_warning:  {
              type: "outcome",
-             text: "<strong>Pregnancy</strong><br><br><div class='outcome-box red-box'>Only scan <u>without</u> contrast according to the conditions in section 4.2 of the <strong>MRI Protocol for Scanning Pregnant Patients</strong></div>"
+             text: "<div class='outcome-box red-box'>Only scan <u>without</u> contrast according to the conditions in section 4.2 of the <strong>MRI Protocol for Scanning Pregnant Patients</strong></div>"
            },
 
 preg_conditions: {
              type: "outcome",
-             text: `<strong>Vascular Stents</strong><br><br>Scan following conditions in <strong>Section 4.2 Table 1</strong> of the <strong>MRI Protocol for Scanning Pregnant Patients</strong>.
-   <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T especially in first trimester</td></tr>
