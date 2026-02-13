@@ -418,7 +418,7 @@
 	    title: "Pregnancy",
 	    questionFlowchartSection: "4.1",
 	    tableSection: "4.2",
-	    gipName: "MRI Protocol for Scanning Pregnant Patients"
+	    gipName: "MRI Protocol for Scanning Pregnant Patients",
 
 	    pregRisk1_title: "Non-contrast MRI in Normal mode",
 	    pregRisk1_likelihood: "1 - RARE",
@@ -1149,15 +1149,7 @@ preg_conditions: {
      </tbody>
    </table>
    <br>
-<br><div style="text-align: left;"></div>
-<br><br><div style="text-align: left;"><strong>Non-contrast MRI in Normal mode:</strong></div>
-<ul><li>The likelihood is 1. RARE and the consequence 1. NONE</li><li>This give a VERY LOW risk score of 1</li></ul>
-<br><br><div style="text-align: left;"><strong>Non-contrast MRI in 1st level mode:</strong></div>
-<ul><li>The likelihood is 1. RARE and the consequence 2. MINOR</li><li>This give a VERY LOW risk score of 2</li></ul>
-<br><br><div style="text-align: left;"><strong>Gadolinium contrast MRI:</strong></div>
-<ul><li>The likelihood is 1. RARE and the consequence 5. CATASTROPHIC</li><li>This give a LOW risk score of 5</li></ul>
-   <br><br>Please document the decision and use of this procedure on the screening form.`
-           },
+   },
          }
        };
 
@@ -1211,7 +1203,7 @@ preg_conditions: {
 			  if (node.type === "outcome" && hasTable) {
 			    
 			    if (ctx.id === "pregnancy") {
-			      return FOOTERS.pregTable();
+			      return FOOTERS.pregTable(ctx);
 			    }
 			
 			    return FOOTERS.table(ctx);
