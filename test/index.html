@@ -419,6 +419,24 @@
 	    questionFlowchartSection: "4.1",
 	    tableSection: "4.2",
 	    gipName: "MRI Protocol for Scanning Pregnant Patients"
+
+	    pregRisk1_title: "Non-contrast MRI in Normal mode",
+	    pregRisk1_likelihood: "1 - RARE",
+	    pregRisk1_consequence: "1 - NONE",
+	    pregRisk1_riskcat: "VERY LOW",
+	    pregRisk1_riskscore: "1",
+	
+	    pregRisk2_title: "Non-contrast MRI in 1st level mode",
+	    pregRisk2_likelihood: "1 - RARE",
+	    pregRisk2_consequence: "2 - MINOR",
+	    pregRisk2_riskcat: "VERY LOW",
+	    pregRisk2_riskscore: "2",
+	
+	    pregRisk3_title: "Gadolinium contrast MRI",
+	    pregRisk3_likelihood: "1 - RARE",
+	    pregRisk3_consequence: "5 - CATASTROPHIC",
+	    pregRisk3_riskcat: "LOW",
+	    pregRisk3_riskscore: "5",
 	  }
 	};
 
@@ -453,34 +471,31 @@
 	    <br><br><u>Please document the final decision and the GIP used on the screening form</u>
 	  `,
 
-	pregTable: () => `
-    <br><br><div style="text-align:left;">
-    <u>Based on current information, with these conditions in place:</u>
-    </div>
+	pregTable: (ctx) => `
+    <br><div style="text-align:left;"><u>Based on current information, with these conditions in place:</u></div>
 
-    <br><strong>Non-contrast MRI in Normal mode:</strong>
+    <br><div style="text-align:left;"><strong>${ctx.pregRisk1_title}:</strong></div>
     <ul>
-      <li>Likelihood: 1 – RARE</li>
-      <li>Consequence: 1 – NONE</li>
-      <li>Risk Score: 1 – VERY LOW</li>
+      <li>The likelihood is ${ctx.pregRisk1_likelihood} and the consequence is ${ctx.pregRisk1_consequence}</li>
+      <li>This gives a ${ctx.pregRisk1_riskcat} risk score of ${ctx.pregRisk1_riskscore}</li>
     </ul>
 
-    <strong>Non-contrast MRI in First Level mode:</strong>
+    <br><div style="text-align:left;"><strong>${ctx.pregRisk2_title}:</strong></div>
     <ul>
-      <li>Likelihood: 1 – RARE</li>
-      <li>Consequence: 2 – MINOR</li>
-      <li>Risk Score: 2 – VERY LOW</li>
+      <li>The likelihood is ${ctx.pregRisk2_likelihood} and the consequence is ${ctx.pregRisk2_consequence}</li>
+      <li>This gives a ${ctx.pregRisk2_riskcat} risk score of ${ctx.pregRisk2_riskscore}</li>
     </ul>
 
-    <strong>Gadolinium contrast MRI:</strong>
+    <br><div style="text-align:left;"><strong>${ctx.pregRisk3_title}:</strong></div>
     <ul>
-      <li>Likelihood: 1 – RARE</li>
-      <li>Consequence: 5 – CATASTROPHIC</li>
-      <li>Risk Score: 5 – LOW</li>
+      <li>The likelihood is ${ctx.pregRisk3_likelihood} and the consequence is ${ctx.pregRisk3_consequence}</li>
+      <li>This gives a ${ctx.pregRisk3_riskcat} risk score of ${ctx.pregRisk3_riskscore}</li>
     </ul>
 
-    <br><br><u>Please document the decision and use of this procedure on the screening form</u>
+    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for full justification and to help perform risk-benefit analysis.
+    <br><br><u>Please document the final decision and the GIP used on the screening form</u>
   `,
+
 
 	  outcome: (ctx) => `
 	    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for full justification and to help perform risk-benefit analysis.
