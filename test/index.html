@@ -452,6 +452,36 @@
 	    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for full justification and to help perform risk-benefit analysis.
 	    <br><br><u>Please document the final decision and the GIP used on the screening form</u>
 	  `,
+
+	pregTable: () => `
+    <br><br><div style="text-align:left;">
+    <u>Based on current information, with these conditions in place:</u>
+    </div>
+
+    <br><strong>Non-contrast MRI in Normal mode:</strong>
+    <ul>
+      <li>Likelihood: 1 – RARE</li>
+      <li>Consequence: 1 – NONE</li>
+      <li>Risk Score: 1 – VERY LOW</li>
+    </ul>
+
+    <strong>Non-contrast MRI in First Level mode:</strong>
+    <ul>
+      <li>Likelihood: 1 – RARE</li>
+      <li>Consequence: 2 – MINOR</li>
+      <li>Risk Score: 2 – VERY LOW</li>
+    </ul>
+
+    <strong>Gadolinium contrast MRI:</strong>
+    <ul>
+      <li>Likelihood: 1 – RARE</li>
+      <li>Consequence: 5 – CATASTROPHIC</li>
+      <li>Risk Score: 5 – LOW</li>
+    </ul>
+
+    <br><br><u>Please document the decision and use of this procedure on the screening form</u>
+  `,
+
 	  outcome: (ctx) => `
 	    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for full justification and to help perform risk-benefit analysis.
 	    <br><br><u>Please document the final decision and the GIP used on the screening form</u>
@@ -1042,7 +1072,7 @@
 	  
    preg1:  {
              type: "question",
-             text: "The patient is known to be pregnant or has indicated that they may be pregnant during screening",
+             text: "<br>The patient is known to be pregnant or has indicated that they may be pregnant during screening",
              options: [
                { label: "Continue", next: "preg2" },
                { label: "Start Over", next: "q1" }
@@ -1078,7 +1108,7 @@
 
    preg_sheet:  {
              type: "question",
-             text: "Please ensure that you have given the patient the <i>Patient Information Sheet</i> (Appendix A in the <strong>MRI Protocol for Scanning Pregnant Patients</strong>)",
+             text: "<br>Give the <i>Patient Information Sheet</i> (Appendix A in the <strong>MRI Protocol for Scanning Pregnant Patients</strong>) to the patient",
              options: [
                { label: "Continue", next: "preg_conditions" }
              ]
@@ -1104,7 +1134,7 @@ preg_conditions: {
      </tbody>
    </table>
    <br>
-<br><div style="text-align: left;"><u>Based on current information, with these conditions in place:</u></div>
+<br><div style="text-align: left;"></div>
 <br><br><div style="text-align: left;"><strong>Non-contrast MRI in Normal mode:</strong></div>
 <ul><li>The likelihood is 1. RARE and the consequence 1. NONE</li><li>This give a VERY LOW risk score of 1</li></ul>
 <br><br><div style="text-align: left;"><strong>Non-contrast MRI in 1st level mode:</strong></div>
@@ -1163,7 +1193,16 @@ preg_conditions: {
 			  const body = node.text ?? "";
 			  const hasTable = body.includes("<table");
 			
-			  if (node.type === "outcome" && hasTable) return FOOTERS.table(ctx);
+			  if (node.type === "outcome" && hasTable) {
+			    
+			    if (ctx.id === "pregnancy") {
+			      return FOOTERS.pregTable();
+			    }
+			
+			    return FOOTERS.table(ctx);
+			}
+
+
 			  if (node.type === "outcome") return FOOTERS.outcome(ctx);
 			
 			  return "";
