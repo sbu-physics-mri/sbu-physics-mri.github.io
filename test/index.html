@@ -463,7 +463,7 @@
 
 	  const FOOTERS = {
 	  table: (ctx) => `
-	    <br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:<br><br>
+	    <br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:<br>
 	    <ul>
 	      <li>The likelihood is ${ctx.likelihood} and the consequence is ${ctx.consequence}</li>
 	      <li>This gives a ${ctx.riskcat} risk score of ${ctx.riskscore}</li>
@@ -1013,7 +1013,7 @@
 	  
    cied1: {
              type: "question",
-             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><div class='blue-box'>Is the whole system identified as MR conditional?</div>",
+             text: "<div class='blue-box'>Is the whole system identified as MR conditional?</div>",
              options: [
                { label: "Yes", next: "cied_conditionaly" },
                { label: "No", next: "cied_conditionaln" }
@@ -1022,12 +1022,12 @@
 
    cied_conditionaly: {
              type: "outcome",
-             text: "<br><br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><br><div class='outcome-box green-box'>Scan according to checklists</div>",
+             text: "<div class='outcome-box green-box'>Scan according to checklists</div>",
            },
 
    cied_conditionaln: {
              type: "question",
-             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><div class='blue-box'>Pulse generator identified as MR conditional</div>",
+             text: "<div class='blue-box'>Pulse generator identified as MR conditional</div>",
              options: [
                { label: "Yes", next: "cied_pgconditionaly" },
                { label: "No", next: "cied_pgconditionaln" }
@@ -1036,7 +1036,7 @@
 
    cied_pgconditionaly: {
              type: "question",
-             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><div class='blue-box'><strong>Confirmed as e-MRC i.e. The device is ONLY not MR conditional because of:</strong><br><ul><li>MR Unlabelled/mismatched pin plug</li><li>MR Unlabelled/mismatched lead(s)</li><li>Recent implant (<6 weeks)</li><li>Temporary surgical epicardial pacing wires (no external components)</li><li>Unmet patient position or exclusion zone</li><li>Additional MR Conditional device present</li></ul></div>",
+             text: "<div class='blue-box'><strong>Confirmed as e-MRC i.e. The device is ONLY not MR conditional because of:</strong><br><ul><li>MR Unlabelled/mismatched pin plug</li><li>MR Unlabelled/mismatched lead(s)</li><li>Recent implant (<6 weeks)</li><li>Temporary surgical epicardial pacing wires (no external components)</li><li>Unmet patient position or exclusion zone</li><li>Additional MR Conditional device present</li></ul></div>",
              options: [
                { label: "Yes", next: "cied_conditionaly" },
                { label: "No", next: "cied_pgconditionaln" }
