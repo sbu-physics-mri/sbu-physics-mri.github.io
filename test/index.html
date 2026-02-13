@@ -442,7 +442,7 @@
 	};
 
 	  function branchsiteWarning(ctx) {
-		  return ctx?.siteWarning ? `<u>${ctx.siteWarning}</u><br>` : "";
+		  return ctx?.siteWarning ? `<u>${ctx.siteWarning}</u><br><br>` : "";
 		}
 
 
@@ -468,7 +468,7 @@
 	      <li>The likelihood is ${ctx.likelihood} and the consequence is ${ctx.consequence}</li>
 	      <li>This gives a ${ctx.riskcat} risk score of ${ctx.riskscore}</li>
 	    </ul>
-	    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for full justification and to help perform risk-benefit analysis.
+	    <br>Please refer to the <strong>${ctx.gipName}</strong> for full justification and to help perform risk-benefit analysis.
 	    <br><br><u>Please document the final decision and the GIP used on the screening form</u>
 	  `,
 
