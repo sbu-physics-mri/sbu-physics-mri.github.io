@@ -418,6 +418,7 @@
 	    title: "Pregnancy",
 	    questionFlowchartSection: "4.1",
 	    tableSection: "4.2",
+	    riskSection: "6",
 	    gipName: "MRI Protocol for Scanning Pregnant Patients",
 
 	    pregRisk1_title: "Non-contrast MRI in Normal mode",
@@ -472,21 +473,20 @@
 	  `,
 
 	pregTable: (ctx) => `
-    <br><div style="text-align:left;"><u>Based on current information, with these conditions in place:</u></div>
-
+    <br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:<br><br> 
     <br><div style="text-align:left;"><strong>${ctx.pregRisk1_title}:</strong></div>
     <ul>
       <li>The likelihood is ${ctx.pregRisk1_likelihood} and the consequence is ${ctx.pregRisk1_consequence}</li>
       <li>This gives a ${ctx.pregRisk1_riskcat} risk score of ${ctx.pregRisk1_riskscore}</li>
     </ul>
 
-    <br><div style="text-align:left;"><strong>${ctx.pregRisk2_title}:</strong></div>
+    <br><br><div style="text-align:left;"><strong>${ctx.pregRisk2_title}:</strong></div>
     <ul>
       <li>The likelihood is ${ctx.pregRisk2_likelihood} and the consequence is ${ctx.pregRisk2_consequence}</li>
       <li>This gives a ${ctx.pregRisk2_riskcat} risk score of ${ctx.pregRisk2_riskscore}</li>
     </ul>
 
-    <br><div style="text-align:left;"><strong>${ctx.pregRisk3_title}:</strong></div>
+    <br><br><div style="text-align:left;"><strong>${ctx.pregRisk3_title}:</strong></div>
     <ul>
       <li>The likelihood is ${ctx.pregRisk3_likelihood} and the consequence is ${ctx.pregRisk3_consequence}</li>
       <li>This gives a ${ctx.pregRisk3_riskcat} risk score of ${ctx.pregRisk3_riskscore}</li>
