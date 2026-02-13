@@ -185,6 +185,16 @@
   background-color: #fff; 
   }
 
+  .black-box {
+  display: inline-block;
+  border: 2px solid #000000;   /* black border */
+  border-radius: 0;    
+  padding: 8px 12px;
+  margin: 12px 0;
+  color: #000;
+  background-color: #fff; 
+  }
+
   .card-logo {
   display: block;
   margin: 0 auto 12px auto; /* centered, space below */
@@ -1013,7 +1023,7 @@
 	  
    cied1: {
              type: "question",
-             text: "<div class='blue-box'>Is the whole system identified as MR conditional?</div>",
+             text: "<div class='black-box'>Whole system identified as MR conditional</div>",
              options: [
                { label: "Yes", next: "cied_conditionaly" },
                { label: "No", next: "cied_conditionaln" }
@@ -1027,7 +1037,7 @@
 
    cied_conditionaln: {
              type: "question",
-             text: "<div class='blue-box'>Pulse generator identified as MR conditional</div>",
+             text: "<div class='black-box'>Pulse generator identified as MR conditional</div>",
              options: [
                { label: "Yes", next: "cied_pgconditionaly" },
                { label: "No", next: "cied_pgconditionaln" }
