@@ -1233,7 +1233,7 @@ preg_conditions: {
 			  return "";
 			}
 
-			  function footerForNode(node) {
+			function footerForNode(node) {
 			  if (current === "q1") return "";
 			
 			  const ctx = getCtx();
@@ -1241,7 +1241,9 @@ preg_conditions: {
 			
 			  if (node.type === "outcome") {
     			return FOOTERS.outcome(ctx);
- 			 }
+ 			  }
+
+			  return "";
 			}
 
 
