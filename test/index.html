@@ -484,14 +484,24 @@
 	  
 
 	  const FOOTERS = {
-	  table: (ctx) => {
-	    /*
+
+	  outcome: (ctx) => `
+	    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for surrounding information, supporting evidence and assigned risk scores to help perform risk-benefit analysis.
+	  `,
+	  blank: () => ""
+	  };
+
+
+		  
+	/*  -- COMMENTED OUT SECTION INCLUDES REPRODUCING THE RISK SCORES
+	table: (ctx) => {
+	    
 		<br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:<br><br>
 	    <ul>
 	      <li>The likelihood is ${ctx.likelihood} and the consequence is ${ctx.consequence}</li>
 	      <li>This gives a ${ctx.riskcat} risk score of ${ctx.riskscore}</li>
 	    </ul>
-		*/
+		
 		return `
 	    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for surrounding information, supporting evidence and assigned risk scores to help perform risk-benefit analysis.
         <br><br><u>Please document the final decision and the GIP used on the screening form</u>
@@ -499,7 +509,7 @@
 	  },
         
 	pregTable: (ctx) => {
-    /*
+    
 	<br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:<br><br> 
     <br><div style="text-align:left;"><strong>${ctx.pregRisk1_title}:</strong></div>
     <ul>
@@ -518,11 +528,12 @@
       <li>The likelihood is ${ctx.pregRisk3_likelihood} and the consequence is ${ctx.pregRisk3_consequence}</li>
       <li>This gives a ${ctx.pregRisk3_riskcat} risk score of ${ctx.pregRisk3_riskscore}</li>
     </ul>
-	*/
+	
 	return `
     <br><br>Please refer to the <strong>${ctx.gipName}</strong> for surrounding information, supporting evidence and assigned risk scores to help perform risk-benefit analysis.
    <br><br><u>Please document the final decision and the GIP used on the screening form</u>
   `;
+  
   },
 	
 
@@ -532,6 +543,8 @@
 	    <br><br><u>Please document the final decision and the GIP used on the screening form</u>
 	  `,
 	  blank: () => ""
+	*/
+	  
 	};
 
 
@@ -817,7 +830,7 @@
 
    	capsules_scan: {
              type: "outcome",
-             text: "<div class='outcome-box green-box'>Scan as normal<br><br>Inform the patient to press the buzzer if they feel discomfort during their scan. If the patient reports <strong>abdominal discomfort</strong> or if there are <strong>susceptibility artefacts</strong> present in adbominal localise images, <strong>terminate the scan immediately</strong>, then slowly and carefully move the patient out of the scanner and scanner room.</div><br>Please document the decision and use of GIP (name and version) on the screening form."
+             text: "<div class='outcome-box green-box'>Scan as normal<br><br>Inform the patient to press the buzzer if they feel discomfort during their scan. If the patient reports <strong>abdominal discomfort</strong> or if there are <strong>susceptibility artefacts</strong> present in adbominal localise images, <strong>terminate the scan immediately</strong>, then slowly and carefully move the patient out of the scanner and scanner room.</div>"
            },
 
 // ---- 
