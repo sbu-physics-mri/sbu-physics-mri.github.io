@@ -1239,16 +1239,9 @@ preg_conditions: {
 			  const ctx = getCtx();
 			  if (!ctx) return "";
 			
-			  const body = node.text ?? "";
-			  const hasTable = body.includes("<table");
-			
-			  if (node.type === "outcome" && hasTable) {
-			    
-			    if (ctx.id === "pregnancy") {
-			      return FOOTERS.pregTable(ctx);
-			    }
-			
-			    return FOOTERS.table(ctx);
+			  if (node.type === "outcome") {
+    			return FOOTERS.outcome(ctx);
+ 			 }
 			}
 
 
