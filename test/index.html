@@ -485,17 +485,21 @@
 
 	  const FOOTERS = {
 	  table: (ctx) => `
-	    <br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:<br><br>
+	    <!--
+		<br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:<br><br>
 	    <ul>
 	      <li>The likelihood is ${ctx.likelihood} and the consequence is ${ctx.consequence}</li>
 	      <li>This gives a ${ctx.riskcat} risk score of ${ctx.riskscore}</li>
 	    </ul>
-	    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for full justification and to help perform risk-benefit analysis.
-	    <br><br><u>Please document the final decision and the GIP used on the screening form</u>
+		-->
+		
+	    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for surrounding information, supporting evidence and assigned risk scores to help perform risk-benefit analysis.
+  <br><br><u>Please document the final decision and the GIP used on the screening form</u>
 	  `,
-
+        
 	pregTable: (ctx) => `
-    <br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:<br><br> 
+    <!--
+	<br>The following risk score is given in <strong>Section ${ctx.riskSection}</strong> of the <strong>${ctx.gipName}</strong>:<br><br> 
     <br><div style="text-align:left;"><strong>${ctx.pregRisk1_title}:</strong></div>
     <ul>
       <li>The likelihood is ${ctx.pregRisk1_likelihood} and the consequence is ${ctx.pregRisk1_consequence}</li>
@@ -513,9 +517,10 @@
       <li>The likelihood is ${ctx.pregRisk3_likelihood} and the consequence is ${ctx.pregRisk3_consequence}</li>
       <li>This gives a ${ctx.pregRisk3_riskcat} risk score of ${ctx.pregRisk3_riskscore}</li>
     </ul>
+	-->
 
-    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for full justification and to help perform risk-benefit analysis.
-    <br><br><u>Please document the final decision and the GIP used on the screening form</u>
+    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for surrounding information, supporting evidence and assigned risk scores to help perform risk-benefit analysis.
+  <br><br><u>Please document the final decision and the GIP used on the screening form</u>
   `,
 
 
