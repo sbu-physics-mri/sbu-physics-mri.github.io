@@ -228,7 +228,7 @@
   ⚠️ Test Version – Please give feedback <a href="mailto:SBU.Physics.MRI@wales.nhs.uk" style="color: white; text-decoration: underline;">SBU.Physics.MRI@wales.nhs.uk</a>
 </div>
 
-  <!-- PASSWORD -->
+  <!-- PASSWORD OPTION COMMENTED OUT -->
 
   <div id="login-screen" class="card">
 	<img
@@ -238,14 +238,20 @@
    	/>
    <h2>MRI Safety Flow Chart<br>Interactive Reference</h2>
    <p>This tool is only intended for trained staff from sites supported by the MRI PHYSICS GROUP hosted by Swansea Bay University Health Board. By continuing, you confirm that you are authorised to use it<br><br>Please enter the password</p> 
+   
+   <!--  
    <input type="password" id="passwordInput" placeholder="Password" style="padding:10px;width:100%;margin-bottom:10px;" onkeydown="if (event.key === 'Enter') checkPassword();" />
-
-   <button onclick="checkPassword()">
-    Enter
-   </button>
-   <p id="error" style="color:red; display:none;">
+   
+    <p id="error" style="color:red; display:none;">
     Incorrect password
    </p>
+   -->
+   <!-- <button onclick="checkPassword()">Enter</button> -->
+   
+  <button onclick="enterSite()">
+    Enter
+  </button>
+  
   </div>
 
   <!-- PROTECTED  -->
@@ -273,6 +279,7 @@
   </div>
   
   <script>
+  /*
    function checkPassword() {
      const correctPassword = "MRI26"; 
      const entered = document.getElementById("passwordInput").value;
@@ -284,6 +291,11 @@
        document.getElementById("error").style.display = "block";
      }
    }
+  */
+  function enterSite() {
+  document.getElementById("login-screen").style.display = "none";
+  document.getElementById("protected-content").style.display = "block";
+  }
   </script>
   <script>
 
