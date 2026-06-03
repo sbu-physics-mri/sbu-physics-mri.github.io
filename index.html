@@ -614,7 +614,7 @@
 
            embolism1: {
              type: "question",
-             text: "<div class='outcome-box orange-box'>This GIP <strong>ONLY</strong> applies to <strong>embolisation devices</strong> within the <strong>vascular system</strong>, including the <strong>cerebrovascular system.</strong>. Devices covered include <strong>coils, plugs, liquid embolic agents</strong> and <strong>glues, micospheres, occlusion ballons</strong> and <strong>flow diverers</strong>. This GIP excludes coils or embolisation devices not placed in blood vessels, e.g., endobronchial coils for emphysema (delivered via endobronchial intervention) and coils used in utretic embolisation</div>",
+             text: "<div class='outcome-box orange-box'>This GIP <strong>ONLY</strong> applies to <strong>embolisation devices</strong> within the <strong>vascular system</strong>, including the <strong>cerebrovascular system.</strong>. Devices covered include <strong>coils, plugs, liquid embolic agents</strong> and <strong>glues, micospheres, occlusion ballons</strong> and <strong>flow diverers</strong>. This GIP excludes coils or embolisation devices not placed in blood vessels, e.g., endobronchial coils for emphysema (delivered via endobronchial intervention) and coils used in ureteric embolisation</div>",
              options: [
                { label: "Continue", next: "embolism1y" },
                { label: "Start Over", next: "q1" }
@@ -623,7 +623,7 @@
  
           embolism1y: {
              type: "question",
-             text: "<div class='blue-box'>Has the patient or referrer confirmed that the embolisation device(s) do <strong>NOT</strong> include aneurysm clip(s)? e.g. check notes or ask patient about procedure: was the coil(s) or other embolisation device(s) implanted in a intra-vascular pocedure (coil), not in a craniotomy procedure (clip)?</div>",
+             text: "<div class='blue-box'>Has the patient or referrer confirmed that the patient's embolization device(s) do <strong>NOT</strong> include aneurysm clip(s)? e.g. check notes or ask patient about procedure: was the coil(s) or other embolisation device(s) implanted in an endovascular procedure (coil), not in a craniotomy procedure (clip)?</div>",
              options: [
    	        { label: "Yes, the implant does NOT include aneurysm clips", next: "embolism_conditions" },
             { label: "No, the implant MAY include aneurysm clips", next: "embolism_clip_warning" },
@@ -632,7 +632,7 @@
 
            embolism_clip_warning: {
              type: "outcome",
-             text: "<div class='outcome-box red-box'>Follow procedure for aneurysm clips or contact MR Physics.</div>"
+             text: "<div class='outcome-box red-box'>Follow procedure for aneurysm clips or contact MRI Physics.</div>"
            },
 
            embolism_conditions: {
@@ -641,9 +641,9 @@
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only 3T scanner is available, scan at 3T.</td></tr>
-       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid areas next to covers at bore entrance</td></tr>
+       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally (the aim is to keep the implant(s) as far as possible from the scanner bore wall.)</td></tr>
        <tr><td><strong>SAR</strong><br>Normal mode</td><td></td></tr>
-       <tr><td><strong>Coil(s) end-to-end maximum length</strong><br><br><u>1.5T:</u> No limit<br><br><u>3T:</u> 10 cm</td><td><u>In the case of 3T</u><br>If the end-to-end length of coil/combination of coils exceeds 10 cm → risk-benefit analysis required. This only applies when the coils are in the area of the transmit RF.</td></tr>
+       <tr><td><strong>Coil(s) end-to-end maximum length</strong><br><br><u>1.5T:</u> No limit<br><br><u>3T:</u> 10 cm</td><td><u>In the case of 3T</u><br>If the end-to-end length of coil/combination of coils exceeds 10 cm → risk-benefit analysis required. This only applies when the coils are in the area of the transmitted RF.</td></tr>
      </tbody>
    </table>`
            },
