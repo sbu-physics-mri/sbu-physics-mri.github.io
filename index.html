@@ -470,13 +470,13 @@
 
 	  const HEADERS = {
     question: (ctx) =>
-      `${branchsiteWarning(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
+      `${branchsiteWarning(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
 
 	    outcome: (ctx) =>
-	      `${branchsiteWarning(ctx)}This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
+	      `${branchsiteWarning(ctx)}This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
 	
 	    table: (ctx) =>
-	      `${branchsiteWarning(ctx)}This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the healthcare professional<br>`,
+	      `${branchsiteWarning(ctx)}This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
 	
 	    blank: () => ""
 	  };
@@ -500,7 +500,7 @@
 
            q1: {
              type: "question",
-             text: "This tool provides an <strong>interactive digital view of existing MRI safety flow charts</strong>. Final responsibility remains with qualified healthcare professionals<br><br>Please select the relevant category:",
+             text: "This tool provides an <strong>interactive digital view of existing MRI safety flow charts</strong>. Final responsibility remains with the MR Radiographer<br><br>Please select the relevant category:",
              options: [
                { label: "Clips, Staples and Metal Sutures", next: "clips1", branchID: "clips" },
                { label: "Embolisation Devices", next: "embolism1", branchID: "embolism" },
