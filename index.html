@@ -893,7 +893,7 @@
 
    	shunts2: {
              type: "question",
-             text: "<div class='blue-box'>If shunt/device contains valve, try to determine whether it is fixed or adjustable/variable/programmable:<br><br><ol><li>If the shunt was <strong><u>implanted before 1984 → Shunt is fixed valve</strong></u></li><li>The make and model can be obtained from the patient’s surgical notes, or implant information provided by patient (e.g. <strong>implant card</strong>). <u>You do not need to check the MR Conditions of the device at this stage.</u></li><li>Certain <strong>questions</strong> can help: Has a neurosurgeon/doctor held a magnet over patient’s head to adjust shunt settings AND/OR has the patient been warned that their shunt may be affected by external magnets?--> If YES, programmable shunt.<li><strong>Previous x-ray imaging</strong> may be helpful to determine type of device: A radiograph of a programmable valve will show a rotating structure. Some resources are available in the GIP. If no previous imaging is available, an x-ray request could be considered.</li><li>Given the adjustable valve utilises a magnet, there is potential for a ferromagnetic detector to identify cases where the patient has a programmable shunt.</li></ol></div>",
+             text: "<div class='blue-box'>If shunt/device contains valve, try to determine whether it is fixed or adjustable/variable/programmable:<br><br><ol><li>If the shunt was <strong><u>implanted before 1984 → Shunt is fixed valve</strong></u></li><li>The make and model can be obtained from the patient’s surgical notes, or implant information provided by patient (e.g. <strong>implant card</strong>). <u>You do not need to check the MR Conditions of the device at this stage.</u></li><li>Certain <strong>questions</strong> can help: Has a neurosurgeon/doctor held a magnet over patient’s head to adjust shunt settings AND/OR has the patient been warned that their shunt may be affected by external magnets?--> If YES, programmable shunt.<li><strong>Previous x-ray imaging</strong> may be helpful to determine type of device: A radiograph of a programmable valve will show a rotating structure. Some resources are available in the GIP. If no previous imaging is available, an x-ray request could be considered.</li><li>Given the adjustable valve utilises a magnet, there is potential for a <strong>ferromagnetic detector</strong> to identify cases where the patient has a programmable shunt.</li></ol></div>",
              options: [
                { label: "Continue", next: "shunts3" },
                { label: "Start Over", next: "q1" }
@@ -902,11 +902,11 @@
 
           shunts3: {
              type: "question",
-             text: "<div class='blue-box'>Is the device fixed valve and implanted in UK, Europe, US, Japan, NZ, Australia or Canada?</div>",
+             text: "<div class='blue-box'>Is the device fixed valve</div>",
              options: [
                { label: "Yes", next: "shunts_conditions" },
                { label: "No", next: "shunts3n" },
-               { label: "Don't Know", next: "shunts_unknown" }
+               { label: "Do not know", next: "shunts_unknown" }
              ]
            },
 
@@ -922,7 +922,7 @@
 
            shunts3n: {
              type: "outcome",
-             text: "<div class='outcome-box orange-box'>Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met.<br>Scan according to conditions.<br>IF device is Programmable: <u>Follow the Pathway for MRI Imaging of Patients with Programmable Shunts (<strong>Sec. 6.3</strong> of the <strong>Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong>).</u></div>"
+             text: "<div class='outcome-box orange-box'>Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met.<br>Scan according to conditions.<br>IF device is Programmable: <u>Follow the Pathway for MRI Imaging of Patients with Programmable Shunts Sec. 5.3 of the <strong>Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong>).</u></div>"
            },
 
            shunts_unknown: {
