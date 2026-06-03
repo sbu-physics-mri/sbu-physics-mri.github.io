@@ -884,7 +884,7 @@
 	  
    shunts1: {
              type: "question",
-             text: "<div class='outcome green-box'><strong>If there is no valve presnet, i.e. only ventricular reservoir, scan following condirition in sec. 6.2 of GIP</strong> --> Document decision and use of GIP (name and version) on screening form",
+             text: "<div class='outcome green-box'><strong>If there is no valve present, i.e. only ventricular reservoir, scan following condition in Sec. 5.2 of GIP</strong> --> Document decision and use of GIP (name and version) on screening form",
              options: [
                { label: "Valves present", next: "shunts2" },
                { label: "No valves present, i.e. only ventricular reservoir", next: "shunts_conditions" }
@@ -893,7 +893,7 @@
 
    	shunts2: {
              type: "question",
-             text: "<div class='blue-box'>If shunt/device contains valve, try to determine whether it is fixed or adjustable / variable / programmable by identifying make and model and checking manufacturer website.<br><br><u>You do not need to check the MR conditions of the device at this stage.</u><br><ol><li>If the shunt was <strong><u>implanted before 1984 → Shunt is fixed valve</strong></u></li><li>Make and model can be obtained from the patient’s surgical notes, or implant information provided by patient (e.g. <strong>implant card</strong>)</li><li>Certain <strong>questions</strong> can help: Has a neurosurgeon/doctor held a magnet over patient’s head to adjust shunt settings AND/OR has the patient been warned that their shunt may be affected by external magnets?--> If YES, programmable shunt.<li><strong>Previous x-ray imaging</strong> may be helpful to determine type of device: A radiograph of a programmable valve will show a rotating structure. The configuration of this structure informs the valve setting which allows regulation of the opening pressure. Some resources:  <strong>If no previous imaging available, x-ray request could be considered.</strong></li><li>Given the adjustable valve utilises a magnet, there is potential for a ferromagnetic detector to identify cases where the patient has a programmable shunt.</li></ol></div>",
+             text: "<div class='blue-box'>If shunt/device contains valve, try to determine whether it is fixed or adjustable/variable/programmable:<br><br><ol><li>If the shunt was <strong><u>implanted before 1984 → Shunt is fixed valve</strong></u></li><li>The make and model can be obtained from the patient’s surgical notes, or implant information provided by patient (e.g. <strong>implant card</strong>). <u>You do not need to check the MR Conditions of the device at this stage.</u></li><li>Certain <strong>questions</strong> can help: Has a neurosurgeon/doctor held a magnet over patient’s head to adjust shunt settings AND/OR has the patient been warned that their shunt may be affected by external magnets?--> If YES, programmable shunt.<li><strong>Previous x-ray imaging</strong> may be helpful to determine type of device: A radiograph of a programmable valve will show a rotating structure. Some resources are available in the GIP. If no previous imaging is available, an x-ray request could be considered.</li><li>Given the adjustable valve utilises a magnet, there is potential for a ferromagnetic detector to identify cases where the patient has a programmable shunt.</li></ol></div>",
              options: [
                { label: "Continue", next: "shunts3" },
                { label: "Start Over", next: "q1" }
@@ -915,7 +915,7 @@
              text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
-       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T. However, if implanted before the year 2000, only scan at 1.5T.</td></tr><tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on the table avoiding the scanner wall when entering the scanner.</td></tr><tr><td><strong>SAR</strong><br>Normal mode only</td><td>Only enter into First Level Mode if clinically required. If use of transmit/receive head coil is clinically required, make and model should be established, and specific conditions checked. Off-label procedure may be required (contact MR Physics).</td></tr><tr><td><strong>Gradient switching mode</strong><br>No limit</td><td></td></tr>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>Majority of known devices are MR Safe or MR Conditional up to 3T. However, if implanted before the year 2000, only scan at 1.5T.</td></tr><tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on the table avoiding the scanner wall when entering the scanner.</td></tr><tr><td><strong>SAR</strong><br>Normal mode</td><td>Only enter into First Level Mode if clinically required.</td></tr><tr><td><strong>Gradient switching mode</strong><br>No limit</td><td></td></tr>
      </tbody>
    </table>`
            },
