@@ -775,7 +775,7 @@
 
    	capsules_scan: {
              type: "outcome",
-             text: "<div class='outcome-box green-box'>Scan as normal<br><br>Inform the patient to press the buzzer if they feel discomfort during their scan. If the patient reports <strong>abdominal discomfort</strong> or if there are <strong>susceptibility artefacts</strong> present in adbominal localise images, <strong>terminate the scan immediately</strong>, then slowly and carefully move the patient out of the scanner and scanner room.</div>"
+             text: "<div class='outcome-box green-box'>Scan as normal<br><br>Inform the patient to press the buzzer if they feel discomfort during their scan. If the patient reports <strong>abdominal discomfort</strong> or if there are <strong>susceptibility artefacts</strong> present in adbominal localiser images, <strong>terminate the scan immediately</strong>, then slowly and carefully move the patient out of the scanner and scanner room.</div>"
            },
 
 // ---- 
@@ -834,7 +834,7 @@
 
    	ortho3: {
              type: "question",
-             text: "<div class='blue-box'>Does this patient have a sternal fixation device with 20cm of the FOV?</div>",
+             text: "<div class='blue-box'>Does this patient have a sternal fixation device within 20cm of the FOV?</div>",
              options: [
                { label: "Yes", next: "ortho3y" },
                { label: "No", next: "ortho_conditions1" }
@@ -843,7 +843,7 @@
 
    	ortho3y: {
              type: "question",
-             text: "<div class='blue-box'>Is there imaging available which shows that the sternal fixation device is a sternal wire and that the sternal wires from the non-interconnected, metallic closure system (loops)?</div>",
+             text: "<div class='blue-box'>Is there imaging available which shows that the sternal fixation device is a sternal wire and that the sternal wires form a non-interconnected, metallic closure system (loops)?</div>",
              options: [
                { label: "Yes", next: "ortho_conditions1" },
                { label: "No", next: "ortho_conditions2" }
@@ -871,7 +871,7 @@
      <tbody>
        <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T</td></tr>
        <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid area near covers at entrance to bore</td></tr>
-       <tr><td><strong>SAR</strong><br>No limit</td><td>Normal operating mode.<br><br>Only run sequences that are required and interleave low SAR sequences with any high SAR sequences that are required.<br><br>Use local transmit/receive coils is possible.<br><br>Inform patient that a heating sensation is possible and that they should immediately inform the MR Operator if this happens.</td></tr>
+       <tr><td><strong>SAR</strong><br>Normal Mode</td><td>Normal operating mode.<br><br>Only run sequences that are required and interleave low SAR sequences with any high SAR sequences that are required.<br><br>Use local transmit/receive coils if possible.<br><br>Inform patient that a heating sensation is possible and that they should immediately inform the MR Operator if this happens.</td></tr>
        <tr><td><strong>Gradient switching mode</strong><br>No limit</td><td>Only enter into First Level Mode if clinically required</td></tr>
        <tr><td><strong>Minimum time since implantation</strong><br>None</td><td></td></tr>
      </tbody>
