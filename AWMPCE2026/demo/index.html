@@ -1,1 +1,1302 @@
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+   MRI Safety Interactive Flow Chart
+  </title>
+  <style>
+     *,
+     *::before,
+     *::after {
+        box-sizing: border-box;
+     }
 
+.test-banner {
+  position: fixed;        
+  top: 0;
+  left: 0;
+  width: 100%;            
+  background-color: #ef4444;  
+  color: white;
+  text-align: center;
+  padding: 8px 12px;
+  font-weight: bold;
+  z-index: 1000;          
+  font-size: 1rem;
+}
+
+     body {
+       font-family: "Roboto", sans-serif;
+       background: #f8fafc;
+       color: #1e293b;
+       display: flex;
+       justify-content: center;
+       padding: 20px;
+       padding-top: 20px;
+       margin: 0;
+       min-height: 100vh;
+       align-items: flex-start;
+       overflow-y: auto;
+       overflow-x: hidden;
+       }
+
+       .card {
+         position: relative;
+         background: white;
+         border-radius: 16px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+         padding: 20px;
+         max-width: 450px;
+         width: 100%;
+         margin: 0 auto;
+         text-align: center;
+	   }
+       h1 {
+         color: #0369a1; 
+		 /* NHS WALES COLOUR: #325A8A; */
+         font-size: 1.5rem;
+         margin-bottom: 16px;
+       }
+       p {
+         font-size: 1.1rem;
+         line-height: 1.4;
+         margin-bottom: 12px;
+       }
+       .back-link {
+         position: absolute;
+         top: 12px;
+         left: 16px;
+         font-size: 0.9rem;
+         color: #0369a1;
+         text-decoration: underline;
+         cursor: pointer;
+         display: none;
+       }
+       .buttons {
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+         margin-top: 12px;
+       }
+       button {
+         padding: 10px 20px;
+         font-size: 1rem;
+         border: none;
+         border-radius: 8px;
+         cursor: pointer;
+         transition: background 0.2s ease;
+		 background-color: #0284c7;  
+		 /* NHS WALES COLOUR: #325A8A; */
+		 color: white;   
+       }
+       button:hover {
+         background-color: #0369a1;
+       }
+       .warning {
+         background-color: #f97316 !important;
+       }
+       .warning:hover {
+         background-color: #ea580c !important;
+       }
+       .danger {
+         color: #b91c1c;
+         font-weight: bold;
+       }
+       ul {
+         text-align: left;
+         padding-left: 20px;
+       }
+       table {
+         margin-top: 12px;
+         width: 100%;
+         max-width: 100%;
+         border-collapse: collapse;
+         overflow-x: auto;
+         display: block;
+       }
+
+       th {
+         background-color: #e2e8f0;
+         text-align: left;
+       }
+       td, th {
+         border: 1px solid #cbd5e1;
+         padding: 6px;
+       }
+
+       #question ol,
+       #question ul {
+       text-align: left !important;
+       display: inline-block !important;
+       margin: 0 auto;
+       padding-left: 20px;
+     }
+
+   @media (max-width: 480px) {
+     body {
+       padding: 12px;
+     }
+
+     .card {
+       padding: 16px;
+     }
+
+     h1 {
+       font-size: 1.3rem;
+     }
+
+     p {
+       font-size: 1rem;
+     }
+
+     button {
+       font-size: 1rem;
+       padding: 12px;
+     }
+   }
+
+  .outcome-box {
+    display: inline-block;    
+    border: 4px solid;       
+    border-radius: 0;          
+    padding: 8px 12px;         
+    margin: 12px 0;               
+    color: black;              
+  }
+
+  .green-box {
+    border-color: #10b981;  /* green border */
+  }
+
+  .red-box {
+    border-color: #ef4444;  /* red border */
+  }
+
+  .orange-box { border-color: #f97316; }  /* orange border */
+
+  .blue-box {
+  display: inline-block;
+  border: 4px solid #57a0d2;   /* black border */
+  border-radius: 0;    
+  padding: 8px 12px;
+  margin: 12px 0;
+  color: #000;
+  background-color: #fff; 
+  }
+
+  .black-box {
+  display: inline-block;
+  border: 2px solid #000000;   /* black border */
+  border-radius: 0;    
+  padding: 8px 12px;
+  margin: 12px 0;
+  color: #000;
+  background-color: #fff; 
+  }
+
+  .card-logo {
+  display: block;
+  margin: 0 auto 12px auto; /* centered, space below */
+  max-width: 180px;         /* prevents oversized logos */
+  width: 100%;
+  height: auto;
+  }
+
+  </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0T8V10184M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  window.site_source = new URLSearchParams(window.location.search).get("source") || "(direct)";
+
+  gtag('config', 'G-0T8V10184M', {
+    site_source: window.site_source
+  });
+
+</script>
+	 
+ </head>
+
+ <body>
+
+<div class="test-banner">
+  ⚠️ Test Version – Please give feedback <a href="mailto:SBU.Physics.MRI@wales.nhs.uk" style="color: white; text-decoration: underline;">SBU.Physics.MRI@wales.nhs.uk</a>
+</div>
+
+  <!-- PASSWORD OPTION COMMENTED OUT -->
+
+  <div id="login-screen" class="card">
+	<img
+	    src="group_logo.JPG"
+	    alt="MRI Physics Group"
+	    class="card-logo"
+   	/>
+   <h2>MRI Safety<br>Interactive Flow Chart</h2>
+   <p>This tool is only intended for trained staff from sites supported by the MRI PHYSICS GROUP hosted by Swansea Bay University Health Board. By continuing, you confirm that you are authorised to use it<br></p> 
+   
+   <!--  
+   <input type="password" id="passwordInput" placeholder="Password" style="padding:10px;width:100%;margin-bottom:10px;" onkeydown="if (event.key === 'Enter') checkPassword();" />
+   
+    <p id="error" style="color:red; display:none;">
+    Incorrect password
+   </p>
+   -->
+   <!-- <button onclick="checkPassword()">Enter</button> -->
+   
+  <button onclick="enterSite()">
+    Enter
+  </button>
+  
+  </div>
+
+  <!-- LANDING PAGE - PASSWORD COMMENTED OUT IF NEEDED IN FUTURE  -->
+
+  <div id="main-app" style="display:none;">
+   <div class="card">
+	<img
+	    src="group_logo.JPG"
+	    alt="MRI Physics Group"
+	    class="card-logo"
+   	/>
+    
+    <h2>
+     MRI Safety<br>Interactive Flow Chart
+    </h2>
+	 
+    <!-- <u>Only for use by sites supported by the MRI PHYSICS GROUP hosted by Swansea Bay University Health Board</u> -->
+    
+    <span id="back-link" class="back-link" onclick="goBack()">
+     ← Back
+    </span>
+    <p id="question">Loading...</p>
+    <div class="buttons" id="buttons"></div>
+   </div>
+  </div>
+  
+  <script>
+  /*
+   function checkPassword() {
+     const correctPassword = "MRI26"; 
+     const entered = document.getElementById("passwordInput").value;
+
+     if (entered === correctPassword) {
+       document.getElementById("login-screen").style.display = "none";
+	   document.getElementById("main-app").style.display = "block";
+     } else {
+       document.getElementById("error").style.display = "block";
+     }
+   }
+  */
+  function enterSite() {
+  document.getElementById("login-screen").style.display = "none";
+  document.getElementById("main-app").style.display = "block";
+  }
+  </script>
+  <script>
+
+	// info for nodes
+		  
+	  const BRANCH = {
+	  clips: {
+	    id: "clips",
+	    title: "Surgical Clips, Staples and Metal Sutures",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+	    riskSection: "6",
+	    gipName: "Generic Implant Procedure for Clips, Staples and Metal Sutures (v2.0)",
+		likelihood: "1 - RARE",
+		consequence: "5 - CATASTROPHIC",
+		riskcat: "low",
+	    riskscore: "5"
+	  },
+	
+	  embolism: {
+	    id: "embolism",
+	    title: "Embolisation Coils and Other Embolisation Devices",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+		riskSection: "6",
+	    gipName: "Generic Implant Procedure for Embolisation Coils and Other Embolisation Devices (v4.1)",
+		likelihood: "1 - RARE",
+		consequence: "5 - CATASTROPHIC",
+		riskcat: "low",
+	    riskscore: "5"
+	  },
+	
+	  gastric: {
+	    id: "gastric",
+	    title: "Gastric Bands",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+		riskSection: "6",
+	    gipName: "Generic Implant Procedure for Gastric Bands (v3.0)",
+		likelihood: "1 - RARE",
+		consequence: "3 - MODERATE",
+		riskcat: "low",
+	    riskscore: "3"
+	  },
+	
+	  valves: {
+	    id: "valves",
+	    title: "Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+		riskSection: "6",
+	    gipName: "Generic Implant Procedure for Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices (v3.0)",
+		likelihood: "1 - RARE",
+		consequence: "3 - MODERATE",
+		riskcat: "low",
+	    riskscore: "3"
+	  },
+	
+	  capsules: {
+	    id: "capsules",
+	    title: "Ingestible Capsules",
+	    questionFlowchartSection: "5.1",
+	    tableSection: null, // no single conditions table section
+		riskSection: "6",
+	    gipName: "Generic Implant Procedure for Ingestible Capsules (v1.6)",
+		likelihood: "2 - UNLIKELY",
+		consequence: "3 - MODERATE",
+		riskcat: "moderate",
+	    riskscore: "6"
+	  },
+	
+	  iuds: {
+	    id: "iuds",
+	    title: "Intrauterine Devices",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+		riskSection: "6",
+	    gipName: "Generic Implant Procedure for Intrauterine Devices (IUDs) (v1.0)",
+		likelihood: "1 - RARE",
+		consequence: "5 - CATASTROPHIC",
+		riskcat: "low",
+	    riskscore: "5"
+	  },
+	
+	  ortho: {
+	    id: "ortho",
+	    title: "Orthopaedic Implants",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2 / 5.3",
+		riskSection: "6",
+	    gipName: "Generic Implant Procedure for Orthopaedic Implants (v2.2)",
+		likelihood: "1 - RARE",
+		consequence: "3 - MODERATE",
+		riskcat: "low",
+	    riskscore: "3"
+	  },
+	
+	  shunts: {
+	    id: "shunts",
+	    title: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories",
+	    questionFlowchartSection: "6.1",
+	    tableSection: "6.2 / 6.3",
+		riskSection: "7",
+	    gipName: "Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories (v1.7)",
+		likelihood: "1 - RARE",
+		consequence: "4 - MAJOR",
+		riskcat: "low",
+	    riskscore: "4"
+	  },
+	
+	  stents: {
+	    id: "stents",
+	    title: "Vascular Stents",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+	    gipName: "Generic Implant Procedure for Vascular Stents (v2.0)",
+		likelihood: "1 - RARE",
+		consequence: "3 - MODERATE",
+		riskcat: "low",
+	    riskscore: "3"
+	  },
+	
+	  cieds: {
+	    id: "cieds",
+	    title: "Cardiac Implantable Electronic Devices (CIEDs)",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.1",
+	    gipName: "MRI Protocol for Scanning Patients with Cardiac Implantable Electronic Devices (CIEDs) (v3.1)",
+	    siteWarning: "Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board"
+	  },
+	
+	  nogip: {
+	    id: "nogip",
+	    title: "Implant Not Covered by a Generic Implant Procedure",
+	    questionFlowchartSection: 3,
+	    tableSection: null,
+	    gipName: "Procedure for Magnetic Resonance Imaging (MRI) of Patients and Healthy Volunteers with Implanted Medical Devices or Other Potential Contraindications (v2.0)"
+	  },
+	
+	  pregnancy: {
+	    id: "pregnancy",
+	    title: "Pregnancy",
+	    questionFlowchartSection: "4.1",
+	    tableSection: "4.2",
+	    riskSection: "6",
+	    gipName: "MRI Protocol for Scanning Pregnant Patients (v1.2)",
+
+	    pregRisk1_title: "Non-contrast MRI in Normal mode",
+	    pregRisk1_likelihood: "1 - RARE",
+	    pregRisk1_consequence: "1 - NONE",
+	    pregRisk1_riskcat: "VERY LOW",
+	    pregRisk1_riskscore: "1",
+	
+	    pregRisk2_title: "Non-contrast MRI in 1st level mode",
+	    pregRisk2_likelihood: "1 - RARE",
+	    pregRisk2_consequence: "2 - MINOR",
+	    pregRisk2_riskcat: "VERY LOW",
+	    pregRisk2_riskscore: "2",
+	
+	    pregRisk3_title: "Gadolinium contrast MRI",
+	    pregRisk3_likelihood: "1 - RARE",
+	    pregRisk3_consequence: "5 - CATASTROPHIC",
+	    pregRisk3_riskcat: "LOW",
+	    pregRisk3_riskscore: "5",
+	  }
+	};
+
+	  function branchsiteWarning(ctx) {
+		  return ctx?.siteWarning ? `<u>${ctx.siteWarning}</u><br><br>` : "";
+		}
+
+
+	  const HEADERS = {
+    question: (ctx) =>
+      `${branchsiteWarning(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
+
+	    outcome: (ctx) =>
+	      `${branchsiteWarning(ctx)}This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
+	
+	    table: (ctx) =>
+	      `${branchsiteWarning(ctx)}This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
+	
+	    blank: () => ""
+	  };
+
+	  
+
+	  const FOOTERS = {
+
+	  outcome: (ctx) => `
+	    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for surrounding information, supporting evidence and assigned risk scores to help perform risk-benefit analysis.
+	  `,
+	  blank: () => ""
+	  };
+
+
+
+
+       const tree = {
+         start: "q1",
+         nodes: {
+
+           q1: {
+             type: "question",
+             text: "This tool provides an <strong>interactive digital view of existing MRI safety flow charts</strong>. Final responsibility remains with the MR Radiographer<br><br>Please select the relevant category:",
+             options: [
+               { label: "Clips, Staples and Metal Sutures", next: "clips1", branchID: "clips" },
+               { label: "Embolisation Devices", next: "embolism1", branchID: "embolism" },
+               { label: "Gastric Bands", next: "gastric1", branchID: "gastric" },
+               { label: "Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices", next: "valves1", branchID: "valves" },
+               { label: "Ingestible Capsules", next: "capsules1", branchID: "capsules" },
+               { label: "IUDs", next: "iud1", branchID: "iuds" },
+               { label: "Orthopaedic Implants", next: "ortho1", branchID: "ortho" },
+               { label: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories", next: "shunts1", branchID: "shunts" },
+               { label: "Vascular Stents", next: "stents1", branchID: "stents" },
+   	           { label: "CIEDs", next: "cied1", warning: true, branchID: "cieds" },
+               { label: "Implant not in one of these categories", next: "nogip", warning: true, branchID: "nogip" },
+	           { label: "Pregnancy", next: "preg1", warning: true, branchID: "pregnancy" }
+             ]
+           },
+
+// ----------------------------------- 
+// Clips, Staples and Metal Structures 
+// ----------------------------------- 
+
+          clips1: {
+             type: "question",
+             text: "<br>This policy covers all clips and staples, <u>excluding those implanted above the neck</u>",
+             options: [
+               { label: "Continue", next: "clips2" },
+               { label: "Start Over", next: "q1" }
+             ]
+           },
+
+   	clips2: {
+             type: "question",
+             text: "<div class='outcome-box red-box'>This GIP applies to metal clips, staples and sutures and <b><u>does not cover</u></b> complex wire systems such as seternal wires (refer to orthopaedic GIP)</div>",
+             options: [
+               { label: "Continue", next: "clips3" },
+               { label: "Start Over", next: "q1" }
+             ]
+           },
+
+   	clips3: {
+             type: "question",
+             text: "<div class='blue-box'>Is the implant an endoscopy clip</div>",
+             options: [
+               { label: "Yes", next: "clips4" },
+               { label: "No", next: "clips_conditions" }
+             ]
+           },
+
+   	clips4: {
+             type: "question",
+             text: "<div class='blue-box'>Was the endoscopy clip implanted in NHS Wales?</div>",
+             options: [
+               { label: "Yes", next: "clips4y" },
+               { label: "No", next: "clips4n" }
+             ]
+           },
+
+   	clips4y: {
+             type: "question",
+             text: "<div class='blue-box'>Was it implanted in the last 6 weeks?</div>",
+             options: [
+               { label: "Yes", next: "clips_xray" },
+               { label: "No", next: "clips_conditions" }
+             ]
+           },
+
+   	clips4n: {
+             type: "question",
+             text: "<div class='blue-box'>Was it implanted in the last year?</div>",
+             options: [
+               { label: "Yes", next: "clips_xray" },
+               { label: "No", next: "clips_conditions" }
+             ]
+           },
+
+   	clips_xray: {
+             type: "question",
+             text: "<div class='blue-box'>Has X-ray confirmed all clips have passed?</div>",
+             options: [
+               { label: "Yes", next: "clips_xrayy" },
+               { label: "No", next: "clips_xrayn" }
+             ]
+           },
+
+   	clips_xrayy: {
+             type: "outcome",
+             text: "<div class='outcome-box green-box'>OK to Scan</div>"
+           },
+
+   	clips_xrayn: {
+             type: "outcome",
+             text: "<div class='outcome-box red-box'><u>Individual risk/benefit assessment</u> to be performed. Although this is not necesserily an off-label scan, the procedure outlined in Section 7 of the Implants Policy should be followed. If the MRI is to proceed, monitor the patient throughout the scan and if they feel any discomfort when enterine the magnet room or during the scan, terminate the scan immediately and carefully remove the patient from the scan room.</div>"
+           },
+
+   	clips_conditions: {
+             type: "outcome",
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+     <tbody>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
+       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid area near covers at entrance to bore</td></tr>
+       <tr><td><strong>SAR</strong><br>Normal mode</td><td>Only enter into First Level Mode if clinically required</td></tr>
+       <tr><td><strong>Gradient switching mode</strong><br>No limit</td><td></td></tr>
+       <tr><td><strong>Minimum time since implantation</strong><br><br><u>For non-endoscopy clips:</u> None<br><br><u>For endoscopy clips implants in NHS Wales:</u> 6 weeks<br><br><u>For endoscopy clips implanted outside NHS Wales:</u> 1 year</td><td><u>For endoscopy clips only</u><br>Individual risk assessment required for MRI scan to proceed before that time. If the MRI is to proceed: consent the patient, monitor them during the scan, if they report any discomfort when entering the magnet room or during the scan, terminate the scan immediately and carefully remove the patient from the magnet room. </td></tr>
+     </tbody>
+   </table>`
+           },
+
+// -------------------- 
+// Embolisation devices 
+// -------------------- 
+
+           embolism1: {
+             type: "question",
+             text: "<div class='outcome-box orange-box'>This GIP <strong>ONLY</strong> applies to <strong>embolisation devices</strong> within the <strong>vascular system</strong>, including the <strong>cerebrovascular system.</strong>. Devices covered include <strong>coils, plugs, liquid embolic agents</strong> and <strong>glues, micospheres, occlusion ballons</strong> and <strong>flow diverers</strong>. This GIP excludes coils or embolisation devices not placed in blood vessels, e.g., endobronchial coils for emphysema (delivered via endobronchial intervention) and coils used in ureteric embolisation</div>",
+             options: [
+               { label: "Continue", next: "embolism1y" },
+               { label: "Start Over", next: "q1" }
+             ]
+           },
+ 
+          embolism1y: {
+             type: "question",
+             text: "<div class='blue-box'>Has the patient or referrer confirmed that the patient's embolization device(s) do <strong>NOT</strong> include aneurysm clip(s)? e.g. check notes or ask patient about procedure: was the coil(s) or other embolisation device(s) implanted in an endovascular procedure (coil), not in a craniotomy procedure (clip)?</div>",
+             options: [
+   	        { label: "Yes, the implant does NOT include aneurysm clips", next: "embolism_conditions" },
+            { label: "No, the implant MAY include aneurysm clips", next: "embolism_clip_warning" },
+             ]
+           },
+
+           embolism_clip_warning: {
+             type: "outcome",
+             text: "<div class='outcome-box red-box'>Follow procedure for aneurysm clips or contact MRI Physics.</div>"
+           },
+
+           embolism_conditions: {
+             type: "outcome",
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+     <tbody>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only 3T scanner is available, scan at 3T.</td></tr>
+       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally (the aim is to keep the implant(s) as far as possible from the scanner bore wall.)</td></tr>
+       <tr><td><strong>SAR</strong><br>Normal mode</td><td></td></tr>
+       <tr><td><strong>Coil(s) end-to-end maximum length</strong><br><br><u>1.5T:</u> No limit<br><br><u>3T:</u> 10 cm</td><td><u>In the case of 3T</u><br>If the end-to-end length of coil/combination of coils exceeds 10 cm → risk-benefit analysis required. This only applies when the coils are in the area of the transmitted RF.</td></tr>
+     </tbody>
+   </table>`
+           },
+
+// ------------- 
+// Gastric Bands 
+// ------------- 
+
+           gastric1: {
+             type: "question",
+             text: "<div class='outcome-box orange-box'>Patients with <strong>bypass or sleeves</strong> where no devices have been implanted may undergo MRI scanning with no additional conditions unless there are clips or staples in situ (see <strong>Generic Implant Procedure for Surgical Clips, Staples and Metal Sutures</strong>).</div>",
+             options: [
+               { label: "Continue", next: "gastric3" },
+               { label: "Start Over", next: "q1" }
+             ]
+           },
+
+   	gastric3: {
+             type: "question",
+             text: "<div class='blue-box'>Was a laproscopic adjustable gastric band implanted in the <strong>UK, US, Europe, Canada, Australia or New Zealand after 2000?</strong></div>",
+             options: [
+               { label: "Yes", next: "gastric2y" },
+               { label: "No", next: "gastric_makemodel" }
+             ]
+           },
+
+   	gastric2y: {
+             type: "question",
+             text: "<div class='blue-box'>Was a laproscopic adjustable gastric band implanted <strong>between 2009 and 2011 (inc.)?</div>",
+             options: [
+               { label: "Yes", next: "gastric2yy" },
+               { label: "No", next: "gastric_conditions" }
+             ]
+           },
+
+   	gastric2yy: {
+             type: "question",
+             text: "<div class='blue-box'>Can you gather any evidence the laproscopic band <strong>IS NOT</strong> an EasyBand e.g. confirm by X-ray the band <strong>DOES NOT</strong> have an electrical motor?</div>",
+             options: [
+               { label: "Yes", next: "gastric_conditions" },
+               { label: "No", next: "gastric_makemodel" }
+             ]
+           },
+
+   	gastric_makemodel: {
+             type: "outcome",
+             text: "<div class='outcome-box orange-box'>Identify make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met. Scan according to conditions. <strong>If not possible</strong>, or any other questions, please contact Medical Physics.</div>"
+           },
+
+   	gastric_conditions: {
+             type: "outcome",
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+     <tbody>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
+       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid area near covers at entrance to bore</td></tr>
+       <tr><td><strong>SAR</strong><br>Normal mode</td><td>Only enter into First Level Mode if clinically required</td></tr>
+     </tbody>
+   </table>`
+           },
+
+// -------------------------------------------------------------------------- 
+// Heart Valves, Annuloplasty Rings and Cardiac Closure and Occlusion Devices 
+// -------------------------------------------------------------------------- 
+	  
+   	valves1: {
+             type: "question",
+             text: "<div class='blue-box'>Heart valves, annuloplasty rings, mitral and tricuspid transcatheter edge-to-edge repair systems, cardiac closure and occlusion devices <strong>should not be considered a contraindication for MRI</strong> scanning</div>",
+             options: [
+               { label: "Continue", next: "valves2" },
+               { label: "Start Over", next: "q1" }
+             ]
+           },
+
+           valves2: {
+             type: "outcome",
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+     <tbody>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
+       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid areas next to covers at bore entrance</td></tr>
+       <tr><td><strong>SAR</strong><br>No limit</td><td>Only enter into First Level Mode if clinically required.</td></tr>
+       <tr><td><strong>Time following implantation</strong><br>No wait required*</td><td>*For <strong>cardiac closure and occlusion devices</strong> → six weeks.</td></tr>
+     </tbody>
+   </table>`
+           },
+
+// ------------------- 
+// Ingestible Capsules 
+// ------------------- 
+
+   	capsules1: {
+             type: "question",
+             text: "<div class='blue-box'>The patient has undergone a procedure with an ingestible capsule within the last 30 days</div>",
+             options: [
+               { label: "Yes", next: "capsules2" },
+               { label: "No", next: "capsules_scan" }
+             ]
+           },
+
+   	capsules2: {
+             type: "question",
+             text: "<div class='blue-box'>The patient can confirm that the capsule has been excreted?</div>",
+             options: [
+               { label: "Yes", next: "capsules_scan" },
+               { label: "No", next: "capsules3" }
+             ]
+           },
+
+   	capsules3: {
+             type: "question",
+             text: "<div class='blue-box'>Is there an abdominal CT / X-ray available taken since the capsule intake that the supervising radiologist could review?</div>",
+             options: [
+               { label: "Yes, and the capsule is not present", next: "capsules_scan" },
+               { label: "Yes, and the capsule is present", next: "capsules4" },
+               { label: "No", next: "capsules5" }
+             ]
+           },
+
+   	capsules4: {
+             type: "outcome",
+             text: "<div class='outcome-box red-box'>MRI is contraindicated until exretion / removal of capsule is confirmed. However, if the scan is urgent, consider following the off-label scanning procedure.</div>"
+           },
+
+   	capsules5: {
+             type: "outcome",
+             text: "<div class='outcome-box red-box'>The supervising radiologist may decide to request an abdominal CT / X-ray if one is not available.<br><br>MRI is contraindicated until extretion / removal or capsule is confirmed. However, if the scan is urgent, consider following the off-label scanning procedure.</div><br>"
+           },
+
+   	capsules_scan: {
+             type: "outcome",
+             text: "<div class='outcome-box green-box'>Scan as normal<br><br>Inform the patient to press the buzzer if they feel discomfort during their scan. If the patient reports <strong>abdominal discomfort</strong> or if there are <strong>susceptibility artefacts</strong> present in adbominal localiser images, <strong>terminate the scan immediately</strong>, then slowly and carefully move the patient out of the scanner and scanner room.</div>"
+           },
+
+// ---- 
+// IUDS 
+// ---- 
+
+	 iud1: {
+		 type: "question",
+		 text: "<div class='outcome-box red-box'>This GIP <strong>does not cover pregnant patients with retained IUDs</strong></div>",
+		 options: [
+		   { label: "Continue", next: "iud2" },
+		   { label: "Start Over", next: "q1" }
+		 ]
+	   },
+ 
+	  iud2: {
+		 type: "question",
+		 text: "<div class='blue-box'>Was the IUD fitted in China</div>",
+		 options: [
+	{ label: "Yes", next: "iud_warning" },
+		{ label: "No", next: "iud_conditions" },
+		 ]
+	   },
+
+	   iud_warning: {
+		 type: "outcome",
+		 text: "<div class='outcome-box red-box'>Identifiy make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all confitions can be met. Scan according to conditions.<br><br><strong>If not possible</strong> or any questions, contact MRI Physics.</div>"
+	   },
+
+	   iud_conditions: {
+		 type: "outcome",
+		 text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+		 <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+		 <tbody>
+		   <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only 3T scanner is available, scan at 3T.</td></tr>
+		   <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid areas near covers at entrance to bore</td></tr>
+		   <tr><td><strong>SAR</strong><br>No limit</td><td>Only enter into First Level Mode if clinically required</td></tr>
+		   <tr><td><strong>Gradient Switching mode</strong><br>No limit</td><td></td></tr>
+		   <tr><td><strong>Minimum time since implantation</strong><br>None</td><td></td></tr>
+		 </tbody>
+		</table>`
+	   },
+
+// -------------------- 
+// Orthopaedic Implants 
+// -------------------- 
+
+   	ortho1: {
+             type: "question",
+             text: "<div class='outcome-box red-box'>This GIP <strong><u>ONLY applies to internal passive orthopaedic implants</strong></u> and does <strong><u>NOT cover</u></strong>:<ul><li>External fixation devices</li><li>External prostheses (including limbs and joints)</li><li>Implants with magnetic components or batteries</li><li>Ferromagnetic orthopaedic implants <strong><u>not</u></strong> firmly attached to bone</div></li></ul>",
+             options: [
+               { label: "Continue", next: "ortho3" },
+               { label: "Start Over", next: "q1" }
+             ]
+           },
+
+   	ortho3: {
+             type: "question",
+             text: "<div class='blue-box'>Does this patient have a sternal fixation device within 20cm of the FOV?</div>",
+             options: [
+               { label: "Yes", next: "ortho3y" },
+               { label: "No", next: "ortho_conditions1" }
+             ]
+           },
+
+   	ortho3y: {
+             type: "question",
+             text: "<div class='blue-box'>Is there imaging available which shows that the sternal fixation device is a sternal wire and that the sternal wires form a non-interconnected, metallic closure system (loops)?</div>",
+             options: [
+               { label: "Yes", next: "ortho_conditions1" },
+               { label: "No", next: "ortho_conditions2" }
+             ]
+           },
+
+   	ortho_conditions1: {
+             type: "outcome",
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+     <tbody>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T</td></tr>
+       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid area near covers at entrance to bore</td></tr>
+       <tr><td><strong>SAR</strong><br>No limit</td><td><u>Only enter into First Level Mode if clinically required (i.e. for metal artefact suppression techniques)</u>.<br> Inform patient that a heating sensation is possible and that they should immediately inform the MR Operator if this happens.</td></tr>
+       <tr><td><strong>Gradient switching mode</strong><br>No limit</td><td>Only enter into First Level Mode if clinically required</td></tr>
+       <tr><td><strong>Minimum time since implantation</strong><br>None</td><td></td></tr>
+     </tbody>
+   </table>`
+           },
+
+   	ortho_conditions2: {
+             type: "outcome",
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+     <tbody>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T</td></tr>
+       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid area near covers at entrance to bore</td></tr>
+       <tr><td><strong>SAR</strong><br>Normal Mode</td><td>Normal operating mode.<br><br>Only run sequences that are required and interleave low SAR sequences with any high SAR sequences that are required.<br><br>Use local transmit/receive coils if possible.<br><br>Inform patient that a heating sensation is possible and that they should immediately inform the MR Operator if this happens.</td></tr>
+       <tr><td><strong>Gradient switching mode</strong><br>No limit</td><td>Only enter into First Level Mode if clinically required</td></tr>
+       <tr><td><strong>Minimum time since implantation</strong><br>None</td><td></td></tr>
+     </tbody>
+   </table>`
+           },
+
+// ------------------------------------------------------------------ 
+// Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories 
+// ------------------------------------------------------------------ 
+	  
+   shunts1: {
+             type: "question",
+             text: "<div class='outcome green-box'><strong>If there is no valve present, i.e. only ventricular reservoir, scan following condition in Sec. 5.2 of GIP</strong> --> Document decision and use of GIP (name and version) on screening form",
+             options: [
+               { label: "Valves present", next: "shunts2" },
+               { label: "No valves present, i.e. only ventricular reservoir", next: "shunts_conditions" }
+             ]
+           },
+
+   	shunts2: {
+             type: "question",
+             text: "<div class='blue-box'>If shunt/device contains valve, try to determine whether it is fixed or adjustable/variable/programmable:<br><br><ol><li>If the shunt was <strong><u>implanted before 1984 → Shunt is fixed valve</strong></u></li><li>The make and model can be obtained from the patient’s surgical notes, or implant information provided by patient (e.g. <strong>implant card</strong>). <u>You do not need to check the MR Conditions of the device at this stage.</u></li><li>Certain <strong>questions</strong> can help: Has a neurosurgeon/doctor held a magnet over patient’s head to adjust shunt settings AND/OR has the patient been warned that their shunt may be affected by external magnets?--> If YES, programmable shunt.<li><strong>Previous x-ray imaging</strong> may be helpful to determine type of device: A radiograph of a programmable valve will show a rotating structure. Some resources are available in the GIP. If no previous imaging is available, an x-ray request could be considered.</li><li>Given the adjustable valve utilises a magnet, there is potential for a <strong>ferromagnetic detector</strong> to identify cases where the patient has a programmable shunt.</li></ol></div>",
+             options: [
+               { label: "Continue", next: "shunts3" },
+               { label: "Start Over", next: "q1" }
+             ]
+           },
+
+          shunts3: {
+             type: "question",
+             text: "<div class='blue-box'>Is the device fixed valve</div>",
+             options: [
+               { label: "Yes", next: "shunts_conditions" },
+               { label: "No", next: "shunts3n" },
+               { label: "Do not know", next: "shunts_unknown" }
+             ]
+           },
+
+           shunts_conditions: {
+             type: "outcome",
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+     <tbody>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>Majority of known devices are MR Safe or MR Conditional up to 3T. However, if implanted before the year 2000, only scan at 1.5T.</td></tr><tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on the table avoiding the scanner wall when entering the scanner.</td></tr><tr><td><strong>SAR</strong><br>Normal mode</td><td>Only enter into First Level Mode if clinically required.</td></tr><tr><td><strong>Gradient switching mode</strong><br>No limit</td><td></td></tr>
+     </tbody>
+   </table>`
+           },
+
+           shunts3n: {
+             type: "outcome",
+             text: "<div class='outcome-box orange-box'>Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met.<br>Scan according to conditions.<br>IF device is Programmable: <u>Follow the Pathway for MRI Imaging of Patients with Programmable Shunts Sec. 5.3 of the <strong>Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong>).</u></div>"
+           },
+
+           shunts_unknown: {
+             type: "outcome",
+             text: "<div class='outcome-box red-box'>Consult Superintendent Radiographer/ raise a ticket with MRI Physics</div>"
+           },
+
+// --------------- 
+// Vascular Stents 
+// ---------------   
+	  
+
+           stents1:  {
+             type: "question",
+             text: "For patients will any number of vascular stents (including any overlapping stents).",
+             options: [
+               { label: "Continue", next: "stents2" },
+               { label: "Start Over", next: "q1" }
+             ]
+           },
+
+   	stents2: {
+             type: "question",
+             text: "<div class='blue-box'>Is the stent a coronary artery stent?</div>",
+             options: [
+               { label: "Yes", next: "stents_conditions1" },
+               { label: "No", next: "stents3" }
+             ]
+           },
+
+   	stents3: {
+             type: "question",
+             text: "<div class='blue-box'>Was the stent implanted <strong>over</strong> 6 weeks ago?</div>",
+             options: [
+               { label: "Yes", next: "stents_conditions2" },
+               { label: "No", next: "stents4" }
+             ]
+           },
+
+   	stents4: {
+             type: "outcome",
+             text: "<div class='outcome-box orange-box'>Identify the make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met. Scan according to conditions or consider following off-label scanning procedure.</div>",
+           },
+
+   	stents_conditions1: {
+             type: "outcome",
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+     <tbody>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
+       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally (the aim is to keep the implant(s) as far a possible from the scanner bore wall)</td></tr>
+       <tr><td><strong>SAR</strong><br>Normal mode</td><td>Multiple pulse sequences per protocol are allowed but any single sequence must not exceed 15 minutes in length</td></tr>
+       <tr><td><strong>Gradient switching mode</strong><br>No limit</td><td></td></tr>
+       <tr><td><strong>Minimum time since implantation</strong><br>None</td><td></td></tr>
+     </tbody>
+   </table>`
+           },
+
+   	stents_conditions2: {
+             type: "outcome",
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+     <tbody>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T. If only a 3T scanner is available at the site, scan at 3T.</td></tr>
+       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally (the aim is to keep the implant(s) as far as possible from scanner bore wall)</td></tr>
+       <tr><td><strong>SAR</strong><br>For any scanning above level of mid-thigh: Normal mode<br><br>For any scanning below the level of mid-thigh:<br> Normal mode<br>+<br>Wait 20s between sequences</td><td>Multiple pulse sequences per protocol are allowed but any single sequence must not exceed 15 minutes in length</td></tr>
+       <tr><td><strong>Gradient switching mode</strong><br>No limit</td><td></td></tr>
+       <tr><td><strong>Minimum time since implantation</strong><br>6 weeks</td><td></td></tr>
+     </tbody>
+   </table>`
+           },
+
+// ----- 
+// CIEDS 
+// ----- 
+	  
+   cied1: {
+             type: "question",
+             text: "<div class='black-box'>Whole system identified as MR conditional</div>",
+             options: [
+               { label: "Yes", next: "cied_conditionaly" },
+               { label: "No", next: "cied_conditionaln" }
+             ]
+           },
+
+   cied_conditionaly: {
+             type: "outcome",
+             text: "<div class='outcome-box green-box'>Scan according to checklists</div>",
+           },
+
+   cied_conditionaln: {
+             type: "question",
+             text: "<div class='black-box'>Pulse generator identified as MR conditional</div>",
+             options: [
+               { label: "Yes", next: "cied_pgconditionaly" },
+               { label: "No", next: "cied_pgconditionaln" }
+             ]
+           },
+
+   cied_pgconditionaly: {
+             type: "question",
+             text: "<div class='blue-box'><strong>Confirmed as e-MRC i.e. The device is ONLY not MR conditional because of:</strong><br><ul><li>MR Unlabelled/mismatched pin plug</li><li>MR Unlabelled/mismatched lead(s)</li><li>Recent implant (<6 weeks)</li><li>Temporary surgical epicardial pacing wires (no external components)</li><li>Unmet patient position or exclusion zone</li><li>Additional MR Conditional device present</li></ul></div>",
+             options: [
+               { label: "Yes", next: "cied_conditionaly" },
+               { label: "No", next: "cied_pgconditionaln" }
+             ]
+           },
+
+   cied_pgconditionaln: {
+             type: "outcome",
+             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><br><strong><div class='outcome-box orange-box'>Patient specific Risk Assessment would be required for scanning (Follow off label procedure, Sec 7 of the Implant Policy)</strong><br><u>These cases might include:</u><ul><li>Unmet MRI Condition (SAR, 3T) when required for diagnostic imaging</li><li>MR Unlabelled generators</li><li>Abandoned lead(s)</li><li>Temporary systems with externalised generator</li><li>Inactive, battery-depleted CIEDs</li><li>Permanent epicardial leads</li><li>Generators implanted outside the pectoral region</li><li>CIED component advisory warning</li><li>Stable abnormal lead parameter</li><li>Fractured leads</li><li>Battery at elective replacement interval</li><li>Pre-2003 market release pulse generators</li></ul></div>",
+           },
+
+// ------------------------------------- 
+// Implant not in one of these categories 
+// -------------------------------------- 
+	  
+	nogip: {
+             type: "question",
+             text: "<div class='blue-box'>Can the implant be identified as MR Safe OR MR Conditional and all conditions met?</div>",
+             options: [
+               { label: "Yes", next: "implant_conditionaly" },
+               { label: "No", next: "implant_conditionaln" }
+             ]
+           },
+
+           implant_conditionaln: {
+             type: "question",
+             text: "<div class='blue-box'>Can the patient be scanned under an off-label pocedure?</div>",
+             options: [
+               { label: "Yes", next: "implant_conditionaly" },
+               { label: "No", next: "nogip_noscan" }
+             ]
+           },
+
+           implant_conditionaly: {
+             type: "outcome",
+             text: "<div class='outcome-box green-box'>Scan according to conditions</div>"
+           },
+
+	
+           nogip_noscan: {
+             type: "outcome",
+             text: "<div class='outcome-box red-box'>Do not scan</div>"
+           },
+			   
+// --------- 
+// Pregnancy 
+// --------- 
+	  
+   preg1:  {
+             type: "question",
+             text: "<br>The patient is known to be pregnant or has indicated that they may be pregnant during screening",
+             options: [
+               { label: "Continue", next: "preg2" },
+               { label: "Start Over", next: "q1" }
+             ]
+           },
+
+   preg2:  {
+             type: "question",
+             text: "<div class='blue-box'>Does the scan require contrast?",
+             options: [
+               { label: "Yes", next: "preg3" },
+               { label: "No", next: "preg_sheet" }
+             ]
+           },
+
+   preg3:  {
+             type: "question",
+             text: "<div class='outcome-box orange-box'>Radiologist feels the clinical need outweighs the risk</div>",
+             options: [
+               { label: "Yes", next: "preg4" },
+               { label: "No", next: "preg_warning" }
+             ]
+           },
+
+   preg4:  {
+             type: "question",
+             text: "<div class='outcome-box orange-box'>Discussion with patient and patient consents</div>",
+             options: [
+               { label: "Yes", next: "preg_sheet" },
+               { label: "No", next: "preg_warning" }
+             ]
+           },
+
+   preg_sheet:  {
+             type: "question",
+             text: "<br>Give the <i>Patient Information Sheet</i> (Appendix A in the <strong>MRI Protocol for Scanning Pregnant Patients</strong>) to the patient",
+             options: [
+               { label: "Continue", next: "preg_conditions" }
+             ]
+           },
+
+   preg_warning:  {
+             type: "outcome",
+             text: "<div class='outcome-box red-box'>Only scan <u>without</u> contrast according to the conditions in section 4.2 of the <strong>MRI Protocol for Scanning Pregnant Patients</strong></div>"
+           },
+
+preg_conditions: {
+             type: "outcome",
+             text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+     <tbody>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T especially in first trimester</td></tr>
+       <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid area near covers at entrance to bore</td></tr>
+       <tr><td><strong>SAR</strong><br>Normal mode</td><td>Only enter into First Level Mode if clinically required</td></tr>
+       <tr><td><strong>Gradient switching mode</strong><br>No limit</td><td>Use noise-reducing protocols if possible</td></tr>
+       <tr><td><strong>Scan time</strong><br>No limit</td><td></td></tr>
+       <tr><td><strong>Patient positioning</strong><br>Supine or left lateral tilt depending on gestational age and patient comfort</td><td>Radiographer to decide based on a case-by-case basis</td></tr>
+       <tr><td><strong>Patient set-up</strong><br>If foetus is in FOV, reduce non-MRI warming</td><td>Ensure the fans are on and consider not covering the patient with blankets, depending on patient comfort.</td></tr>
+     </tbody>
+   </table>`
+   },
+         }
+       };
+
+       let current = tree.start;
+       const history = [];
+       const qEl = document.getElementById("question");
+       const bEl = document.getElementById("buttons");
+       const backEl = document.getElementById("back-link");
+
+	   let currentBranchId = null;
+
+	  function scrollToTop() {
+		  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+		  document.documentElement.scrollTop = 0;
+		  document.body.scrollTop = 0;
+		}
+
+	  function getCtx() {
+	  if (!currentBranchId) return null;
+	  return BRANCH[currentBranchId] || null;
+			}
+			
+			// Picks which header to use for each node type.
+			// For now: question/outcome get their headers. Anything containing a <table gets table header.
+			function headerForNode(node) {
+			  
+			  if (current === "q1") return "";  // no header on q1
+			
+			  const ctx = getCtx();
+			  if (!ctx) return "";
+			
+			  const body = node.text ?? "";
+			  const hasTable = body.includes("<table");
+			
+			  if (node.type === "question") return HEADERS.question(ctx);
+			  if (node.type === "outcome" && hasTable) return HEADERS.table(ctx);
+			  if (node.type === "outcome") return HEADERS.outcome(ctx);
+			
+			  return "";
+			}
+
+			function footerForNode(node) {
+			  if (current === "q1") return "";
+			
+			  const ctx = getCtx();
+			  if (!ctx) return "";
+			
+			  if (node.type === "outcome") {
+    			return FOOTERS.outcome(ctx);
+ 			  }
+
+			  return "";
+			}
+	
+			function buildNodeHtml(node) {
+			  const header = headerForNode(node);
+			  const body = node.text ?? "";
+			  const footer = footerForNode(node);
+			  return header + body + footer;
+			}
+
+	  
+       function renderNode() {
+         const node = tree.nodes[current];
+         bEl.innerHTML = "";
+         backEl.style.display = history.length > 0 ? "inline" : "none";
+         qEl.classList.remove("danger");
+
+         if (node.type === "question") {
+           qEl.innerHTML = buildNodeHtml(node);
+           node.options.forEach(opt => {
+             const btn = document.createElement("button");
+             btn.textContent = opt.label;
+             btn.className = (current === "q1" && opt.warning) ? "warning" : "yes";
+             btn.onclick = () => {
+			  // GA: track button press
+			  if (typeof gtag === "function") {
+
+			    if (current === "q1") {
+			      gtag("event", "Q1_clicked", {
+			        gip_selected: opt.label,   
+			        site_source: window.site_source
+			      });
+
+					// Set the branch context when leaving q1
+					currentBranchId = opt.branchID || null;
+			
+			    } else {
+			      gtag("event", "button_clicked", {
+			        button_clicked: opt.label, 
+			        from_node: current,
+			        to_node: opt.next,
+			        site_source: window.site_source
+			      });
+			    }
+			  }
+
+  			 history.push(current);
+ 			 nextNode(opt.next);
+
+			 };
+             bEl.appendChild(btn);
+           });
+         } else if (node.type === "outcome") {
+           qEl.innerHTML = buildNodeHtml(node);
+
+			 // GA: track outcome reached
+  		   if (typeof gtag === "function") {
+	    	   gtag("event", "outcome_reached", {
+	           outcome_node: current,   
+	           site_source: window.site_source
+            });
+           }
+		
+           const restartBtn = document.createElement("button");
+           restartBtn.textContent = "Start Over";
+           restartBtn.className = "no";
+           restartBtn.onclick = restart;
+           bEl.appendChild(restartBtn);
+         }
+
+		scrollToTop();
+		   
+       }
+
+       function nextNode(next) {
+         current = next;
+         renderNode();
+       }
+
+       function goBack() {
+         if (history.length > 0) {
+           current = history.pop();
+           renderNode();
+         }
+       }
+
+       function restart() {
+         current = tree.start;
+         history.length = 0;
+		 currentBranchId = null;
+         renderNode();
+       }
+
+       renderNode();
+  </script>
+  <script>
+  function adjustForBanner() {
+    const banner = document.querySelector(".test-banner");
+    if (!banner) return;
+	  const bannerHeight = banner.offsetHeight; 
+      document.body.style.paddingTop = (bannerHeight + 20) + "px";
+  }
+
+  window.addEventListener("load", adjustForBanner);
+  window.addEventListener("resize", adjustForBanner);
+
+  if (document.fonts) {
+     document.fonts.ready.then(adjustForBanner);
+  }
+</script>
+ </body>
+</html>
