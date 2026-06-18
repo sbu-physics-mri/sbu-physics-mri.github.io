@@ -735,7 +735,7 @@
 
    	capsules1: {
              type: "question",
-             text: "<div class='blue-box'>The patient has undergone a procedure with an ingestible capsule within the last 30 days</div>",
+             text: "<div class='black-box'>The patient has undergone a procedure with an ingestible capsule within the last 30 days</div>",
              options: [
                { label: "Yes", next: "capsules2" },
                { label: "No", next: "capsules_scan" }
@@ -744,7 +744,7 @@
 
    	capsules2: {
              type: "question",
-             text: "<div class='blue-box'>The patient can confirm that the capsule has been excreted?</div>",
+             text: "<div class='black-box'>The patient can confirm that the capsule has been excreted?</div>",
              options: [
                { label: "Yes", next: "capsules_scan" },
                { label: "No", next: "capsules3" }
@@ -753,7 +753,7 @@
 
    	capsules3: {
              type: "question",
-             text: "<div class='blue-box'>Is there an abdominal CT / X-ray available taken since the capsule intake that the supervising radiologist could review?</div>",
+             text: "<div class='black-box'>Is there an abdominal CT / X-ray available taken since the capsule intake that the supervising radiologist could review?</div>",
              options: [
                { label: "Yes, and the capsule is not present", next: "capsules_scan" },
                { label: "Yes, and the capsule is present", next: "capsules4" },
