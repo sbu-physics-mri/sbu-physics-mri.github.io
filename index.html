@@ -165,15 +165,13 @@
     color: black;              
   }
 
-  .green-box {
-    border-color: #10b981;  /* green border */
-  }
-
-  .red-box {
-    border-color: #ef4444;  /* red border */
-  }
-
+  .green-box { border-color: #10b981; } /* green border */
+  
+  .red-box { border-color: #ef4444; } /* red border */
+  
   .orange-box { border-color: #f97316; }  /* orange border */
+
+  .yellow-box { border-color: #ffdE21; } /* yellow border */
 
   .blue-box {
   display: inline-block;
@@ -623,7 +621,7 @@
  
           embolism1y: {
              type: "question",
-             text: "<div class='blue-box'>Has the patient or referrer confirmed that the patient's embolization device(s) do <strong>NOT</strong> include aneurysm clip(s)? e.g. check notes or ask patient about procedure: was the coil(s) or other embolisation device(s) implanted in an endovascular procedure (coil), not in a craniotomy procedure (clip)?</div>",
+             text: "<div class='blue-box'>Has the patient or referrer confirmed that the patient's embolization device(s) do <strong>NOT</strong> include aneurysm clip(s)? E.g. check notes or ask patient about procedure: was the coil(s) or other embolisation device(s) implanted in an endovascular procedure (coil), not in a craniotomy procedure (clip)?</div>",
              options: [
    	        { label: "Yes, the implant does NOT include aneurysm clips", next: "embolism_conditions" },
             { label: "No, the implant MAY include aneurysm clips", next: "embolism_clip_warning" },
