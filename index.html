@@ -273,6 +273,7 @@
     </span>
     <p id="question">Loading...</p>
     <div class="buttons" id="buttons"></div>
+	<div id="question-footer"></div>
    </div>
   </div>
   
@@ -1145,6 +1146,7 @@ preg_conditions: {
        const qEl = document.getElementById("question");
        const bEl = document.getElementById("buttons");
        const backEl = document.getElementById("back-link");
+	   const questionFooterEl = document.getElementById("question-footer");
 
 	   let currentBranchId = null;
 
@@ -1183,10 +1185,6 @@ preg_conditions: {
 			
 			  const ctx = getCtx();
 			  if (!ctx) return "";
-
-			if (node.type === "question") {
-            return FOOTERS.question(ctx);
-              }
 			
 			  if (node.type === "outcome") {
     			return FOOTERS.outcome(ctx);
@@ -1206,6 +1204,7 @@ preg_conditions: {
        function renderNode() {
          const node = tree.nodes[current];
          bEl.innerHTML = "";
+         questionFooterEl.innerHTML = "";
          backEl.style.display = history.length > 0 ? "inline" : "none";
          qEl.classList.remove("danger");
 
@@ -1244,6 +1243,11 @@ preg_conditions: {
 			 };
              bEl.appendChild(btn);
            });
+		 	if (current !== "q1") {
+    		const ctx = getCtx();
+
+    	 questionFooterEl.innerHTML = FOOTERS.question(ctx);
+ 		 }
          } else if (node.type === "outcome") {
            qEl.innerHTML = buildNodeHtml(node);
 
