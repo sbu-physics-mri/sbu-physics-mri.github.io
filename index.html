@@ -1171,7 +1171,7 @@ preg_conditions: {
 			  const body = node.text ?? "";
 			  const hasTable = body.includes("<table");
 			
-			  if (node.type === "question") return HEADERS.question(ctx);
+			  //if (node.type === "question") return HEADERS.question(ctx);
 			  if (node.type === "outcome" && hasTable) return HEADERS.table(ctx);
 			  if (node.type === "outcome") return HEADERS.outcome(ctx);
 			
@@ -1183,6 +1183,10 @@ preg_conditions: {
 			
 			  const ctx = getCtx();
 			  if (!ctx) return "";
+
+			if (node.type === "question") {
+            return FOOTERS.question(ctx);
+              }
 			
 			  if (node.type === "outcome") {
     			return FOOTERS.outcome(ctx);
