@@ -467,8 +467,8 @@
 
 
 	  const HEADERS = {
-    question: (ctx) =>
-      `${branchsiteWarning(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
+//    question: (ctx) =>
+//     `${branchsiteWarning(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
 
 	    outcome: (ctx) =>
 	      `${branchsiteWarning(ctx)}This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
@@ -482,6 +482,8 @@
 	  
 
 	  const FOOTERS = {
+     question: (ctx) =>
+      `${branchsiteWarning(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
 
 	  outcome: (ctx) => `
 	    <br><br>Please refer to the <strong>${ctx.gipName}</strong> for surrounding information, supporting evidence and assigned risk scores to help perform risk-benefit analysis.
