@@ -480,8 +480,8 @@
 
 
 	  const HEADERS = {
-//    question: (ctx) =>
-//     `<br>${branchsiteWarning(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. It remains the responsibility of the individual registered radiographer to apply their MRI knowledge and professional judgment to the situation under consideration.<br>`,
+    question: (ctx) =>
+     `<strong>${ctx.title}</strong>`,
 
 	    outcome: (ctx) =>
 	      `${branchsiteWarning(ctx)}This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. It remains the responsibility of the individual registered radiographer to apply their MRI knowledge and professional judgment to the situation under consideration.<br>`,
@@ -536,7 +536,7 @@
 
           clips1: {
              type: "question",
-             text: "<br>This policy covers all clips and staples, <u>excluding those implanted above the neck</u><br>",
+             text: "This policy covers all clips and staples, <u>excluding those implanted above the neck</u><br>",
              options: [
                { label: "Continue", next: "clips2" },
                { label: "Start Over", next: "q1" }
