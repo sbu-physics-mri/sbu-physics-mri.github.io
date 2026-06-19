@@ -1219,6 +1219,12 @@ preg_conditions: {
 		 questionHeaderEl.innerHTML = "";
          questionFooterEl.innerHTML = "";
          backEl.style.display = history.length > 0 ? "inline" : "none";
+		 if (current !== "q1") {
+		 const ctx = getCtx();
+		 if (ctx) {
+			questionHeaderEl.innerHTML = HEADERS.question(ctx);
+		  }
+		 }
          qEl.classList.remove("danger");
 
          if (node.type === "question") {
@@ -1258,8 +1264,7 @@ preg_conditions: {
            });
 		 	if (current !== "q1") {
     		const ctx = getCtx();
-		    questionHeaderEl.innerHTML = HEADERS.question(ctx);
-    	    questionFooterEl.innerHTML = FOOTERS.question(ctx);
+		    questionFooterEl.innerHTML = FOOTERS.question(ctx);
  		 }
          } else if (node.type === "outcome") {
 			 const body = node.text ?? "";
