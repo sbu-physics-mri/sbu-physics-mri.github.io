@@ -1255,7 +1255,7 @@ preg_conditions: {
            });
 		 	if (current !== "q1") {
     		const ctx = getCtx();
-
+		 questionHeaderEl.innerHTML = HEADERS.question(ctx);
     	 questionFooterEl.innerHTML = FOOTERS.question(ctx);
  		 }
          } else if (node.type === "outcome") {
