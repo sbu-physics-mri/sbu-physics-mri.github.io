@@ -201,7 +201,7 @@
   height: auto;
   }
 
-  #question-footer {
+  #question-footer:not(:empty) {
   background-color: #E5E4E2; /* light grey */
   /* border-left: 4px solid #c0c0c0; */
   padding: 10px 12px;
@@ -1183,10 +1183,8 @@ preg_conditions: {
 			  const body = node.text ?? "";
 			  const hasTable = body.includes("<table");
 			
-			  //if (node.type === "question") return HEADERS.question(ctx);
 			  if (node.type === "outcome" && hasTable) return HEADERS.table(ctx);
-			  if (node.type === "outcome") return HEADERS.outcome(ctx);
-			
+			  			
 			  return "";
 			}
 
@@ -1259,7 +1257,9 @@ preg_conditions: {
     	 questionFooterEl.innerHTML = FOOTERS.question(ctx);
  		 }
          } else if (node.type === "outcome") {
-           qEl.innerHTML = buildNodeHtml(node);
+			 const body = node.text ?? "";
+  			 const hasTable = body.includes("<table");
+			 qEl.innerHTML = buildNodeHtml(node);
 
 			 // GA: track outcome reached
   		   if (typeof gtag === "function") {
@@ -1274,6 +1274,10 @@ preg_conditions: {
            restartBtn.className = "no";
            restartBtn.onclick = restart;
            bEl.appendChild(restartBtn);
+		   if (!hasTable) {
+			  const ctx = getCtx();
+			  questionFooterEl.innerHTML = HEADERS.outcome(ctx);
+			} 
          }
 
 		scrollToTop();
