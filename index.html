@@ -481,8 +481,8 @@
 
 
 	  const HEADERS = {
-    question: (ctx) =>
-     `<strong>${ctx.title}</strong>`,
+       question: (ctx) =>
+         `<strong><u>${ctx.title}</u></strong>`,
 
 	    outcome: (ctx) =>
 	      `${branchsiteWarning(ctx)}This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. It remains the responsibility of the individual registered radiographer to apply their MRI knowledge and professional judgment to the situation under consideration.<br>`,
