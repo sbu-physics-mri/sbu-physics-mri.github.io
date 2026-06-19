@@ -281,6 +281,7 @@
     <span id="back-link" class="back-link" onclick="goBack()">
      ← Back
     </span>
+	<div id="question-header"></div>
     <p id="question">Loading...</p>
     <div class="buttons" id="buttons"></div>
 	<div id="question-footer"></div>
@@ -524,7 +525,7 @@
                { label: "Orthopaedic Implants", next: "ortho1", branchID: "ortho" },
                { label: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories", next: "shunts1", branchID: "shunts" },
                { label: "Vascular Stents", next: "stents1", branchID: "stents" },
-   	           { label: "CIEDs", next: "cied1", warning: true, branchID: "cieds" },
+   	           { label: "CIEDs", next: "cied1", branchID: "cieds" },
                { label: "Implant not in one of these categories", next: "nogip", warning: true, branchID: "nogip" },
 	           { label: "Pregnancy", next: "preg1", warning: true, branchID: "pregnancy" }
              ]
@@ -1158,6 +1159,7 @@ preg_conditions: {
        const qEl = document.getElementById("question");
        const bEl = document.getElementById("buttons");
        const backEl = document.getElementById("back-link");
+	   const questionHeaderEl = document.getElementById("question-header");
 	   const questionFooterEl = document.getElementById("question-footer");
 
 	   let currentBranchId = null;
@@ -1214,6 +1216,7 @@ preg_conditions: {
        function renderNode() {
          const node = tree.nodes[current];
          bEl.innerHTML = "";
+		 questionHeaderEl.innerHTML = "";
          questionFooterEl.innerHTML = "";
          backEl.style.display = history.length > 0 ? "inline" : "none";
          qEl.classList.remove("danger");
@@ -1255,8 +1258,8 @@ preg_conditions: {
            });
 		 	if (current !== "q1") {
     		const ctx = getCtx();
-		 questionHeaderEl.innerHTML = HEADERS.question(ctx);
-    	 questionFooterEl.innerHTML = FOOTERS.question(ctx);
+		    questionHeaderEl.innerHTML = HEADERS.question(ctx);
+    	    questionFooterEl.innerHTML = FOOTERS.question(ctx);
  		 }
          } else if (node.type === "outcome") {
 			 const body = node.text ?? "";
