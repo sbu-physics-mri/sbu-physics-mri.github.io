@@ -308,7 +308,9 @@
   </script>
   <script>
 
+    // ------------------
 	// info for nodes
+    // -----------------
 		  
 	  const BRANCH = {
 	  clips: {
@@ -405,10 +407,10 @@
 	  shunts: {
 	    id: "shunts",
 	    title: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories",
-	    questionFlowchartSection: "6.1",
+	    questionFlowchartSection: "5.1",
 	    tableSection: "5.2 / 5.3",
-		riskSection: "7",
-	    gipName: "Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories (v1.7)",
+		riskSection: "6",
+	    gipName: "Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories (v1.8)",
 		likelihood: "1 - RARE",
 		consequence: "4 - MAJOR",
 		riskcat: "low",
@@ -431,7 +433,7 @@
 	    id: "cieds",
 	    title: "Cardiac Implantable Electronic Devices (CIEDs)",
 	    questionFlowchartSection: "5.1",
-	    tableSection: "5.1",
+	    tableSection: null, // no single conditions table section,
 	    gipName: "MRI Protocol for Scanning Patients with Cardiac Implantable Electronic Devices (CIEDs) (v3.1)",
 	    siteWarning: "Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board"
 	  },
@@ -439,7 +441,7 @@
 	  nogip: {
 	    id: "nogip",
 	    title: "Implant Not Covered by a Generic Implant Procedure",
-	    questionFlowchartSection: 3,
+	    questionFlowchartSection: 3.1,
 	    tableSection: null,
 	    gipName: "Procedure for Magnetic Resonance Imaging (MRI) of Patients and Healthy Volunteers with Implanted Medical Devices or Other Potential Contraindications (v2.0)"
 	  },
@@ -450,7 +452,7 @@
 	    questionFlowchartSection: "4.1",
 	    tableSection: "4.2",
 	    riskSection: "6",
-	    gipName: "MRI Protocol for Scanning Pregnant Patients (v1.2)",
+	    gipName: "MRI Protocol for Scanning Pregnant Patients (v1.3)",
 
 	    pregRisk1_title: "Non-contrast MRI in Normal mode",
 	    pregRisk1_likelihood: "1 - RARE",
@@ -541,7 +543,7 @@
              ]
            },
 
-   	clips2: {
+   	    clips2: {
              type: "question",
              text: "<div class='outcome-box red-box'>This GIP applies to metal clips, staples and sutures and <b><u>does not cover</u></b> complex wire systems such as seternal wires (refer to orthopaedic GIP)</div>",
              options: [
@@ -665,7 +667,7 @@
 
            gastric1: {
              type: "question",
-             text: "This policy includes adjustable gastric bands and nonadjustable gastric bypass bands. This policy does not include any other bariatric implants such as: endoluminal sleeves, reflux management systems, or implantable gastric stimulators.<br><div class='outcome-box orange-box'>Patients with <strong>bypass or sleeves</strong> where no devices have been implanted may undergo MRI scanning with no additional conditions unless there are clips or staples in situ (see <strong>Generic Implant Procedure for Surgical Clips, Staples and Metal Sutures</strong>).</div>",
+             text: "This policy includes adjustable gastric bands and nonadjustable gastric bypass bands. This policy does not include any other bariatric implants such as: endoluminal sleeves, reflux management systems, or implantable gastric stimulators.<br><div class='outcome-box orange-box'>Patients with gastric <strong>bypass or sleeves</strong> where no devices have been implanted may undergo MRI scanning with no additional conditions unless there are clips or staples in situ (see <strong>clips and staples GIP</strong>).</div>",
              options: [
                { label: "Continue", next: "gastric3" },
                { label: "Start Over", next: "q1" }
@@ -804,7 +806,7 @@
  
 	  iud2: {
 		 type: "question",
-		 text: "<div class='blue-box'>Was the IUD fitted in China</div>",
+		 text: "<div class='blue-box'>Was the IUD fitted in China?</div>",
 		 options: [
 	{ label: "Yes", next: "iud_warning" },
 		{ label: "No", next: "iud_conditions" },
@@ -1062,7 +1064,7 @@
 
            implant_conditionaln: {
              type: "question",
-             text: "<div class='blue-box'>Can the patient be scanned under an off-label pocedure?</div>",
+             text: "<div class='blue-box'>Can the patient be scanned under an off-label procedure?</div>",
              options: [
                { label: "Yes", next: "implant_conditionaly" },
                { label: "No", next: "nogip_noscan" }
@@ -1138,9 +1140,9 @@ preg_conditions: {
              text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
      <thead><tr><th>Condition</th><th>Comment</th></tr></thead>
      <tbody>
-       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T especially in first trimester</td></tr>
+       <tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td>If practical, scan at 1.5T (especially in first trimester)</td></tr>
        <tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally on table and avoid area near covers at entrance to bore</td></tr>
-       <tr><td><strong>SAR</strong><br>Normal mode</td><td>Only enter into First Level Mode if clinically required</td></tr>
+       <tr><td><strong>SAR</strong><br>Normal mode</td><td>If First Level Mode is clinically required, contact MRI physics for risk assessment</td></tr>
        <tr><td><strong>Gradient switching mode</strong><br>No limit</td><td>Use noise-reducing protocols if possible</td></tr>
        <tr><td><strong>Scan time</strong><br>No limit</td><td></td></tr>
        <tr><td><strong>Patient positioning</strong><br>Supine or left lateral tilt depending on gestational age and patient comfort</td><td>Radiographer to decide based on a case-by-case basis</td></tr>
