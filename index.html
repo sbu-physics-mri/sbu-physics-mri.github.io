@@ -481,13 +481,13 @@
 
 	  const HEADERS = {
 //    question: (ctx) =>
-//     `<br>${branchsiteWarning(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
+//     `<br>${branchsiteWarning(ctx)}These questions reproduce the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. It remains the responsibility of the individual registered radiographer to apply their MRI knowledge and professional judgment to the situation under consideration.<br>`,
 
 	    outcome: (ctx) =>
-	      `${branchsiteWarning(ctx)}This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
+	      `${branchsiteWarning(ctx)}This outcome is reproduced from the flow chart found in <strong>Section ${ctx.questionFlowchartSection}</strong> of the <strong>${ctx.gipName}</strong>. It remains the responsibility of the individual registered radiographer to apply their MRI knowledge and professional judgment to the situation under consideration.<br>`,
 	
 	    table: (ctx) =>
-	      `${branchsiteWarning(ctx)}This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. Any final decision remains with the MR Radiographer<br>`,
+	      `${branchsiteWarning(ctx)}This table is reproduced from <strong>Section ${ctx.tableSection}</strong> of the <strong>${ctx.gipName}</strong>. It remains the responsibility of the individual registered radiographer to apply their MRI knowledge and professional judgment to the situation under consideration.<br>`,
 	
 	    blank: () => ""
 	  };
