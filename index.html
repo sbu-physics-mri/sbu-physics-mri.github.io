@@ -175,9 +175,12 @@
 
   .blue-box { border-color: #57a0d2; } /* blue border */
 
+  .black-box { border-color: #000000; } /* black border */
+
+	  /*
   .blue-box {
   display: inline-block;
-  border: 4px solid #57a0d2;   /* blue border */
+  border: 4px solid #57a0d2;   /* blue border */ /*
   border-radius: 0;    
   padding: 8px 12px;
   margin: 12px 0;
@@ -185,6 +188,7 @@
   background-color: #fff; 
   }
 
+	  */
   .black-box {
   display: inline-block;
   border: 2px solid #000000;   /* black border */
@@ -566,7 +570,7 @@
 
    	clips4: {
              type: "question",
-             text: "<div class='blue-box'>Was the endoscopy clip implanted in NHS Wales?</div>",
+             text: "<div class='text-box blue-box'>Was the endoscopy clip implanted in NHS Wales?</div>",
              options: [
                { label: "Yes", next: "clips4y" },
                { label: "No", next: "clips4n" }
@@ -575,7 +579,7 @@
 
    	clips4y: {
              type: "question",
-             text: "<div class='blue-box'>Was it implanted in the last 6 weeks?</div>",
+             text: "<div class='text-box blue-box'>Was it implanted in the last 6 weeks?</div>",
              options: [
                { label: "Yes", next: "clips_xray" },
                { label: "No", next: "clips_conditions" }
@@ -584,7 +588,7 @@
 
    	clips4n: {
              type: "question",
-             text: "<div class='blue-box'>Was it implanted in the last year?</div>",
+             text: "<div class='text-box blue-box'>Was it implanted in the last year?</div>",
              options: [
                { label: "Yes", next: "clips_xray" },
                { label: "No", next: "clips_conditions" }
@@ -593,7 +597,7 @@
 
    	clips_xray: {
              type: "question",
-             text: "<div class='blue-box'>Has X-ray confirmed all clips have passed?</div>",
+             text: "<div class='text-box blue-box'>Has X-ray confirmed all clips have passed?</div>",
              options: [
                { label: "Yes", next: "clips_xrayy" },
                { label: "No", next: "clips_xrayn" }
@@ -639,7 +643,7 @@
  
           embolism1y: {
              type: "question",
-             text: "<div class='blue-box'>Has the patient or referrer confirmed that the patient's embolization device(s) do <strong>NOT</strong> include aneurysm clip(s)? E.g. check notes or ask patient about procedure: was the coil(s) or other embolisation device(s) implanted in an endovascular procedure (coil), not in a craniotomy procedure (clip)?</div>",
+             text: "<div class='text-box blue-box'>Has the patient or referrer confirmed that the patient's embolization device(s) do <strong>NOT</strong> include aneurysm clip(s)? E.g. check notes or ask patient about procedure: was the coil(s) or other embolisation device(s) implanted in an endovascular procedure (coil), not in a craniotomy procedure (clip)?</div>",
              options: [
    	        { label: "Yes, the implant does NOT include aneurysm clips", next: "embolism_conditions" },
             { label: "No, the implant MAY include aneurysm clips", next: "embolism_clip_warning" },
@@ -679,7 +683,7 @@
 
    	gastric3: {
              type: "question",
-             text: "<div class='blue-box'>Was a laproscopic adjustable gastric band implanted in the <strong>UK, US, Europe, Canada, Australia or New Zealand after 2000?</strong></div>",
+             text: "<div class='text-box blue-box'>Was a laproscopic adjustable gastric band implanted in the <strong>UK, US, Europe, Canada, Australia or New Zealand after 2000?</strong></div>",
              options: [
                { label: "Yes", next: "gastric2y" },
                { label: "No", next: "gastric_makemodel" }
@@ -688,7 +692,7 @@
 
    	gastric2y: {
              type: "question",
-             text: "<div class='blue-box'>Was a laproscopic adjustable gastric band implanted <strong>between 2009 and 2011 (inc.)?</div>",
+             text: "<div class='text-box blue-box'>Was a laproscopic adjustable gastric band implanted <strong>between 2009 and 2011 (inc.)?</div>",
              options: [
                { label: "Yes", next: "gastric2yy" },
                { label: "No", next: "gastric_conditions" }
@@ -697,7 +701,7 @@
 
    	gastric2yy: {
              type: "question",
-             text: "<div class='blue-box'>Can you gather any evidence the laproscopic band <strong>IS NOT</strong> an EasyBand e.g. confirm by X-ray the band <strong>DOES NOT</strong> have an electrical motor?</div>",
+             text: "<div class='text-box blue-box'>Can you gather any evidence the laproscopic band <strong>IS NOT</strong> an EasyBand e.g. confirm by X-ray the band <strong>DOES NOT</strong> have an electrical motor?</div>",
              options: [
                { label: "Yes", next: "gastric_conditions" },
                { label: "No", next: "gastric_makemodel" }
@@ -727,7 +731,7 @@
 	  
    	valves1: {
              type: "question",
-             text: "This GIP <strong>does not apply</strong> to coiling or embolization devices. Other GIPs may be relevant. This GIP does not apply to closure and occlusion devices outside of the heart.<br><div class='blue-box'>Heart valves, annuloplasty rings, mitral and tricuspid transcatheter edge-to-edge repair systems, cardiac closure and occlusion devices <strong>should not be considered a contraindication for MRI</strong> scanning</div>",
+             text: "This GIP <strong>does not apply</strong> to coiling or embolization devices. Other GIPs may be relevant. This GIP does not apply to closure and occlusion devices outside of the heart.<br><div class='text-box blue-box'>Heart valves, annuloplasty rings, mitral and tricuspid transcatheter edge-to-edge repair systems, cardiac closure and occlusion devices <strong>should not be considered a contraindication for MRI</strong> scanning</div>",
              options: [
                { label: "Continue", next: "valves2" },
                { label: "Start Over", next: "q1" }
@@ -753,7 +757,7 @@
 
    	capsules1: {
              type: "question",
-             text: "<div class='black-box'>The patient has undergone a procedure with an ingestible capsule within the last 30 days</div>",
+             text: "<div class='text-box black-box'>The patient has undergone a procedure with an ingestible capsule within the last 30 days</div>",
              options: [
                { label: "Yes", next: "capsules2" },
                { label: "No", next: "capsules_scan" }
@@ -762,7 +766,7 @@
 
    	capsules2: {
              type: "question",
-             text: "<div class='black-box'>The patient can confirm that the capsule has been excreted?</div>",
+             text: "<div class='text-box black-box'>The patient can confirm that the capsule has been excreted?</div>",
              options: [
                { label: "Yes", next: "capsules_scan" },
                { label: "No", next: "capsules3" }
@@ -771,7 +775,7 @@
 
    	capsules3: {
              type: "question",
-             text: "<div class='black-box'>Is there an abdominal CT / X-ray available taken since the capsule intake that the supervising radiologist could review?</div>",
+             text: "<div class='text-box black-box'>Is there an abdominal CT / X-ray available taken since the capsule intake that the supervising radiologist could review?</div>",
              options: [
                { label: "Yes, and the capsule is not present", next: "capsules_scan" },
                { label: "Yes, and the capsule is present", next: "capsules4" },
@@ -809,7 +813,7 @@
  
 	  iud2: {
 		 type: "question",
-		 text: "<div class='blue-box'>Was the IUD fitted in China?</div>",
+		 text: "<div class='text-box blue-box'>Was the IUD fitted in China?</div>",
 		 options: [
 	{ label: "Yes", next: "iud_warning" },
 		{ label: "No", next: "iud_conditions" },
@@ -850,7 +854,7 @@
 
    	ortho3: {
              type: "question",
-             text: "<div class='blue-box'>Does this patient have a sternal fixation device within 20cm of the FOV?</div>",
+             text: "<div class='text-box blue-box'>Does this patient have a sternal fixation device within 20cm of the FOV?</div>",
              options: [
                { label: "Yes", next: "ortho3y" },
                { label: "No", next: "ortho_conditions1" }
@@ -859,7 +863,7 @@
 
    	ortho3y: {
              type: "question",
-             text: "<div class='blue-box'>Is there imaging available which shows that the sternal fixation device is a sternal wire and that the sternal wires form a non-interconnected, metallic closure system (loops)?</div>",
+             text: "<div class='text-box blue-box'>Is there imaging available which shows that the sternal fixation device is a sternal wire and that the sternal wires form a non-interconnected, metallic closure system (loops)?</div>",
              options: [
                { label: "Yes", next: "ortho_conditions1" },
                { label: "No", next: "ortho_conditions2" }
@@ -909,7 +913,7 @@
 
    	shunts2: {
              type: "question",
-             text: "<div class='blue-box'>If shunt/device contains valve, try to determine whether it is fixed or adjustable/variable/programmable:<br><br><ol><li>If the shunt was <strong><u>implanted before 1984 → Shunt is fixed valve</strong></u></li><li>The <strong>make and model</strong> can be obtained from the patient’s surgical notes, or implant information provided by patient (e.g. <strong>implant card</strong>). <u>You do not need to check the MR Conditions of the device at this stage.</u></li><li>Certain <strong>questions</strong> can help: Has a neurosurgeon/doctor held a magnet over patient’s head to adjust shunt settings AND/OR has the patient been warned that their shunt may be affected by external magnets?--> If YES, programmable shunt.<li><strong>Previous x-ray imaging</strong> may be helpful to determine type of device: A radiograph of a programmable valve will show a rotating structure. Some resources are available in the GIP. If no previous imaging is available, an x-ray request could be considered.</li><li>Given the adjustable valve utilises a magnet, there is potential for a <strong>ferromagnetic detector</strong> to identify cases where the patient has a programmable shunt.</li></ol></div>",
+             text: "<div class='text-box blue-box'>If shunt/device contains valve, try to determine whether it is fixed or adjustable/variable/programmable:<br><br><ol><li>If the shunt was <strong><u>implanted before 1984 → Shunt is fixed valve</strong></u></li><li>The <strong>make and model</strong> can be obtained from the patient’s surgical notes, or implant information provided by patient (e.g. <strong>implant card</strong>). <u>You do not need to check the MR Conditions of the device at this stage.</u></li><li>Certain <strong>questions</strong> can help: Has a neurosurgeon/doctor held a magnet over patient’s head to adjust shunt settings AND/OR has the patient been warned that their shunt may be affected by external magnets?--> If YES, programmable shunt.<li><strong>Previous x-ray imaging</strong> may be helpful to determine type of device: A radiograph of a programmable valve will show a rotating structure. Some resources are available in the GIP. If no previous imaging is available, an x-ray request could be considered.</li><li>Given the adjustable valve utilises a magnet, there is potential for a <strong>ferromagnetic detector</strong> to identify cases where the patient has a programmable shunt.</li></ol></div>",
              options: [
                { label: "Continue", next: "shunts3" },
                { label: "Start Over", next: "q1" }
@@ -918,7 +922,7 @@
 
           shunts3: {
              type: "question",
-             text: "<div class='blue-box'>Is the device fixed valve</div>",
+             text: "<div class='text-box blue-box'>Is the device fixed valve</div>",
              options: [
                { label: "Yes", next: "shunts_conditions" },
                { label: "No", next: "shunts3n" },
@@ -962,7 +966,7 @@
 
    	stents2: {
              type: "question",
-             text: "<div class='blue-box'>Is the stent a coronary artery stent?</div>",
+             text: "<div class='text-box blue-box'>Is the stent a coronary artery stent?</div>",
              options: [
                { label: "Yes", next: "stents_conditions1" },
                { label: "No", next: "stents3" }
@@ -971,7 +975,7 @@
 
    	stents3: {
              type: "question",
-             text: "<div class='blue-box'>Was the stent implanted <strong>over</strong> 6 weeks ago?</div>",
+             text: "<div class='text-box blue-box'>Was the stent implanted <strong>over</strong> 6 weeks ago?</div>",
              options: [
                { label: "Yes", next: "stents_conditions2" },
                { label: "No", next: "stents4" }
@@ -1017,7 +1021,7 @@
 	  
    cied1: {
              type: "question",
-             text: "<div class='black-box'>Whole system identified as MR conditional</div>",
+             text: "<div class='text-box black-box'>Whole system identified as MR conditional</div>",
              options: [
                { label: "Yes", next: "cied_conditionaly" },
                { label: "No", next: "cied_conditionaln" }
@@ -1031,7 +1035,7 @@
 
    cied_conditionaln: {
              type: "question",
-             text: "<div class='black-box'>Pulse generator identified as MR conditional</div>",
+             text: "<div class='text-box black-box'>Pulse generator identified as MR conditional</div>",
              options: [
                { label: "Yes", next: "cied_pgconditionaly" },
                { label: "No", next: "cied_pgconditionaln" }
@@ -1040,7 +1044,7 @@
 
    cied_pgconditionaly: {
              type: "question",
-             text: "<div class='blue-box'><strong>Confirmed as e-MRC i.e. The device is ONLY not MR conditional because of:</strong><br><ul><li>MR Unlabelled/mismatched pin plug</li><li>MR Unlabelled/mismatched lead(s)</li><li>Recent implant (<6 weeks)</li><li>Temporary surgical epicardial pacing wires (no external components)</li><li>Unmet patient position or exclusion zone</li><li>Additional MR Conditional device present</li></ul></div>",
+             text: "<div class='text-box blue-box'><strong>Confirmed as e-MRC i.e. The device is ONLY not MR conditional because of:</strong><br><ul><li>MR Unlabelled/mismatched pin plug</li><li>MR Unlabelled/mismatched lead(s)</li><li>Recent implant (<6 weeks)</li><li>Temporary surgical epicardial pacing wires (no external components)</li><li>Unmet patient position or exclusion zone</li><li>Additional MR Conditional device present</li></ul></div>",
              options: [
                { label: "Yes", next: "cied_conditionaly" },
                { label: "No", next: "cied_pgconditionaln" }
@@ -1058,7 +1062,7 @@
 	  
 	nogip: {
              type: "question",
-             text: "<div class='blue-box'>Can the implant be identified as MR Safe OR MR Conditional and all conditions met?</div>",
+             text: "<div class='text-box blue-box'>Can the implant be identified as MR Safe OR MR Conditional and all conditions met?</div>",
              options: [
                { label: "Yes", next: "implant_conditionaly" },
                { label: "No", next: "implant_conditionaln" }
@@ -1067,7 +1071,7 @@
 
            implant_conditionaln: {
              type: "question",
-             text: "<div class='blue-box'>Can the patient be scanned under an off-label procedure?</div>",
+             text: "<div class='text-box blue-box'>Can the patient be scanned under an off-label procedure?</div>",
              options: [
                { label: "Yes", next: "implant_conditionaly" },
                { label: "No", next: "nogip_noscan" }
@@ -1100,7 +1104,7 @@
 
    preg2:  {
              type: "question",
-             text: "<div class='blue-box'>Does the scan require contrast?",
+             text: "<div class='text-box blue-box'>Does the scan require contrast?",
              options: [
                { label: "Yes", next: "preg3" },
                { label: "No", next: "preg_sheet" }
