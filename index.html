@@ -156,7 +156,7 @@
      }
    }
 
-  .outcome-box {
+  .text-box {
     display: inline-block;    
     border: 4px solid;       
     border-radius: 0;          
@@ -600,12 +600,12 @@
 
    	clips_xrayy: {
              type: "outcome",
-             text: "<div class='outcome-box green-box'>Scan</div>"
+             text: "<div class='text-box green-box'>Scan</div>"
            },
 
    	clips_xrayn: {
              type: "outcome",
-             text: "<div class='outcome-box red-box'><u>Individual risk/benefit assessment</u> to be performed. Although this is not necessarily an off-label scan, the procedure outlined in Section 7 of the Implants Policy should be followed. If the MRI is to proceed, monitor the patient throughout the scan and if they feel any discomfort when entering the magnet room or during the scan, terminate the scan immediately and carefully remove the patient from the room.</div>"
+             text: "<div class='text-box red-box'><u>Individual risk/benefit assessment</u> to be performed. Although this is not necessarily an off-label scan, the procedure outlined in Section 7 of the Implants Policy should be followed. If the MRI is to proceed, monitor the patient throughout the scan and if they feel any discomfort when entering the magnet room or during the scan, terminate the scan immediately and carefully remove the patient from the room.</div>"
            },
 
    	clips_conditions: {
@@ -628,7 +628,7 @@
 
            embolism1: {
              type: "question",
-             text: "<div class='outcome-box yellow-box'>This GIP <strong>ONLY</strong> applies to <strong>embolisation devices</strong> within the <strong>vascular system</strong>, including the <strong>cerebrovascular system.</strong>. Devices covered include <strong>coils, plugs, liquid embolic agents</strong> and <strong>glues, micospheres, occlusion ballons</strong> and <strong>flow diverers</strong>. This GIP excludes coils or embolisation devices not placed in blood vessels, e.g., endobronchial coils for emphysema (delivered via endobronchial intervention) and coils used in ureteric embolisation</div>",
+             text: "<div class='text-box yellow-box'>This GIP <strong>ONLY</strong> applies to <strong>embolisation devices</strong> within the <strong>vascular system</strong>, including the <strong>cerebrovascular system.</strong>. Devices covered include <strong>coils, plugs, liquid embolic agents</strong> and <strong>glues, micospheres, occlusion ballons</strong> and <strong>flow diverers</strong>. This GIP excludes coils or embolisation devices not placed in blood vessels, e.g., endobronchial coils for emphysema (delivered via endobronchial intervention) and coils used in ureteric embolisation</div>",
              options: [
                { label: "Continue", next: "embolism1y" },
                { label: "Start Over", next: "q1" }
@@ -646,7 +646,7 @@
 
            embolism_clip_warning: {
              type: "outcome",
-             text: "<div class='outcome-box red-box'>Follow procedure for aneurysm clips or contact MRI Physics.</div>"
+             text: "<div class='text-box red-box'>Follow procedure for aneurysm clips or contact MRI Physics.</div>"
            },
 
            embolism_conditions: {
@@ -668,7 +668,7 @@
 
            gastric1: {
              type: "question",
-             text: "This policy includes adjustable gastric bands and nonadjustable gastric bypass bands. This policy does not include any other bariatric implants such as: endoluminal sleeves, reflux management systems, or implantable gastric stimulators.<br><div class='outcome-box orange-box'>Patients with gastric <strong>bypass or sleeves</strong> where no devices have been implanted may undergo MRI scanning with no additional conditions unless there are clips or staples in situ (see <strong>clips and staples GIP</strong>).</div>",
+             text: "This policy includes adjustable gastric bands and nonadjustable gastric bypass bands. This policy does not include any other bariatric implants such as: endoluminal sleeves, reflux management systems, or implantable gastric stimulators.<br><div class='text-box orange-box'>Patients with gastric <strong>bypass or sleeves</strong> where no devices have been implanted may undergo MRI scanning with no additional conditions unless there are clips or staples in situ (see <strong>clips and staples GIP</strong>).</div>",
              options: [
                { label: "Continue", next: "gastric3" },
                { label: "Start Over", next: "q1" }
@@ -704,7 +704,7 @@
 
    	gastric_makemodel: {
              type: "outcome",
-             text: "<div class='outcome-box orange-box'>Identify make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met. Scan according to conditions. <strong>If not possible</strong>, or any other questions, please contact Medical Physics.</div>"
+             text: "<div class='text-box orange-box'>Identify make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met. Scan according to conditions. <strong>If not possible</strong>, or any other questions, please contact Medical Physics.</div>"
            },
 
    	gastric_conditions: {
@@ -779,17 +779,17 @@
 
    	capsules4: {
              type: "outcome",
-             text: "<div class='outcome-box red-box'>MRI is contraindicated until exretion / removal of capsule is confirmed. However, if the scan is urgent, consider following the off-label scanning procedure.</div>"
+             text: "<div class='text-box red-box'>MRI is contraindicated until exretion / removal of capsule is confirmed. However, if the scan is urgent, consider following the off-label scanning procedure.</div>"
            },
 
    	capsules5: {
              type: "outcome",
-             text: "<div class='outcome-box red-box'>The supervising radiologist may decide to request an abdominal CT / X-ray if one is not available.<br><br>MRI is contraindicated until extretion / removal or capsule is confirmed. However, if the scan is urgent, consider following the off-label scanning procedure.</div><br>"
+             text: "<div class='text-box red-box'>The supervising radiologist may decide to request an abdominal CT / X-ray if one is not available.<br><br>MRI is contraindicated until extretion / removal or capsule is confirmed. However, if the scan is urgent, consider following the off-label scanning procedure.</div><br>"
            },
 
    	capsules_scan: {
              type: "outcome",
-             text: "<div class='outcome-box green-box'>Scan as normal<br><br>Inform the patient to press the buzzer if they feel discomfort during their scan. If the patient reports <strong>abdominal discomfort</strong> or if there are <strong>susceptibility artefacts</strong> present in adbominal localiser images, <strong>terminate the scan immediately</strong>, then slowly and carefully move the patient out of the scanner and scanner room.</div>"
+             text: "<div class='text-box green-box'>Scan as normal<br><br>Inform the patient to press the buzzer if they feel discomfort during their scan. If the patient reports <strong>abdominal discomfort</strong> or if there are <strong>susceptibility artefacts</strong> present in adbominal localiser images, <strong>terminate the scan immediately</strong>, then slowly and carefully move the patient out of the scanner and scanner room.</div>"
            },
 
 // ---- 
@@ -798,7 +798,7 @@
 
 	 iud1: {
 		 type: "question",
-		 text: "<div class='outcome-box red-box'>This GIP <strong>does not cover pregnant patients with retained IUDs</strong></div>",
+		 text: "<div class='text-box red-box'>This GIP <strong>does not cover pregnant patients with retained IUDs</strong></div>",
 		 options: [
 		   { label: "Continue", next: "iud2" },
 		   { label: "Start Over", next: "q1" }
@@ -816,7 +816,7 @@
 
 	   iud_warning: {
 		 type: "outcome",
-		 text: "<div class='outcome-box red-box'>Identifiy make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all confitions can be met. Scan according to conditions.<br><br><strong>If not possible</strong> or any questions, contact MRI Physics.</div>"
+		 text: "<div class='text-box red-box'>Identifiy make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all confitions can be met. Scan according to conditions.<br><br><strong>If not possible</strong> or any questions, contact MRI Physics.</div>"
 	   },
 
 	   iud_conditions: {
@@ -839,7 +839,7 @@
 
    	ortho1: {
              type: "question",
-             text: "<div class='outcome-box red-box'>This GIP <strong><u>ONLY applies to internal passive orthopaedic implants</strong></u> and does <strong><u>NOT cover</u></strong>:<ul><li>External fixation devices</li><li>External prostheses (including limbs and joints)</li><li>Implants with magnetic components or batteries</li><li>Ferromagnetic orthopaedic implants <strong><u>not</u></strong> firmly attached to bone</div></li></ul>",
+             text: "<div class='text-box red-box'>This GIP <strong><u>ONLY applies to internal passive orthopaedic implants</strong></u> and does <strong><u>NOT cover</u></strong>:<ul><li>External fixation devices</li><li>External prostheses (including limbs and joints)</li><li>Implants with magnetic components or batteries</li><li>Ferromagnetic orthopaedic implants <strong><u>not</u></strong> firmly attached to bone</div></li></ul>",
              options: [
                { label: "Continue", next: "ortho3" },
                { label: "Start Over", next: "q1" }
@@ -898,7 +898,7 @@
 	  
    shunts1: {
              type: "question",
-             text: "This GIP only applies to patients and volunteers who have hydrocephalus shunts and accessories (this includes ventricular, cystoperitoneal or lumbar-peritoneal shunts), or ventricular reservoirs/ports<div class='outcome-box green-box'><strong>If there is no valve present, i.e. only ventricular reservoir, scan following condition in Sec. 5.2 of GIP</strong> --> Document decision and use of GIP (name and version) on screening form</div>",
+             text: "This GIP only applies to patients and volunteers who have hydrocephalus shunts and accessories (this includes ventricular, cystoperitoneal or lumbar-peritoneal shunts), or ventricular reservoirs/ports<div class='text-box green-box'><strong>If there is no valve present, i.e. only ventricular reservoir, scan following condition in Sec. 5.2 of GIP</strong> --> Document decision and use of GIP (name and version) on screening form</div>",
              options: [
                { label: "Valves present", next: "shunts2" },
                { label: "No valves present, i.e. only ventricular reservoir", next: "shunts_conditions" }
@@ -936,12 +936,12 @@
 
            shunts3n: {
              type: "outcome",
-             text: "<div class='outcome-box orange-box'>Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met.<br>Scan according to conditions.<br>IF device is Programmable: <u>Follow the Pathway for MRI Imaging of Patients with Programmable Shunts Sec. 5.3 of the <strong>Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong>).</u></div>"
+             text: "<div class='text-box orange-box'>Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met.<br>Scan according to conditions.<br>IF device is Programmable: <u>Follow the Pathway for MRI Imaging of Patients with Programmable Shunts Sec. 5.3 of the <strong>Generic Implant Procedure for Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories</strong>).</u></div>"
            },
 
            shunts_unknown: {
              type: "outcome",
-             text: "<div class='outcome-box red-box'>Consult Superintendent Radiographer/ raise a ticket with MRI Physics</div>"
+             text: "<div class='text-box red-box'>Consult Superintendent Radiographer/ raise a ticket with MRI Physics</div>"
            },
 
 // --------------- 
@@ -978,7 +978,7 @@
 
    	stents4: {
              type: "outcome",
-             text: "<div class='outcome-box orange-box'>Identify the make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met. Scan according to conditions or consider following off-label scanning procedure.</div>",
+             text: "<div class='text-box orange-box'>Identify the make and model. Confirm <strong>MR Safe</strong> or <strong>MR Conditional</strong> and all MR conditions can be met. Scan according to conditions or consider following off-label scanning procedure.</div>",
            },
 
    	stents_conditions1: {
@@ -1024,7 +1024,7 @@
 
    cied_conditionaly: {
              type: "outcome",
-             text: "<div class='outcome-box green-box'>Scan according to checklists</div>",
+             text: "<div class='text-box green-box'>Scan according to checklists</div>",
            },
 
    cied_conditionaln: {
@@ -1047,7 +1047,7 @@
 
    cied_pgconditionaln: {
              type: "outcome",
-             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><br><strong><div class='outcome-box orange-box'>Patient specific Risk Assessment would be required for scanning (Follow off label procedure, Sec 7 of the Implant Policy)</strong><br><u>These cases might include:</u><ul><li>Unmet MRI Condition (SAR, 3T) when required for diagnostic imaging</li><li>MR Unlabelled generators</li><li>Abandoned lead(s)</li><li>Temporary systems with externalised generator</li><li>Inactive, battery-depleted CIEDs</li><li>Permanent epicardial leads</li><li>Generators implanted outside the pectoral region</li><li>CIED component advisory warning</li><li>Stable abnormal lead parameter</li><li>Fractured leads</li><li>Battery at elective replacement interval</li><li>Pre-2003 market release pulse generators</li></ul></div>",
+             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><br><strong><div class='text-box orange-box'>Patient specific Risk Assessment would be required for scanning (Follow off label procedure, Sec 7 of the Implant Policy)</strong><br><u>These cases might include:</u><ul><li>Unmet MRI Condition (SAR, 3T) when required for diagnostic imaging</li><li>MR Unlabelled generators</li><li>Abandoned lead(s)</li><li>Temporary systems with externalised generator</li><li>Inactive, battery-depleted CIEDs</li><li>Permanent epicardial leads</li><li>Generators implanted outside the pectoral region</li><li>CIED component advisory warning</li><li>Stable abnormal lead parameter</li><li>Fractured leads</li><li>Battery at elective replacement interval</li><li>Pre-2003 market release pulse generators</li></ul></div>",
            },
 
 // ------------------------------------- 
@@ -1074,13 +1074,13 @@
 
            implant_conditionaly: {
              type: "outcome",
-             text: "<div class='outcome-box green-box'>Scan according to conditions</div>"
+             text: "<div class='text-box green-box'>Scan according to conditions</div>"
            },
 
 	
            nogip_noscan: {
              type: "outcome",
-             text: "<div class='outcome-box red-box'>Do not scan</div>"
+             text: "<div class='text-box red-box'>Do not scan</div>"
            },
 			   
 // --------- 
@@ -1107,7 +1107,7 @@
 
    preg3:  {
              type: "question",
-             text: "<div class='outcome-box orange-box'>Radiologist feels the clinical need outweighs the risk</div>",
+             text: "<div class='text-box orange-box'>Radiologist feels the clinical need outweighs the risk</div>",
              options: [
                { label: "Yes", next: "preg4" },
                { label: "No", next: "preg_warning" }
@@ -1116,7 +1116,7 @@
 
    preg4:  {
              type: "question",
-             text: "<div class='outcome-box orange-box'>Discussion with patient and patient consents</div>",
+             text: "<div class='text-box orange-box'>Discussion with patient and patient consents</div>",
              options: [
                { label: "Yes", next: "preg_sheet" },
                { label: "No", next: "preg_warning" }
@@ -1133,7 +1133,7 @@
 
    preg_warning:  {
              type: "outcome",
-             text: "<div class='outcome-box red-box'>Only scan <u>without</u> contrast according to the conditions in section 4.2 of the <strong>MRI Protocol for Scanning Pregnant Patients</strong></div>"
+             text: "<div class='text-box red-box'>Only scan <u>without</u> contrast according to the conditions in section 4.2 of the <strong>MRI Protocol for Scanning Pregnant Patients</strong></div>"
            },
 
 preg_conditions: {
