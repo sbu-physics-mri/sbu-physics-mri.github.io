@@ -415,6 +415,18 @@
 	    riskscore: "3"
 	  },
 	
+	ear: {
+		id: "ear",
+	    title: "Passive Ear Implants",
+	    questionFlowchartSection: "1.0",
+	    tableSection: "5.2",
+	    gipName: "Generic Implant Procedure for Passive Ear Implants (v1.0)",
+		likelihood: "1 - RARE",
+		consequence: "4 - MAJOR",
+		riskcat: "low",
+	    riskscore: "4"
+	  },
+		  
 	  cieds: {
 	    id: "cieds",
 	    title: "Cardiac Implantable Electronic Devices (CIEDs)",
@@ -510,6 +522,7 @@
                { label: "Orthopaedic Implants", next: "ortho1", branchID: "ortho" },
                { label: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories", next: "shunts1", branchID: "shunts" },
                { label: "Vascular Stents", next: "stents1", branchID: "stents" },
+			   { label: "Passive Ear Implants", next: "ear1", branchID: "ear"},
    	           { label: "CIEDs", next: "cied1", branchID: "cieds" },
                { label: "Implant not in one of these categories", next: "nogip", warning: true, branchID: "nogip" },
 	           { label: "Pregnancy", next: "preg1", warning: true, branchID: "pregnancy" }
@@ -994,6 +1007,85 @@
    </table>`
            },
 
+
+// --------------------
+// Passive Ear Implants
+// --------------------
+
+	ear1: {
+		type: "question",
+		text: "<div class='text-box red-box'> This GIP <strong>only</strong> applies to stapes prostheses, total ossicular replacement prostheses, partial ossicular replacement prostheses, tympanostomy tubes and endolymphatic shunts and <strong> does not cover </strong> any other ear implants.</div>",
+		options:[
+			{label: "Continue", next:"ear2"},
+			{label: "Start Over", next:"q1"},
+	   	]
+	},
+
+	ear2: {
+		type:"question",
+		text:"<div class='text-box blue-box'> Was a <strong>stapes prosthesis</strong> implanted in <strong>1987-1989</strong>?</div>",
+		options: [
+			{label:"Yes", next: "ear5"},
+			{label:"No", next:"ear3"},
+			]
+	},
+
+	ear3: {
+		type: "question",
+		text:"<div class='text-box blue-box'> Has a <strong>tympanostomy tube</strong> been implanted in the last <strong>3 years<strong>?</div>",
+		options: [
+			{label: "Yes", next: "ear4"},
+			{label: "No", next: "ear_conditions"},
+			]
+	},
+
+	ear4: {
+		type: "question",
+		text:"<div class='text-box blue-box'> Can it be confirmed that the <strong> tympanostomy tube is no-longer in situ </strong> (e.g., available imaging, patient confirmation or notes)?</div>",
+		options: [
+			{label: "Yes", next: "ear_conditions"},
+			{label: "No", next: "ear6"},
+			]
+	},
+
+	ear5: {
+		type: "question",
+		text: "<div class='text-box blue-box'>Can it be confirmed that the <strong>stapes prosthesis was not manufactured by McGee</strong> (e.g., through patient notes)?</div>",
+		options: [
+			{label:"Yes", next: "ear_conditions"},
+			{lable:"No", next:"ear7"},
+			]
+	},
+
+	ear6: {
+		type: "question",
+		text:"<div class='text-box blue-box'>Can it be confirmed that the <strong>tympanostomy tube is non-metallic</strong> (e.g., through available imaging or patient notes)?</div>",
+		options: [
+			{label:"Yes", next: "ear_conditions"},
+			{lable:"No", next:"ear7"},
+			]
+	},
+
+	ear7:{
+		type: "outcome",
+		text: "<div class='text-box orange-box'>Identify make and model. If MR Safe or MR Conditional and all conditions can be met scan according to conditions. <strong> If not possible</storng> or any questions, contact MRI Physics <a href="mailto:SBU.Physics.MRI@wales.nhs.uk" style="color: white; text-decoration: underline;">SBU.Physics.MRI@wales.nhs.uk</a></div>', 
+	},
+
+	ear_conditions:{
+		type: "outcome",
+		text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     	<thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+    	<tbody>
+		<tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td></td></tr>
+		<tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position patient centrally (the aim is to keep the implant(s) as far a possible from the scanner bore wall)</td></tr>
+		<tr><td><strong>SAR</strong><br>No limit</td><td>Only enter into First Level Mode if clinically required. </td></tr>
+		<tr><td><strong>Minimum time since implantation</strong><br>None</td><td></td></tr>
+     	</tbody>
+   		</table>`
+    },
+
+
+	  
 // ----- 
 // CIEDS 
 // ----- 
