@@ -426,6 +426,18 @@
 		riskcat: "low",
 	    riskscore: "4"
 	  },
+
+	eyelid: {
+		id: "eyelid",
+	    title: "Implanted Eyelid Weights",
+	    questionFlowchartSection: "5.1",
+	    tableSection: "5.2",
+	    gipName: "Generic Implant Procedure for Implanted Eyelid Weights (v1.0)",
+		likelihood: "1 - RARE",
+		consequence: "4 - MAJOR",
+		riskcat: "low",
+	    riskscore: "4"
+	  },
 		  
 	  cieds: {
 	    id: "cieds",
@@ -523,6 +535,7 @@
                { label: "Cerebrospinal Shunts, Ventricular Reservoirs and Shunt Accessories", next: "shunts1", branchID: "shunts" },
                { label: "Vascular Stents", next: "stents1", branchID: "stents" },
 			   { label: "Passive Ear Implants", next: "ear1", branchID: "ear"},
+			   { label: "Implanted Eyelid Weights", next: "eyelid1", branchID: "eyelid"},
    	           { label: "CIEDs", next: "cied1", branchID: "cieds" },
                { label: "Implant not in one of these categories", next: "nogip", warning: true, branchID: "nogip" },
 	           { label: "Pregnancy", next: "preg1", warning: true, branchID: "pregnancy" }
@@ -1083,6 +1096,32 @@
      	</tbody>
    		</table>`
     },
+
+// ------------------------
+// Implanted Eyelid Weights
+// ------------------------
+
+eyelid1: {
+	type: "question",
+	text: "<div class='text-box red-box'> This GIP applies to implanted upper eyelid weights and does not cover external eyelid weights, eyelid springs and any other ocular implants. </div>",
+	options:[
+			{label: "Continue", next:"eyelid_conditions"},
+			{label: "Start Over", next:"q1"}
+	   	]
+	},
+
+eyelid_conditions: {
+	type: "outcome",
+	text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+     	<thead><tr><th>Condition</th><th>Comment</th></tr></thead>
+    	<tbody>
+		<tr><td><strong>Field strength</strong><br>1.5T or 3T</td><td></td></tr>
+		<tr><td><strong>Spatial gradient</strong><br>No limit</td><td>Position the patient centrally on the table and avoid the area near the covers at the entrance to the bore.</td></tr>
+		<tr><td><strong>SAR</strong><br>No limit</td><td>Only enter into First Level Mode if clinically required. </td></tr>
+		<tr><td><strong>Time following implantation</strong><br>No wait required</td><td></td></tr>
+     	</tbody>
+   		</table>`
+},
 
 
 	  
