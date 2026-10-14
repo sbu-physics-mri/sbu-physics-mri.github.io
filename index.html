@@ -447,6 +447,15 @@
 	    gipName: "MRI Protocol for Scanning Patients with Cardiac Implantable Electronic Devices (CIEDs) (v3.1)",
 	    siteWarning: "Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board"
 	  },
+
+	  scs: {
+	    id: "scs",
+	    title: "Spinal Cord Stimulators (SCSs)",
+	    questionFlowchartSection: "5.1",
+	    tableSection: null, // no single conditions table section,
+	    gipName: "MRI Protocol for Scanning Patients with Spinal Cord Stimulators (SCSs) (v1.0)",
+	    siteWarning: "Only approved for use in all 1.5T MRI Units supported by the MR Physics Group"
+	  },
 	
 	  nogip: {
 	    id: "nogip",
@@ -537,6 +546,7 @@
 			   { label: "Passive Ear Implants", next: "ear1", branchID: "ear"},
 			   { label: "Implanted Eyelid Weights", next: "eyelid1", branchID: "eyelid"},
    	           { label: "CIEDs", next: "cied1", branchID: "cieds" },
+			   { label: "SCS", next: "scs1", branchID: "scs" },
                { label: "Implant not in one of these categories", next: "nogip", warning: true, branchID: "nogip" },
 	           { label: "Pregnancy", next: "preg1", warning: true, branchID: "pregnancy" }
              ]
@@ -1124,7 +1134,57 @@ eyelid_conditions: {
              type: "outcome",
              text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><br><strong><div class='text-box orange-box'>Patient specific Risk Assessment would be required for scanning (Follow off label procedure, Sec 7 of the Implant Policy)</strong><br><u>These cases might include:</u><ul><li>Unmet MRI Condition (SAR, 3T) when required for diagnostic imaging</li><li>MR Unlabelled generators</li><li>Abandoned lead(s)</li><li>Temporary systems with externalised generator</li><li>Inactive, battery-depleted CIEDs</li><li>Permanent epicardial leads</li><li>Generators implanted outside the pectoral region</li><li>CIED component advisory warning</li><li>Stable abnormal lead parameter</li><li>Fractured leads</li><li>Battery at elective replacement interval</li><li>Pre-2003 market release pulse generators</li></ul></div>",
            },
+	  
+// ----- 
+// SCS 
+// ----- 
+	  
+   scs1: {
+             type: "question",
+             text: "<div class='text-box black-box'>MRI SCS referral form already available for the patient (check WCP)</div>",
+             options: [
+               { label: "Yes", next: "scs_referral_form_yes" },
+               { label: "No", next: "scs_referral_form_no" }
+             ]
+           },
 
+   scs_referral_form_no: {
+             type: "outcome",
+             text: "<div class='text-box green-box'>Radiographer to email implanting or managing clinic and ask for MRI SCS referral form to be filled (Appendix B of the SCS MRI Protocol)</div>",
+           },
+
+   scs_referral_form_yes: {
+             type: "question",
+             text: "<div class='text-box black-box'>SCS identified as MR conditional and all conditions can be followed</div>",
+             options: [
+               { label: "Yes", next: "scs_conditionaly" },
+               { label: "No", next: "scs_conditionaln" }
+             ]
+           },
+
+   scs_pgconditionaly: {
+             type: "question",
+             text: "<div class='text-box blue-box'><strong>'SCS system is from Boston Scientific'</div>",
+             options: [
+               { label: "Yes", next: "scs_conditionalBostonScientificy" },
+               { label: "No", next: "scs_conditionalBostonScientificn" }
+             ]
+           },
+
+   scs_conditionaln: {
+             type: "outcome",
+             text: "<br>Only approved for use in all 1.5T MRI Units supported by the MR Physics Group<br><br><strong><div class='text-box orange-box'>Patient specific Risk Assessment would be required for scanning (Follow off label procedure, Sec 7 of the Implant Policy)</strong><br><u>These cases might include:</u><ul><li>Scanning beyond SAR MRI conditions when clinically required</li><li>Abandoned lead(s)</li><li>Leads known to be fractured and/or impedance errors</li><li>MR Unlabelled pulse generators</li><li>Inactive, battery-depleted SCSs that cannot be charged</li><li>Hybrid systems</li><li>MR unlabelled leads, extenders or accessories</li></ul></div>",
+           },
+
+	scs_conditionalBostonScientificy: {
+             type: "outcome",
+             text: "<div class='text-box green-box'>Scan according to Boston Scientific scanning checklists (Appendix A of the SCS MRI Protocol)</div>",
+           },
+
+	scs_conditionalBostonScientificn: {
+             type: "outcome",
+             text: "<div class='text-box green-box'>Scan according to manufacturer conditions</div>",
+           },
 // ------------------------------------- 
 // Implant not in one of these categories 
 // -------------------------------------- 
