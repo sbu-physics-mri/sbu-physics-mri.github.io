@@ -578,43 +578,6 @@
              text: "<div class='text-box orange-box'>Identify the make and model and scan according to the manufacturer's conditions.<br><br>If radiologist feels there is increased risk (e.g. due to clinical resons) they should assess whether an X-ray is needed first and perform a risk-benefit assessment</div>"
            },
 
-   	clips4y: {
-             type: "question",
-             text: "<div class='text-box blue-box'>Was it implanted in the last 6 weeks?</div>",
-             options: [
-               { label: "Yes", next: "clips_xray" },
-               { label: "No", next: "clips_conditions" }
-             ]
-           },
-
-   	clips4n: {
-             type: "question",
-             text: "<div class='text-box blue-box'>Was it implanted in the last year?</div>",
-             options: [
-               { label: "Yes", next: "clips_xray" },
-               { label: "No", next: "clips_conditions" }
-             ]
-           },
-
-   	clips_xray: {
-             type: "question",
-             text: "<div class='text-box blue-box'>Has X-ray confirmed all clips have passed?</div>",
-             options: [
-               { label: "Yes", next: "clips_xrayy" },
-               { label: "No", next: "clips_xrayn" }
-             ]
-           },
-
-   	clips_xrayy: {
-             type: "outcome",
-             text: "<div class='text-box green-box'>Scan</div>"
-           },
-
-   	clips_xrayn: {
-             type: "outcome",
-             text: "<div class='text-box red-box'><u>Individual risk/benefit assessment</u> to be performed. Although this is not necessarily an off-label scan, the procedure outlined in Section 7 of the Implants Policy should be followed. If the MRI is to proceed, monitor the patient throughout the scan and if they feel any discomfort when entering the magnet room or during the scan, terminate the scan immediately and carefully remove the patient from the room.</div>"
-           },
-
    	clips_conditions: {
              type: "outcome",
              text: `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
