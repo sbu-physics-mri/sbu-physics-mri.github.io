@@ -98,7 +98,15 @@
        }
        .warning:hover {
          background-color: #ea580c !important;
+		   
+	   }
+       .active {
+         background-color: #0a0400 !important;
        }
+       .active:hover {
+         background-color: #0a0400 !important;
+		}
+	  
        .danger {
          color: #b91c1c;
          font-weight: bold;
@@ -545,8 +553,8 @@
                { label: "Vascular Stents", next: "stents1", branchID: "stents" },
 			   { label: "Passive Ear Implants", next: "ear1", branchID: "ear"},
 			   { label: "Implanted Eyelid Weights", next: "eyelid1", branchID: "eyelid"},
-   	           { label: "CIEDs", next: "cied1", branchID: "cieds" },
-			   { label: "SCS", next: "scs1", branchID: "scs" },
+   	           { label: "CIEDs", next: "cied1", active: true, branchID: "cieds" },
+			   { label: "SCS", next: "scs1", active: true, branchID: "scs" },
                { label: "Implant not in one of these categories", next: "nogip", warning: true, branchID: "nogip" },
 	           { label: "Pregnancy", next: "preg1", warning: true, branchID: "pregnancy" }
              ]
