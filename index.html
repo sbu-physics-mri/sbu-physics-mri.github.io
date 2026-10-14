@@ -1132,7 +1132,7 @@ eyelid_conditions: {
 
    cied_pgconditionaln: {
              type: "outcome",
-             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><br><strong><div class='text-box orange-box'>Patient specific Risk Assessment would be required for scanning (Follow off label procedure, Sec 7 of the Implant Policy)</strong><br><u>These cases might include:</u><ul><li>Unmet MRI Condition (SAR, 3T) when required for diagnostic imaging</li><li>MR Unlabelled generators</li><li>Abandoned lead(s)</li><li>Temporary systems with externalised generator</li><li>Inactive, battery-depleted CIEDs</li><li>Permanent epicardial leads</li><li>Generators implanted outside the pectoral region</li><li>CIED component advisory warning</li><li>Stable abnormal lead parameter</li><li>Fractured leads</li><li>Battery at elective replacement interval</li><li>Pre-2003 market release pulse generators</li></ul></div>",
+             text: "<br>Only approved for use in Swansea Bay University Health Board, Hywel Dda University Health Board, and Cwm Taf Morgannwg University Health Board<br><br><strong><div class='text-box orange-box'>Patient specific Risk Assessment would be required for scanning (Follow off label procedure, Sec 7 of the Implant Policy)</strong><br><u>These cases might include:</u><ul><li>MR Unlabelled generators</li><li>Abandoned lead(s)</li><li>Temporary systems with externalised generator</li><li>Inactive, battery-depleted CIEDs</li><li>Permanent epicardial leads</li><li>Generators implanted outside the pectoral region</li><li>CIED component advisory warning</li><li>Stable abnormal lead parameter</li><li>Fractured leads</li><li>Battery at elective replacement interval</li><li>Pre-2003 market release pulse generators</li></ul></div>",
            },
 	  
 // ----- 
@@ -1150,7 +1150,7 @@ eyelid_conditions: {
 
    scs_referral_form_no: {
              type: "outcome",
-             text: "<div class='text-box green-box'>Radiographer to email implanting or managing clinic and ask for MRI SCS referral form to be filled (Appendix B of the SCS MRI Protocol)</div>",
+             text: "<div class='text-box black-box'>Radiographer to email implanting or managing clinic and ask for MRI SCS referral form to be filled (Appendix B of the SCS MRI Protocol)</div>",
            },
 
    scs_referral_form_yes: {
@@ -1162,9 +1162,9 @@ eyelid_conditions: {
              ]
            },
 
-   scs_pgconditionaly: {
+   scs_conditionaly: {
              type: "question",
-             text: "<div class='text-box blue-box'><strong>'SCS system is from Boston Scientific'</div>",
+             text: "<div class='text-box black-box'>'SCS system is from Boston Scientific'</div>",
              options: [
                { label: "Yes", next: "scs_conditionalBostonScientificy" },
                { label: "No", next: "scs_conditionalBostonScientificn" }
