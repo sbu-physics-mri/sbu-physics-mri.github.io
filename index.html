@@ -93,10 +93,10 @@
        button:hover {
          background-color: #0369a1;
        }
-       .warning {
+       .nonimplant {
          background-color: #f97316 !important;
        }
-       .warning:hover {
+       .nonimplant:hover {
          background-color: #ea580c !important;
 		   
 	   }
@@ -229,7 +229,7 @@
   Please report any errors or give feedback at <a href="mailto:SBU.Physics.MRI@wales.nhs.uk" style="color: white; text-decoration: underline;">SBU.Physics.MRI@wales.nhs.uk</a>
 </div>
 
-  <!-- PASSWORD OPTION COMMENTED OUT -->
+  <!-- PASSWORD  COMMENTED OUT -->
 
   <div id="login-screen" class="card">
 	<img
@@ -555,8 +555,8 @@
 			   { label: "Implanted Eyelid Weights", next: "eyelid1", branchID: "eyelid"},
    	           { label: "CIEDs", next: "cied1", active: true, branchID: "cieds" },
 			   { label: "SCS", next: "scs1", active: true, branchID: "scs" },
-               { label: "Implant not in one of these categories", next: "nogip", warning: true, branchID: "nogip" },
-	           { label: "Pregnancy", next: "preg1", warning: true, branchID: "pregnancy" }
+               { label: "Implant not in one of these categories", next: "nogip", nonimplant: true, branchID: "nogip" },
+	           { label: "Pregnancy", next: "preg1", nonimplant: true, branchID: "pregnancy" }
              ]
            },
 
@@ -1375,7 +1375,7 @@ preg_conditions: {
            node.options.forEach(opt => {
              const btn = document.createElement("button");
              btn.textContent = opt.label;
-             btn.className = (current === "q1" && opt.warning) ? "warning" : "yes";
+             btn.className = current === "q1" ? (opt.warning ? "nonimplant" : opt.active ? "active" : "yes") : "yes";
              btn.onclick = () => {
 			  // GA: track button press
 			  if (typeof gtag === "function") {
