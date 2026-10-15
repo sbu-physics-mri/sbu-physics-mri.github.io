@@ -94,17 +94,17 @@
          background-color: #0369a1;
        }
        .nonimplant {
-         background-color: #f97316 !important;
+         background-color: #f97316;
        }
        .nonimplant:hover {
-         background-color: #ea580c !important;
+         background-color: #ea580c;
 		   
 	   }
-       .active {
-         background-color: #0a0400 !important;
+       .activeimplant {
+         background-color: #595858;
        }
-       .active:hover {
-         background-color: #0a0400 !important;
+       .activeimplant:hover {
+         background-color: #0a0400;
 		}
 	  
        .danger {
@@ -553,8 +553,8 @@
                { label: "Vascular Stents", next: "stents1", branchID: "stents" },
 			   { label: "Passive Ear Implants", next: "ear1", branchID: "ear"},
 			   { label: "Implanted Eyelid Weights", next: "eyelid1", branchID: "eyelid"},
-   	           { label: "CIEDs", next: "cied1", active: true, branchID: "cieds" },
-			   { label: "SCS", next: "scs1", active: true, branchID: "scs" },
+   	           { label: "CIEDs", next: "cied1", activeimplant: true, branchID: "cieds" },
+			   { label: "SCS", next: "scs1", activeimplant: true, branchID: "scs" },
                { label: "Implant not in one of these categories", next: "nogip", nonimplant: true, branchID: "nogip" },
 	           { label: "Pregnancy", next: "preg1", nonimplant: true, branchID: "pregnancy" }
              ]
@@ -1375,7 +1375,7 @@ preg_conditions: {
            node.options.forEach(opt => {
              const btn = document.createElement("button");
              btn.textContent = opt.label;
-             btn.className = current === "q1" ? (opt.warning ? "nonimplant" : opt.active ? "active" : "yes") : "yes";
+             btn.className = current === "q1" ? (opt.nonimplant ? "nonimplant" : opt.activeimplant ? "activeimplant" : "yes") : "yes";
              btn.onclick = () => {
 			  // GA: track button press
 			  if (typeof gtag === "function") {
